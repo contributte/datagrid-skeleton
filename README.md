@@ -56,9 +56,7 @@ composer create-project -s dev contributte/datagrid-skeleton acme
 
 ### Composer packages
 
-Take a detailed look :eyes: at each single package.
-
-- [contributte/datagrid](https://contributte.org/packages/contributte/datagrid/)
+Take a detailed look :eyes: at [contributte/datagrid](https://contributte.org/packages/contributte/datagrid/)
 
 ## Development
 

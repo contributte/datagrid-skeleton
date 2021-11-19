@@ -1,6 +1,6 @@
 {
-  "name": "contributte/datagrid-sandbox",
-  "description": "Sandbox for contributte/datagrid",
+  "name": "contributte/datagrid-skeleton",
+  "description": "Datagrid sample project based on contributte/datagrid",
   "type": "project",
   "license": "MIT",
   "authors": [
