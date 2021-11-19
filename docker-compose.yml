@@ -7,6 +7,8 @@ services:
     volumes:
       - ./:/srv/www
       - ./.docker/nginx/sites.d:/etc/nginx/sites.d
+    entrypoint: bash
+    working_dir: /srv/www
     ports:
       - 80:80
 
