@@ -46,7 +46,7 @@ composer create-project -s dev contributte/datagrid-skeleton acme
    git clone https://github.com/contributte/datagrid-skeleton.git
    ```
 
-2) After that, you have to setup Postgres >= 10 database. You can start it manually or use docker image `postgres:10`.
+2) Run command:
 
    ```
    docker-compose up
