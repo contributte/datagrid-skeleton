@@ -54,7 +54,7 @@ composer create-project -s dev contributte/datagrid-skeleton acme
 
 3) Open http://localhost and enjoy!
 
-  If you need enter into container (such as `composer update`) run command `docker-compose run web`.
+  If you need enter into container (such as `composer update`) run command `docker-compose run web bash`.
 
 ### Composer packages
 
