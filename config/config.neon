@@ -11,10 +11,10 @@ extensions:
 
 dibi:
 	host: database
-	username: playground
-	password: 'secret'
+	username: contributte
+	password: contributte
+	database: contributte
 	port: 3306
-	database: playground
 
 session:
 	savePath: "%tempDir%/../sessions"

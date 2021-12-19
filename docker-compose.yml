@@ -2,36 +2,26 @@ version: '3.3'
 
 services:
   web:
-    image: contributte_datagrid-skeletton
-    build: .docker
+    image: dockette/web:php-80
     volumes:
-      - ./:/srv/www
-      - ./.docker/nginx/sites.d:/etc/nginx/sites.d
-    working_dir: /srv/www
+      - ./:/srv
     ports:
       - 80:80
 
-    links:
+    depends_on:
       - database
 
   database:
     image: mariadb:latest
     volumes:
-      - ./data:/docker-entrypoint-initdb.d:cached,ro
+      - .docker/db/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: playground
-      MYSQL_PASSWORD: secret
-      MYSQL_DATABASE: playground
+      MYSQL_USER: contributte
+      MYSQL_PASSWORD: contributte
+      MYSQL_DATABASE: contributte
 
   adminer:
-    image: adminer:latest
+    image: dockette/adminer:dg
     ports:
       - 8081:8080
-
-  composer:
-    image: composer:latest
-    volumes:
-      - ./:/app
-    working_dir: /app
-    command: composer install --ignore-platform-reqs
