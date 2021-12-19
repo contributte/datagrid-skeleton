@@ -1,16 +1,19 @@
 {
   "name": "contributte/datagrid-skeleton",
   "description": "Datagrid component project skeleton based on Nette Framework and Contributte libraries by @f3l1x & @paveljanda.",
-  "type": "project",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Pavel Janda",
-      "homepage": "https://paveljanda.com"
-    }
+  "keywords": [
+    "php",
+    "nette",
+    "contributte",
+    "sandbox",
+    "project",
+    "skeleton",
+    "datagrid"
   ],
+  "license": "MIT",
+  "type": "project",
   "require": {
-    "php": ">= 7.1",
+    "php": ">= 8.0",
     "nette/application": "~3.1.0",
     "nette/bootstrap": "~3.1.0",
     "nette/caching": "~3.1.0",
@@ -25,7 +28,7 @@
     "latte/latte": "^2.6",
     "tracy/tracy": "^2.7.0",
     "ublaboo/datagrid": "^6.0",
-    "dibi/dibi": "^3.0.0 || ^4.0.0"
+    "dibi/dibi": "^4.0.0"
   },
   "require-dev": {
     "ninjify/qa": "^0.12",
