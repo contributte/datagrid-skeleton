@@ -1,7 +1,10 @@
+includes:
+	- vendor/phpstan/phpstan-dibi/extension.neon
+	- vendor/phpstan/phpstan-nette/extension.neon
+	- vendor/phpstan/phpstan-nette/rules.neon
+
 parameters:
-	level: max
+	level: 8
+
 	paths:
 		- app
-	ignoreErrors:
-		- '/Call to an undefined method Nette\\ComponentModel\\IComponent::redrawControl\(\)\./'
-	checkMissingIterableValueType: false

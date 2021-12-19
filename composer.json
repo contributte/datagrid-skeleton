@@ -1,6 +1,6 @@
 {
   "name": "contributte/datagrid-skeleton",
-  "description": "Datagrid sample project based on contributte/datagrid",
+  "description": "Datagrid component project skeleton based on Nette Framework and Contributte libraries by @f3l1x & @paveljanda.",
   "type": "project",
   "license": "MIT",
   "authors": [
@@ -29,10 +29,10 @@
   },
   "require-dev": {
     "ninjify/qa": "^0.12",
-    "phpstan/phpstan": "^0.12.36",
-    "phpstan/extension-installer": "^1.0",
-    "phpstan/phpstan-dibi": "^0.12.3",
-    "phpstan/phpstan-strict-rules": "^0.12.4"
+    "phpstan/phpstan": "^1.0.0",
+    "phpstan/phpstan-dibi": "^1.0.0",
+    "phpstan/phpstan-nette": "^1.0.0",
+    "phpstan/phpstan-strict-rules": "^1.0.0"
   },
   "autoload": {
     "psr-4": {

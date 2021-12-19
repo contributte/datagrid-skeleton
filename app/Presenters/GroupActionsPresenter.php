@@ -63,6 +63,9 @@ class GroupActionsPresenter extends Presenter
 	}
 
 
+	/**
+	 * @param mixed[] $ids
+	 */
 	public function groupChangeStatus(array $ids, string $newStatus): void
 	{
 		$this->flashMessage(
@@ -91,6 +94,9 @@ class GroupActionsPresenter extends Presenter
 	}
 
 
+	/**
+	 * @param mixed[] $ids
+	 */
 	public function groupAddNote(array $ids, string $value): void
 	{
 		$this->flashMessage(
@@ -107,6 +113,9 @@ class GroupActionsPresenter extends Presenter
 	}
 
 
+	/**
+	 * @param mixed[] $ids
+	 */
 	public function groupSend(array $ids, string $key): void
 	{
 		$this->flashMessage(
@@ -123,6 +132,9 @@ class GroupActionsPresenter extends Presenter
 	}
 
 
+	/**
+	 * @param mixed[] $ids
+	 */
 	public function groupDelete(array $ids): void
 	{
 		$this->flashMessage(
@@ -139,6 +151,9 @@ class GroupActionsPresenter extends Presenter
 	}
 
 
+	/**
+	 * @param mixed[] $ids
+	 */
 	public function sayHello(array $ids): void
 	{
 		$this->flashMessage(

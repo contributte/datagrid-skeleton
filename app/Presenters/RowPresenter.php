@@ -77,6 +77,9 @@ final class RowPresenter extends Presenter
 	}
 
 
+	/**
+	 * @param mixed[] $ids
+	 */
 	public function groupDelete(array $ids): void
 	{
 		$this->flashMessage(

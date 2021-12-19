@@ -78,6 +78,7 @@ final class TreeViewPresenter extends AbstractPresenter
 
 	/**
 	 * @param mixed $parentCategoryId
+	 * @return Fluent<mixed>
 	 */
 	public function getChildren($parentCategoryId): Fluent
 	{
