@@ -17,4 +17,4 @@ dibi:
 	port: 3306
 
 session:
-	savePath: "%tempDir%/../sessions"
+	savePath: "%tempDir%/sessions"

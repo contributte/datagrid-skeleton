@@ -12,12 +12,12 @@ final class Bootstrap
 		$configurator = new Configurator();
 
 		$configurator->setDebugMode(true);
-		$configurator->enableTracy(__DIR__ . '/../var/log');
+		$configurator->enableTracy(__DIR__ . '/../log');
 
 		$configurator->setTimeZone('Europe/Prague');
-		$configurator->setTempDirectory(__DIR__ . '/../var/tmp');
+		$configurator->setTempDirectory(__DIR__ . '/../temp');
 
-		$configurator->addConfig(__DIR__ . '/../config/config.neon');
+		$configurator->addConfig(__DIR__ . '/../config/common.neon');
 
 		if (file_exists(__DIR__ . '/../config/local.neon')) {
 			$configurator->addConfig(__DIR__ . '/../config/local.neon');
