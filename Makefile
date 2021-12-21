@@ -1,4 +1,4 @@
-.PHONY: project install setup qa dev cs csfix phpstan tests build
+.PHONY: project install setup qa dev cs csf phpstan tests build
 
 ############################################################
 # PROJECT ##################################################
@@ -22,7 +22,7 @@ qa: cs phpstan
 cs:
 	vendor/bin/codesniffer app
 
-csfix:
+csf:
 	vendor/bin/codefixer app
 
 phpstan:
