@@ -1,4 +1,4 @@
-.PHONY: project install setup qa dev cs csfix phpstan tests build
+.PHONY: project install setup qa dev cs csf phpstan tests build
 
 ############################################################
 # PROJECT ##################################################
@@ -10,8 +10,8 @@ install:
 	composer install
 
 setup:
-	mkdir -p var/{tmp,log}
-	chmod +0777 var/{tmp,log}
+	mkdir -p temp log
+	chmod +0777 temp log
 
 ############################################################
 # DEVELOPMENT ##############################################
@@ -22,7 +22,7 @@ qa: cs phpstan
 cs:
 	vendor/bin/codesniffer app
 
-csfix:
+csf:
 	vendor/bin/codefixer app
 
 phpstan:
