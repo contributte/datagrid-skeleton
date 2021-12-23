@@ -154,16 +154,16 @@
         },
         {
             "name": "latte/latte",
-            "version": "v2.10.6",
+            "version": "v2.10.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "8a9bd8af76557fc35abae639ab7b966af706fec9"
+                "reference": "a69d0b9598652438b5754ae5c1abc217d5003d98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/8a9bd8af76557fc35abae639ab7b966af706fec9",
-                "reference": "8a9bd8af76557fc35abae639ab7b966af706fec9",
+                "url": "https://api.github.com/repos/nette/latte/zipball/a69d0b9598652438b5754ae5c1abc217d5003d98",
+                "reference": "a69d0b9598652438b5754ae5c1abc217d5003d98",
                 "shasum": ""
             },
             "require": {
@@ -232,22 +232,22 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/v2.10.6"
+                "source": "https://github.com/nette/latte/tree/v2.10.7"
             },
-            "time": "2021-11-26T22:56:21+00:00"
+            "time": "2021-12-21T11:22:49+00:00"
         },
         {
             "name": "nette/application",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/application.git",
-                "reference": "db6eedc199732ed6cf9982da97a38219e8601c62"
+                "reference": "fa5da6a90ff71724353568894a4839aec627eae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/application/zipball/db6eedc199732ed6cf9982da97a38219e8601c62",
-                "reference": "db6eedc199732ed6cf9982da97a38219e8601c62",
+                "url": "https://api.github.com/repos/nette/application/zipball/fa5da6a90ff71724353568894a4839aec627eae3",
+                "reference": "fa5da6a90ff71724353568894a4839aec627eae3",
                 "shasum": ""
             },
             "require": {
@@ -323,9 +323,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/application/issues",
-                "source": "https://github.com/nette/application/tree/v3.1.4"
+                "source": "https://github.com/nette/application/tree/v3.1.5"
             },
-            "time": "2021-10-06T23:40:44+00:00"
+            "time": "2021-12-20T12:24:49+00:00"
         },
         {
             "name": "nette/bootstrap",
@@ -620,22 +620,22 @@
         },
         {
             "name": "nette/di",
-            "version": "v3.0.11",
+            "version": "v3.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/di.git",
-                "reference": "942e406f63b88b57cb4e095ae0fd95c103d12c5b"
+                "reference": "11c236b9f7bbfc5a95e7b24742ad8847936feeb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/di/zipball/942e406f63b88b57cb4e095ae0fd95c103d12c5b",
-                "reference": "942e406f63b88b57cb4e095ae0fd95c103d12c5b",
+                "url": "https://api.github.com/repos/nette/di/zipball/11c236b9f7bbfc5a95e7b24742ad8847936feeb5",
+                "reference": "11c236b9f7bbfc5a95e7b24742ad8847936feeb5",
                 "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
                 "nette/neon": "^3.3",
-                "nette/php-generator": "^3.3.3",
+                "nette/php-generator": "^3.5.4",
                 "nette/robot-loader": "^3.2",
                 "nette/schema": "^1.1",
                 "nette/utils": "^3.1.6",
@@ -689,9 +689,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/di/issues",
-                "source": "https://github.com/nette/di/tree/v3.0.11"
+                "source": "https://github.com/nette/di/tree/v3.0.12"
             },
-            "time": "2021-10-26T11:44:44+00:00"
+            "time": "2021-12-15T21:05:11+00:00"
         },
         {
             "name": "nette/finder",
@@ -2200,16 +2200,16 @@
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.8.9",
+            "version": "v2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "81c769040cd0396eabed3c6d5cebe68399531c7b"
+                "reference": "551a7d936dfbd7075ced9a604b9527d1f7bfa8b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/81c769040cd0396eabed3c6d5cebe68399531c7b",
-                "reference": "81c769040cd0396eabed3c6d5cebe68399531c7b",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/551a7d936dfbd7075ced9a604b9527d1f7bfa8b4",
+                "reference": "551a7d936dfbd7075ced9a604b9527d1f7bfa8b4",
                 "shasum": ""
             },
             "require": {
@@ -2232,7 +2232,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "2.9-dev"
                 }
             },
             "autoload": {
@@ -2268,9 +2268,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/tracy/issues",
-                "source": "https://github.com/nette/tracy/tree/v2.8.9"
+                "source": "https://github.com/nette/tracy/tree/v2.9.0"
             },
-            "time": "2021-11-24T16:04:35+00:00"
+            "time": "2021-12-20T18:19:46+00:00"
         },
         {
             "name": "ublaboo/datagrid",
