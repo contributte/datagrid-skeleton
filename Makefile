@@ -1,8 +1,7 @@
-.PHONY: project install setup qa dev cs csfix phpstan tests build
-
 ############################################################
 # PROJECT ##################################################
 ############################################################
+.PHONY: project install setup clean
 
 project: install setup
 
@@ -10,19 +9,24 @@ install:
 	composer install
 
 setup:
-	mkdir -p var/{tmp,log}
-	chmod +0777 var/{tmp,log}
+	mkdir -p temp log
+	chmod +0777 temp log
+
+clean:
+	find temp -mindepth 1 ! -name '.gitignore' -type f -or -type d -exec rm -rf {} +
+	find log -mindepth 1 ! -name '.gitignore' -type f -or -type d -exec rm -rf {} +
 
 ############################################################
 # DEVELOPMENT ##############################################
 ############################################################
+.PHONY: qa dev cs csf phpstan tests coverage dev build
 
 qa: cs phpstan
 
 cs:
 	vendor/bin/codesniffer app
 
-csfix:
+csf:
 	vendor/bin/codefixer app
 
 phpstan:
@@ -33,3 +37,16 @@ tests:
 
 coverage:
 	echo "OK"
+
+dev:
+	NETTE_DEBUG=1 NETTE_ENV=dev php -S 0.0.0.0:8000 -t www
+
+build:
+	echo "BUILD OK"
+
+############################################################
+# DEPLOYMENT ###############################################
+############################################################
+.PHONY: deploy
+
+deploy: clean project build
