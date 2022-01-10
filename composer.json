@@ -31,7 +31,7 @@
     "dibi/dibi": "^4.0.0"
   },
   "require-dev": {
-    "ninjify/qa": "^0.12",
+    "ninjify/qa": "^0.13",
     "phpstan/phpstan": "^1.0.0",
     "phpstan/phpstan-dibi": "^1.0.0",
     "phpstan/phpstan-nette": "^1.0.0",
