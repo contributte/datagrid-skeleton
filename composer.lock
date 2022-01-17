@@ -2665,16 +2665,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.3.3",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "151a51f6149855785fbd883e79768c0abc96b75f"
+                "reference": "72b04d97b5e6e60a081f17c416fef35bd521120b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/151a51f6149855785fbd883e79768c0abc96b75f",
-                "reference": "151a51f6149855785fbd883e79768c0abc96b75f",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/72b04d97b5e6e60a081f17c416fef35bd521120b",
+                "reference": "72b04d97b5e6e60a081f17c416fef35bd521120b",
                 "shasum": ""
             },
             "require": {
@@ -2690,7 +2690,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -2705,7 +2705,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.3.3"
+                "source": "https://github.com/phpstan/phpstan/tree/1.4.0"
             },
             "funding": [
                 {
@@ -2725,20 +2725,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-07T09:49:03+00:00"
+            "time": "2022-01-14T15:58:47+00:00"
         },
         {
             "name": "phpstan/phpstan-dibi",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-dibi.git",
-                "reference": "c02c3979ee6050bb04aa64457d0a7b476e242e0f"
+                "reference": "f5b29e0261d0948f68bc1800e30cbe90808725d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-dibi/zipball/c02c3979ee6050bb04aa64457d0a7b476e242e0f",
-                "reference": "c02c3979ee6050bb04aa64457d0a7b476e242e0f",
+                "url": "https://api.github.com/repos/phpstan/phpstan-dibi/zipball/f5b29e0261d0948f68bc1800e30cbe90808725d8",
+                "reference": "f5b29e0261d0948f68bc1800e30cbe90808725d8",
                 "shasum": ""
             },
             "require": {
@@ -2778,9 +2778,9 @@
             "description": "Dibi class reflection extension for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-dibi/issues",
-                "source": "https://github.com/phpstan/phpstan-dibi/tree/1.0.0"
+                "source": "https://github.com/phpstan/phpstan-dibi/tree/1.0.1"
             },
-            "time": "2021-09-13T11:31:36+00:00"
+            "time": "2022-01-16T10:42:02+00:00"
         },
         {
             "name": "phpstan/phpstan-nette",
@@ -3024,5 +3024,5 @@
         "php": ">= 8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
