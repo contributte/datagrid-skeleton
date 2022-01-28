@@ -32,7 +32,7 @@ https://examples.contributte.org/datagrid-skeleton/
 
 ## Installation
 
-To install latest version of `contributte/datagrid-skeleton` use [Composer](https://getcomposer.com).
+To install latest version of `contributte/datagrid-skeleton` use [Composer](https://getcomposer.org).
 
 ```
 composer create-project -s dev contributte/datagrid-skeleton acme
