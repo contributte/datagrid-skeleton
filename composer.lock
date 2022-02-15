@@ -2283,16 +2283,16 @@
         },
         {
             "name": "ublaboo/datagrid",
-            "version": "v6.9.3",
+            "version": "v6.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/datagrid.git",
-                "reference": "6fffc319f3ab2d05428fa83013ec2c41d222c3b5"
+                "reference": "a91ad121517c1adf74e7b5f0528031d479230e7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/datagrid/zipball/6fffc319f3ab2d05428fa83013ec2c41d222c3b5",
-                "reference": "6fffc319f3ab2d05428fa83013ec2c41d222c3b5",
+                "url": "https://api.github.com/repos/contributte/datagrid/zipball/a91ad121517c1adf74e7b5f0528031d479230e7d",
+                "reference": "a91ad121517c1adf74e7b5f0528031d479230e7d",
                 "shasum": ""
             },
             "require": {
@@ -2356,7 +2356,7 @@
             ],
             "support": {
                 "issues": "https://github.com/contributte/datagrid/issues",
-                "source": "https://github.com/contributte/datagrid/tree/v6.9.3"
+                "source": "https://github.com/contributte/datagrid/tree/v6.9.4"
             },
             "funding": [
                 {
@@ -2368,7 +2368,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-11T16:40:00+00:00"
+            "time": "2022-02-14T15:35:30+00:00"
         }
     ],
     "packages-dev": [
