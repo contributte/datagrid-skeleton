@@ -32,7 +32,7 @@ final class RowPresenter extends Presenter
 		});
 
 		$grid->addColumnNumber('id', 'Id')
-			->setAlign('left')
+			->setAlign('start')
 			->setSortable();
 
 		$grid->addColumnText('name', 'Name')

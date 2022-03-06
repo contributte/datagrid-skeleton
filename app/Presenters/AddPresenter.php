@@ -27,7 +27,7 @@ final class AddPresenter extends Presenter
 		$grid->setItemsPerPageList([20, 50, 100]);
 
 		$grid->addColumnNumber('id', 'Id')
-			->setAlign('left')
+			->setAlign('start')
 			->setFilterText();
 
 		$grid->addColumnText('name', 'Name')
