@@ -24,7 +24,7 @@ final class RowPresenter extends AbstractPresenter
 		});
 
 		$grid->addColumnNumber('id', 'Id')
-			->setAlign('left')
+			->setAlign('start')
 			->setSortable();
 
 		$grid->addColumnText('name', 'Name')

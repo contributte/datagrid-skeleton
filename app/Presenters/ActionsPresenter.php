@@ -22,7 +22,7 @@ class ActionsPresenter extends AbstractPresenter
 		$grid->setSortable();
 
 		$grid->addColumnNumber('id', 'Id')
-			->setAlign('left')
+			->setAlign('start')
 			->setSortable();
 
 		$grid->addColumnText('name', 'Name')
