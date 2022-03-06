@@ -19,7 +19,7 @@ class GroupActionsPresenter extends AbstractPresenter
 		$grid->setItemsPerPageList([20, 50, 100]);
 
 		$grid->addColumnNumber('id', 'Id')
-			->setAlign('left')
+			->setAlign('start')
 			->setSortable();
 
 		$grid->addColumnText('name', 'Name')
