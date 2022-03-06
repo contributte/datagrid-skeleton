@@ -23,7 +23,7 @@ final class EditPresenter extends AbstractPresenter
 
 		$grid->addColumnNumber('id', 'Id')
 			->setSortable()
-			->setAlign('left');
+			->setAlign('start');
 
 		$grid->addColumnText('name', 'Name')
 			->setSortable()
