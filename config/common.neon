@@ -4,7 +4,8 @@ application:
 		*: App\*Module\Presenters\*Presenter
 
 services:
-	router: App\Router\RouterFactory::create
+	router: App\Model\RouterFactory::create
+	parameters: App\Model\Parameters(%parameters%)
 
 extensions:
 	dibi: Dibi\Bridges\Nette\DibiExtension22
@@ -18,3 +19,6 @@ dibi:
 
 session:
 	savePath: "%tempDir%/sessions"
+
+parameters:
+	vendorDir: %appDir%/../vendor

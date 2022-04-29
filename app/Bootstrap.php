@@ -11,7 +11,7 @@ final class Bootstrap
 	{
 		$configurator = new Configurator();
 
-		$configurator->setDebugMode(false);
+		$configurator->setDebugMode(getenv('NETTE_DEBUG') === '1');
 		$configurator->enableTracy(__DIR__ . '/../log');
 
 		$configurator->setTimeZone('Europe/Prague');

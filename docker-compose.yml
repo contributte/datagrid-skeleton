@@ -7,9 +7,10 @@ services:
       - ./:/srv
     ports:
       - 80:80
-
     depends_on:
       - database
+    environment:
+      NETTE_DEBUG: 1
 
   database:
     image: mariadb:latest

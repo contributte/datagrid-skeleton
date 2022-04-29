@@ -27,7 +27,7 @@
     "nette/utils": "^3.0",
     "latte/latte": "^2.6",
     "tracy/tracy": "^2.7.0",
-    "ublaboo/datagrid": "^6.0",
+    "ublaboo/datagrid": "dev-fx/bootstrap5",
     "dibi/dibi": "^4.0.0"
   },
   "require-dev": {
@@ -45,5 +45,10 @@
     }
   },
   "prefer-stable": true,
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
 }
