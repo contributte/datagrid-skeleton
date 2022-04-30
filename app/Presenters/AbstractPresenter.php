@@ -4,17 +4,15 @@ namespace App\Presenters;
 
 use Dibi\Connection;
 use Nette\Application\UI\Presenter;
+use Nette\DI\Attributes\Inject;
 use Ublaboo\DataGrid\DataGrid;
 use UnexpectedValueException;
 
 abstract class AbstractPresenter extends Presenter
 {
 
-	/**
-	 * @var Connection
-	 * @inject
-	 */
-	public $dibiConnection;
+	#[Inject]
+	public Connection $dibiConnection;
 
 	abstract public function createComponentGrid(): DataGrid;
 

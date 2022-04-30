@@ -3,21 +3,13 @@
 namespace App\Presenters;
 
 use App\UI\TEmptyLayoutView;
-use Dibi\Connection;
-use Nette\Application\UI\Presenter;
 use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
 use Ublaboo\DataGrid\DataGrid;
 
-final class RowPresenter extends Presenter
+final class RowPresenter extends AbstractPresenter
 {
 
 	use TEmptyLayoutView;
-
-	/**
-	 * @var Connection
-	 * @inject
-	 */
-	public $dibiConnection;
 
 	public function createComponentGrid(): DataGrid
 	{

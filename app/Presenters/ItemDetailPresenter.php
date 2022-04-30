@@ -3,20 +3,12 @@
 namespace App\Presenters;
 
 use App\UI\TEmptyLayoutView;
-use Dibi\Connection;
-use Nette\Application\UI\Presenter;
 use Ublaboo\DataGrid\DataGrid;
 
-final class ItemDetailPresenter extends Presenter
+final class ItemDetailPresenter extends AbstractPresenter
 {
 
 	use TEmptyLayoutView;
-
-	/**
-	 * @var Connection
-	 * @inject
-	 */
-	public $dibiConnection;
 
 	public function createComponentGrid(): DataGrid
 	{

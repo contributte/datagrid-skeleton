@@ -4,7 +4,6 @@ namespace App\Presenters;
 
 use App\UI\TEmptyLayoutView;
 use DateTime;
-use Dibi\Connection;
 use Dibi\Fluent;
 use Dibi\Row;
 use Nette\Utils\ArrayHash;
@@ -14,12 +13,6 @@ final class FiltersPresenter extends AbstractPresenter
 {
 
 	use TEmptyLayoutView;
-
-	/**
-	 * @var Connection
-	 * @inject
-	 */
-	public $dibiConnection;
 
 	public function createComponentGrid(): DataGrid
 	{

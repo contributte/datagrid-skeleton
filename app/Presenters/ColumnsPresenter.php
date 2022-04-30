@@ -4,7 +4,6 @@ namespace App\Presenters;
 
 use App\UI\TEmptyLayoutView;
 use DateTime;
-use Dibi\Connection;
 use Dibi\Fluent;
 use Dibi\Row;
 use Ublaboo\DataGrid\AggregationFunction\IAggregationFunction;
@@ -18,12 +17,6 @@ final class ColumnsPresenter extends AbstractPresenter
 {
 
 	use TEmptyLayoutView;
-
-	/**
-	 * @var Connection
-	 * @inject
-	 */
-	public $dibiConnection;
 
 	public function createComponentGrid(): DataGrid
 	{
