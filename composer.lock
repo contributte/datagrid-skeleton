@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f60d787e538e8d3ae920cf7327ff0879",
+    "content-hash": "efc1f5fa066936b390c17bd2dfc083eb",
     "packages": [
         {
             "name": "contributte/application",
@@ -154,22 +154,22 @@
         },
         {
             "name": "latte/latte",
-            "version": "v2.11.3",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "f2e16d3ec6968854029740452c20c38a514e6842"
+                "reference": "0a3f7fb3f930733c5cbc8d2f67943006d6ab2652"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/f2e16d3ec6968854029740452c20c38a514e6842",
-                "reference": "f2e16d3ec6968854029740452c20c38a514e6842",
+                "url": "https://api.github.com/repos/nette/latte/zipball/0a3f7fb3f930733c5cbc8d2f67943006d6ab2652",
+                "reference": "0a3f7fb3f930733c5cbc8d2f67943006d6ab2652",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-tokenizer": "*",
-                "php": ">=7.1 <8.2"
+                "php": ">=8.0 <8.2"
             },
             "conflict": {
                 "nette/application": "<2.4.1"
@@ -194,7 +194,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.11-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -232,9 +232,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/v2.11.3"
+                "source": "https://github.com/nette/latte/tree/v3.0.0"
             },
-            "time": "2022-05-08T03:22:55+00:00"
+            "time": "2022-05-17T20:14:20+00:00"
         },
         {
             "name": "nette/application",
