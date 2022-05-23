@@ -1,15 +1,14 @@
 {**
  * @param $method
  *}
-{php
-	$method = new ReflectionMethod($control, $method);
-	$filename = $method->getFileName();
-	$start_line = $method->getStartLine() - 1;
-	$end_line = $method->getEndLine();
-	$length = $end_line - $start_line;
+{php $method = new ReflectionMethod($control, $method)}
+{php $filename = $method->getFileName()}
+{php $start_line = $method->getStartLine() - 1}
+{php $end_line = $method->getEndLine()}
+{php $length = $end_line - $start_line}
 
-	$source = file($filename);
-	$body = implode("", array_slice($source, $start_line, $length));
-	$body = trim(preg_replace_callback('/^\t/m', function($i){ return ''; }, $body));
-}
+{php $source = file($filename)}
+{php $body = implode("", array_slice($source, $start_line, $length))}
+{php $body = trim(preg_replace_callback('/^\t/m', function($i){ return ''; }, $body))}
+
 {$body}
