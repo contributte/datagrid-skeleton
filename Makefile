@@ -9,8 +9,8 @@ install:
 	composer install
 
 setup:
-	mkdir -p temp log
-	chmod +0777 temp log
+	mkdir -p temp temp/sessions log
+	chmod +0777 temp temp/sessions log
 
 clean:
 	find temp -mindepth 1 ! -name '.gitignore' -type f,d -exec rm -rf {} +
