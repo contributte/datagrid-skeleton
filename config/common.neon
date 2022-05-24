@@ -9,6 +9,10 @@ services:
 extensions:
 	dibi: Dibi\Bridges\Nette\DibiExtension22
 
+latte:
+	extensions:
+		- Latte\Essential\RawPhpExtension
+
 dibi:
 	host: database
 	username: contributte
