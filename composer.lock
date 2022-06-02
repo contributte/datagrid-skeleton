@@ -154,16 +154,16 @@
         },
         {
             "name": "latte/latte",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "0a3f7fb3f930733c5cbc8d2f67943006d6ab2652"
+                "reference": "1eee22c760ab8d028e2c21f87fbb7ef7bfeaa0b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/0a3f7fb3f930733c5cbc8d2f67943006d6ab2652",
-                "reference": "0a3f7fb3f930733c5cbc8d2f67943006d6ab2652",
+                "url": "https://api.github.com/repos/nette/latte/zipball/1eee22c760ab8d028e2c21f87fbb7ef7bfeaa0b5",
+                "reference": "1eee22c760ab8d028e2c21f87fbb7ef7bfeaa0b5",
                 "shasum": ""
             },
             "require": {
@@ -232,9 +232,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/v3.0.0"
+                "source": "https://github.com/nette/latte/tree/v3.0.1"
             },
-            "time": "2022-05-17T20:14:20+00:00"
+            "time": "2022-06-01T12:19:53+00:00"
         },
         {
             "name": "nette/application",
