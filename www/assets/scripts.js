@@ -10,13 +10,14 @@ var finishFlash = function() {
 };
 
 if (typeof naja !== "undefined") {
-	function FlashesExtension(naja) {
-	    naja.addEventListener('complete', finishFlash);
-
-	    return this;
+	class FlashesExtension {
+		initialize(naja) {
+			naja.addEventListener('complete', finishFlash);
+		}
 	}
 
-	naja.registerExtension(FlashesExtension);
+	naja.registerExtension(new FlashesExtension);
+
 } else {
 	$.nette.ext('flashes', {
 	  complete: function() {
