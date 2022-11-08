@@ -154,16 +154,16 @@
         },
         {
             "name": "latte/latte",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "aad059390316d33c4c81a09703117303ce57f06c"
+                "reference": "1a9ea7baf8e3ca30071b108eca7d94436deda17c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/aad059390316d33c4c81a09703117303ce57f06c",
-                "reference": "aad059390316d33c4c81a09703117303ce57f06c",
+                "url": "https://api.github.com/repos/nette/latte/zipball/1a9ea7baf8e3ca30071b108eca7d94436deda17c",
+                "reference": "1a9ea7baf8e3ca30071b108eca7d94436deda17c",
                 "shasum": ""
             },
             "require": {
@@ -172,7 +172,8 @@
                 "php": ">=8.0 <8.3"
             },
             "conflict": {
-                "nette/application": "<2.4.1"
+                "nette/application": "<3.1.7",
+                "nette/caching": "<3.1.4"
             },
             "require-dev": {
                 "nette/php-generator": "^3.6 || ^4.0",
@@ -232,9 +233,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/v3.0.3"
+                "source": "https://github.com/nette/latte/tree/v3.0.4"
             },
-            "time": "2022-09-12T22:35:05+00:00"
+            "time": "2022-11-04T14:51:17+00:00"
         },
         {
             "name": "nette/application",
