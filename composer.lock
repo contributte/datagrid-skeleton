@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efc1f5fa066936b390c17bd2dfc083eb",
+    "content-hash": "06d39b8452dbee27291b4a76411cb6b5",
     "packages": [
         {
             "name": "contributte/application",
@@ -837,20 +837,20 @@
         },
         {
             "name": "nette/http",
-            "version": "v3.1.7",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/http.git",
-                "reference": "3d0f37872f2d699072b88f9c744b60b231d6402f"
+                "reference": "9db513203006496dbe5b9fbfb69012adb0771c66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/http/zipball/3d0f37872f2d699072b88f9c744b60b231d6402f",
-                "reference": "3d0f37872f2d699072b88f9c744b60b231d6402f",
+                "url": "https://api.github.com/repos/nette/http/zipball/9db513203006496dbe5b9fbfb69012adb0771c66",
+                "reference": "9db513203006496dbe5b9fbfb69012adb0771c66",
                 "shasum": ""
             },
             "require": {
-                "nette/utils": "^3.1",
+                "nette/utils": "^3.2.1 || ~4.0.0",
                 "php": ">=7.2 <8.3"
             },
             "conflict": {
@@ -860,9 +860,9 @@
             "require-dev": {
                 "nette/di": "^3.0",
                 "nette/security": "^3.0",
-                "nette/tester": "^2.0",
-                "phpstan/phpstan": "^0.12",
-                "tracy/tracy": "^2.4"
+                "nette/tester": "^2.4",
+                "phpstan/phpstan": "^1.0",
+                "tracy/tracy": "^2.8"
             },
             "suggest": {
                 "ext-fileinfo": "to detect type of uploaded files"
@@ -870,7 +870,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -909,9 +909,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/http/issues",
-                "source": "https://github.com/nette/http/tree/v3.1.7"
+                "source": "https://github.com/nette/http/tree/v3.2.0"
             },
-            "time": "2022-10-13T01:29:13+00:00"
+            "time": "2022-11-30T17:28:21+00:00"
         },
         {
             "name": "nette/mail",
