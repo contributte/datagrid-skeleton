@@ -1,0 +1,14 @@
+{
+  "js/main.css": {
+    "file": "main.f81f53a3.css",
+    "src": "js/main.css"
+  },
+  "js/main.js": {
+    "file": "app.b967a0c3.js",
+    "src": "js/main.js",
+    "isEntry": true,
+    "css": [
+      "main.f81f53a3.css"
+    ]
+  }
+}
