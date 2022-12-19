@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig(({ mode }) => {
 	return {
-		publicDir: './../www/public/static',
+		publicDir: './../www/dist/static',
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, 'assets/js'),
@@ -14,10 +15,10 @@ export default defineConfig(({ mode }) => {
 			open: false,
 			hmr: false,
 		},
-		base: '/dist/',
+		base: '/',
 		build: {
 			manifest: true,
-			outDir: './../www/public/dist/',
+			outDir: './../www/dist/',
 			emptyOutDir: true,
 			minify: 'esbuild',
 			rollupOptions: {
@@ -31,6 +32,16 @@ export default defineConfig(({ mode }) => {
 					app: './js/main.js'
 				}
 			}
-		}
+		},
+		plugins: [
+			viteStaticCopy({
+				targets: [
+					{
+						src: './node_modules/jquery/dist/jquery.min.js',
+						dest: 'jquery'
+					},
+				]
+			})
+		]
 	}
 });
