@@ -40,6 +40,10 @@ export default defineConfig(({ mode }) => {
 						src: './node_modules/jquery/dist/jquery.min.js',
 						dest: 'jquery'
 					},
+					{
+						src: './node_modules/naja/dist/Naja.min.js',
+						dest: 'naja'
+					},
 				]
 			})
 		]

@@ -10,11 +10,11 @@
 	<title>{ifset title}{include title|stripHtml} | {/ifset}DataGrid Sandbox</title>
 
 	{* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.css"> *}
-	<link rel="stylesheet" type="text/css" href="{$basePath}/dist/main.c3d2576e.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/dist/main.1d92776f.css">
 	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/happy-inputs@2.0.4/src/happy.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ublaboo-datagrid@6.2.24/assets/datagrid.css">
+	{* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ublaboo-datagrid@6.2.24/assets/datagrid.css"> *}
 
 	<!-- Use this css for ajax spinners -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ublaboo-datagrid@6.2.24/assets/datagrid-spinners.css">
@@ -26,6 +26,12 @@
 
 	<link rel="stylesheet" type="text/css" href="{$basePath}/assets/styles.css">
 	<link rel="stylesheet" type="text/css" href="{$basePath}/assets/prism.css">
+	
+	{* {cache assets, if => !$debugMode}
+		{var $manifest = $presenter->getManifest('front')}
+		<link rel="stylesheet" href="{$basePath}/dist/{$manifest['css'][0]}" />
+		<script type="module" src="{$basePath}/dist/{$manifest['file']}"></script>
+	{/cache} *}
 </head>
 
 <body>
@@ -89,6 +95,9 @@
 		</script>
 		{* <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.js"></script> *}
 		<script src="{$basePath}/dist/jquery/jquery.min.js"></script>
+		<script src="{$basePath}/dist/naja/Naja.min.js"></script>
+
+		<script src="{$basePath}/dist/app.f4024a98.js"></script>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.js"></script>
@@ -98,8 +107,9 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', naja.initialize.bind(naja));
 		</script> -->
-		<script src="https://cdn.jsdelivr.net/npm/ublaboo-datagrid@6.2.24/assets/datagrid.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/nette-forms@3.0.4/src/assets/netteForms.min.js"></script>
+
+		{* <script src="https://cdn.jsdelivr.net/npm/ublaboo-datagrid@6.2.24/assets/datagrid.js"></script> *}
+		{* <script src="https://cdn.jsdelivr.net/npm/nette-forms@3.0.4/src/assets/netteForms.min.js"></script> *}
 
 		<!-- It is recommended to include this JS file with just a few bits. It refreshes URL on non ajax request -->
 		<script src="https://cdn.jsdelivr.net/npm/ublaboo-datagrid@6.2.24/assets/datagrid-instant-url-refresh.js"></script>
