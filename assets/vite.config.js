@@ -43,7 +43,11 @@ export default defineConfig(({ mode }) => {
 					{
 						src: './node_modules/naja/dist/Naja.min.js',
 						dest: 'naja'
-					}
+					},
+					{
+						src: './node_modules/nette-forms/src/assets/netteForms.min.js',
+						dest: 'nette-forms'
+					},
 				]
 			})
 		]
