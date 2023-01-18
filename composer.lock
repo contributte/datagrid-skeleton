@@ -912,21 +912,21 @@
         },
         {
             "name": "nette/mail",
-            "version": "v3.1.9",
+            "version": "v3.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/mail.git",
-                "reference": "345b572c1faf8bc88160b1b8be75cc88bbc35b5d"
+                "reference": "23380ff0220c7a595d21253ac9ea64e32a1869c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/mail/zipball/345b572c1faf8bc88160b1b8be75cc88bbc35b5d",
-                "reference": "345b572c1faf8bc88160b1b8be75cc88bbc35b5d",
+                "url": "https://api.github.com/repos/nette/mail/zipball/23380ff0220c7a595d21253ac9ea64e32a1869c7",
+                "reference": "23380ff0220c7a595d21253ac9ea64e32a1869c7",
                 "shasum": ""
             },
             "require": {
                 "ext-iconv": "*",
-                "nette/utils": "^3.1",
+                "nette/utils": "^3.1 || ~4.0.0",
                 "php": ">=7.1 <8.3"
             },
             "conflict": {
@@ -980,9 +980,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/mail/issues",
-                "source": "https://github.com/nette/mail/tree/v3.1.9"
+                "source": "https://github.com/nette/mail/tree/v3.1.10"
             },
-            "time": "2022-10-13T01:28:04+00:00"
+            "time": "2023-01-18T05:42:31+00:00"
         },
         {
             "name": "nette/neon",
@@ -1384,16 +1384,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v3.2.8",
+            "version": "v3.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "02a54c4c872b99e4ec05c4aec54b5a06eb0f6368"
+                "reference": "c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/02a54c4c872b99e4ec05c4aec54b5a06eb0f6368",
-                "reference": "02a54c4c872b99e4ec05c4aec54b5a06eb0f6368",
+                "url": "https://api.github.com/repos/nette/utils/zipball/c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c",
+                "reference": "c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c",
                 "shasum": ""
             },
             "require": {
@@ -1403,6 +1403,7 @@
                 "nette/di": "<3.0.6"
             },
             "require-dev": {
+                "jetbrains/phpstorm-attributes": "dev-master",
                 "nette/tester": "~2.0",
                 "phpstan/phpstan": "^1.0",
                 "tracy/tracy": "^2.3"
@@ -1463,9 +1464,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v3.2.8"
+                "source": "https://github.com/nette/utils/tree/v3.2.9"
             },
-            "time": "2022-09-12T23:36:20+00:00"
+            "time": "2023-01-18T03:26:20+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
