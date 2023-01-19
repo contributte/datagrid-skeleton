@@ -412,16 +412,16 @@
         },
         {
             "name": "nette/caching",
-            "version": "v3.2.1",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/caching.git",
-                "reference": "291cfd1b972f24e5a9c33b75b55209846a038c77"
+                "reference": "45dd9010ebcf50068cf7f3fbfc6dc34c6f890585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/caching/zipball/291cfd1b972f24e5a9c33b75b55209846a038c77",
-                "reference": "291cfd1b972f24e5a9c33b75b55209846a038c77",
+                "url": "https://api.github.com/repos/nette/caching/zipball/45dd9010ebcf50068cf7f3fbfc6dc34c6f890585",
+                "reference": "45dd9010ebcf50068cf7f3fbfc6dc34c6f890585",
                 "shasum": ""
             },
             "require": {
@@ -477,9 +477,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/caching/issues",
-                "source": "https://github.com/nette/caching/tree/v3.2.1"
+                "source": "https://github.com/nette/caching/tree/v3.2.2"
             },
-            "time": "2023-01-15T23:48:52+00:00"
+            "time": "2023-01-19T03:42:13+00:00"
         },
         {
             "name": "nette/component-model",
