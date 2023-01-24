@@ -2,8 +2,9 @@
 
 namespace App\Presenters;
 
+use App\Model\Utils\DateTime;
+use App\Model\Utils\Types;
 use App\UI\TEmptyLayoutView;
-use DateTime;
 use Dibi\Fluent;
 use Dibi\Row;
 use Ublaboo\DataGrid\AggregationFunction\IAggregationFunction;
@@ -61,7 +62,7 @@ final class ColumnsPresenter extends AbstractPresenter
 			->setSortable();
 
 		$grid->addColumnNumber('age', 'Age')
-			->setRenderer(fn (Row $row): int => $row['birth_date']->diff(new DateTime())->y);
+			->setRenderer(fn (Row $row): ?int => DateTime::fromSafe($row->asDateTime('birth_date'))?->diff(new DateTime())->y);
 
 		$grid->setColumnsHideable();
 
@@ -103,15 +104,15 @@ final class ColumnsPresenter extends AbstractPresenter
 						throw new UnexpectedValueException();
 					}
 
-					$this->idsSum = (int) $dataSource->getConnection()
+					$this->idsSum = Types::forceInt($dataSource->getConnection()
 						->select('SUM([id])')
 						->from($dataSource, '_')
-						->fetchSingle();
+						->fetchSingle());
 
-					$this->avgAge = round((float) $dataSource->getConnection()
+					$this->avgAge = round(Types::forceNumber($dataSource->getConnection()
 						->select('AVG(YEAR([birth_date]))')
 						->from($dataSource, '_')
-						->fetchSingle());
+						->fetchSingle()));
 				}
 
 				public function renderResult(string $key): string

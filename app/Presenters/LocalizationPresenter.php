@@ -2,8 +2,8 @@
 
 namespace App\Presenters;
 
+use App\Model\Utils\DateTime;
 use App\UI\TEmptyLayoutView;
-use DateTime;
 use Dibi\Row;
 use Ublaboo\DataGrid\DataGrid;
 use Ublaboo\DataGrid\Localization\SimpleTranslator;
@@ -35,7 +35,7 @@ final class LocalizationPresenter extends AbstractPresenter
 			->setFormat('j. n. Y');
 
 		$grid->addColumnNumber('age', 'Age')
-			->setRenderer(fn (Row $row): int => $row['birth_date']->diff(new DateTime())->y);
+			->setRenderer(fn (Row $row): ?int => DateTime::fromSafe($row->asDateTime('birth_date'))?->diff(new DateTime())->y);
 
 		$translator = new SimpleTranslator([
 			'ublaboo_datagrid.no_item_found_reset' => 'Žádné položky nenalezeny. Filtr můžete vynulovat',

@@ -2,6 +2,7 @@
 
 namespace App\Presenters;
 
+use App\Model\Utils\DateTime;
 use App\UI\TEmptyLayoutView;
 use Dibi\Row;
 use Nette\Forms\Container;
@@ -67,7 +68,7 @@ final class EditPresenter extends AbstractPresenter
 			$container->setDefaults([
 				'id' => $row['id'],
 				'name' => $row['name'],
-				'birth_date' => $row['birth_date']->format('j. n. Y'),
+				'birth_date' => DateTime::fromSafe($row->asDateTime('birth_date'))?->format('j. n. Y'),
 				'link' => $row['name'],
 				'status' => $row['status'],
 			]);
