@@ -48,9 +48,7 @@ final class FiltersPresenter extends AbstractPresenter
 			->setFilterDateRange();
 
 		$grid->addColumnNumber('age', 'Age')
-			->setRenderer(function (Row $row): int {
-				return $row['birth_date']->diff(new DateTime())->y;
-			})
+			->setRenderer(fn (Row $row): int => $row['birth_date']->diff(new DateTime())->y)
 			->setFilterRange()
 			->setCondition(function (Fluent $fluent, ArrayHash $values): void {
 				if ((bool) $values['from']) {

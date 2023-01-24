@@ -23,7 +23,6 @@ class Error4xxPresenter extends Presenter
 		}
 	}
 
-
 	public function renderDefault(BadRequestException $exception): void
 	{
 		// load template 403.latte or 404.latte or ... 4xx.latte

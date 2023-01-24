@@ -68,12 +68,10 @@ final class TreeViewPresenter extends AbstractPresenter
 		return $grid;
 	}
 
-
 	/**
-	 * @param mixed $parentCategoryId
 	 * @return Fluent<mixed>
 	 */
-	public function getChildren($parentCategoryId): Fluent
+	public function getChildren(mixed $parentCategoryId): Fluent
 	{
 		$join = $this->dibiConnection->select('COUNT(id) AS count, parent_category_id')
 			->from('categories')
@@ -87,15 +85,7 @@ final class TreeViewPresenter extends AbstractPresenter
 			->where('c.parent_category_id = ?', (int) $parentCategoryId);
 	}
 
-
-
-	/**
-	 * @param mixed $itemId
-	 * @param mixed $prevId
-	 * @param mixed $nextId
-	 * @param mixed $parentId
-	 */
-	public function handleSort($itemId, $prevId, $nextId, $parentId): void
+	public function handleSort(mixed $itemId, mixed $prevId, mixed $nextId, mixed $parentId): void
 	{
 		$this->flashMessage(
 			sprintf(
@@ -115,7 +105,6 @@ final class TreeViewPresenter extends AbstractPresenter
 		}
 	}
 
-
 	public function handleEdit(): void
 	{
 		$this->flashMessage('Edited!', 'success');
@@ -126,7 +115,6 @@ final class TreeViewPresenter extends AbstractPresenter
 			$this->redirect('this');
 		}
 	}
-
 
 	public function handleDelete(): void
 	{

@@ -40,8 +40,8 @@ class GroupActionsPresenter extends AbstractPresenter
 		)->onSelect[] = [$this, 'groupChangeStatus'];
 
 		$grid->addGroupAction('Send', [
-			'john'  => 'John',
-			'joe'   => 'Joe',
+			'john' => 'John',
+			'joe' => 'Joe',
 			'frank' => 'Frank',
 		])->onSelect[] = [$this, 'groupSend'];
 
@@ -53,7 +53,6 @@ class GroupActionsPresenter extends AbstractPresenter
 
 		return $grid;
 	}
-
 
 	/**
 	 * @param mixed[] $ids
@@ -85,7 +84,6 @@ class GroupActionsPresenter extends AbstractPresenter
 		}
 	}
 
-
 	/**
 	 * @param mixed[] $ids
 	 */
@@ -103,7 +101,6 @@ class GroupActionsPresenter extends AbstractPresenter
 			$this->redirect('this');
 		}
 	}
-
 
 	/**
 	 * @param mixed[] $ids
@@ -123,7 +120,6 @@ class GroupActionsPresenter extends AbstractPresenter
 		}
 	}
 
-
 	/**
 	 * @param mixed[] $ids
 	 */
@@ -141,7 +137,6 @@ class GroupActionsPresenter extends AbstractPresenter
 			$this->redirect('this');
 		}
 	}
-
 
 	/**
 	 * @param mixed[] $ids

@@ -46,28 +46,20 @@ final class RowPresenter extends AbstractPresenter
 
 		$grid->addGroupAction('Delete')->onSelect[] = [$this, 'groupDelete'];
 
-		$grid->allowRowsGroupAction(function ($item): bool {
-			return $item->id % 2 === 0;
-		});
+		$grid->allowRowsGroupAction(fn ($item): bool => $item->id % 2 === 0);
 
-		$grid->allowRowsAction('delete', function ($item): bool {
-			return $item->id % 3 === 0;
-		});
+		$grid->allowRowsAction('delete', fn ($item): bool => $item->id % 3 === 0);
 
-		$grid->allowRowsAction('detail', function ($item): bool {
-			return $item->id % 4 === 0;
-		});
+		$grid->allowRowsAction('detail', fn ($item): bool => $item->id % 4 === 0);
 
 		return $grid;
 	}
-
 
 	public function handleDelete(): void
 	{
 		$this->flashMessage('Deleted!', 'info');
 		$this->redrawControl('flashes');
 	}
-
 
 	/**
 	 * @param mixed[] $ids

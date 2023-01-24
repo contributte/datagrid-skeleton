@@ -61,9 +61,7 @@ final class ColumnsPresenter extends AbstractPresenter
 			->setSortable();
 
 		$grid->addColumnNumber('age', 'Age')
-			->setRenderer(function (Row $row): int {
-				return $row['birth_date']->diff(new DateTime())->y;
-			});
+			->setRenderer(fn (Row $row): int => $row['birth_date']->diff(new DateTime())->y);
 
 		$grid->setColumnsHideable();
 
@@ -80,9 +78,7 @@ final class ColumnsPresenter extends AbstractPresenter
 
 		$grid->addColumnCallback('email', function (ColumnLink $column, Row $row): void {
 			if ($row['id'] === 3) {
-				$column->setRenderer(function (): string {
-					return '';
-				});
+				$column->setRenderer(fn (): string => '');
 			}
 		});
 
@@ -92,19 +88,16 @@ final class ColumnsPresenter extends AbstractPresenter
 			new class implements IMultipleAggregationFunction
 			{
 
-				/** @var int */
-				private $idsSum = 0;
+				private int $idsSum = 0;
 
-				/** @var float */
-				private $avgAge = 0.0;
+				private float $avgAge = 0.0;
 
 				public function getFilterDataType(): string
 				{
 					return IAggregationFunction::DATA_TYPE_PAGINATED;
 				}
 
-				/** @param mixed $dataSource */
-				public function processDataSource($dataSource): void
+				public function processDataSource(mixed $dataSource): void
 				{
 					if (!$dataSource instanceof Fluent) {
 						throw new UnexpectedValueException();
