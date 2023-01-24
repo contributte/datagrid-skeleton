@@ -19,8 +19,7 @@ final class ErrorPresenter implements IPresenter
 
 	use SmartObject;
 
-	/** @var ILogger */
-	private $logger;
+	private ILogger $logger;
 
 	public function __construct(ILogger $logger)
 	{

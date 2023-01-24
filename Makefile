@@ -24,13 +24,17 @@ clean:
 qa: cs phpstan
 
 cs:
-	vendor/bin/codesniffer app
+ifdef GITHUB_ACTION
+	vendor/bin/phpcs --standard=ruleset.xml --extensions=php,phpt --tab-width=4 --ignore=tests/tmp -q --report=checkstyle app tests | cs2pr
+else
+	vendor/bin/phpcs --standard=ruleset.xml --extensions=php,phpt --tab-width=4 --ignore=tests/tmp --colors -nsp app tests
+endif
 
 csf:
-	vendor/bin/codefixer app
+	vendor/bin/phpcbf --standard=ruleset.xml --extensions=php,phpt --tab-width=4 --ignore=tests/tmp --colors -nsp app tests
 
 phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=512M app
+	vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=512M
 
 tests:
 	echo "OK"
