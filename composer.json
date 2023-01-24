@@ -14,28 +14,30 @@
   "type": "project",
   "require": {
     "php": ">= 8.0",
-    "nette/application": "~3.1.0",
-    "nette/bootstrap": "~3.2.0",
-    "nette/caching": "~3.2.0",
-    "nette/database": "~3.1.0",
-    "nette/di": "^3.0",
-    "nette/finder": "~2.6.0",
-    "nette/forms": "~3.1.0",
-    "nette/http": "~3.2.0",
-    "nette/mail": "~3.1.0",
-    "nette/security": "~3.1.0",
-    "nette/utils": "^3.0",
-    "latte/latte": "^3.0",
-    "tracy/tracy": "^2.7.0",
-    "ublaboo/datagrid": "dev-fx/bootstrap5",
-    "dibi/dibi": "^4.0.0"
+
+    "nette/application": "^3.1.0",
+    "nette/bootstrap": "^3.2.0",
+    "nette/caching": "^3.2.0",
+    "nette/database": "^3.1.0",
+    "nette/di": "^3.0.15",
+    "nette/forms": "^3.1.0",
+    "nette/http": "^3.2.0",
+    "nette/utils": "^3.2.0",
+
+    "latte/latte": "^3.0.3",
+    "tracy/tracy": "^2.9.5",
+
+    "ublaboo/datagrid": "dev-next",
+
+    "nextras/orm": "^4.0.6",
+    "dibi/dibi": "^4.2.7"
   },
   "require-dev": {
-    "ninjify/qa": "^0.13",
-    "phpstan/phpstan": "^1.0.0",
-    "phpstan/phpstan-dibi": "^1.0.0",
-    "phpstan/phpstan-nette": "^1.0.0",
-    "phpstan/phpstan-strict-rules": "^1.0.0"
+    "contributte/qa": "^0.4.0",
+    "phpstan/phpstan": "^1.9.14",
+    "phpstan/phpstan-dibi": "^1.0.1",
+    "phpstan/phpstan-nette": "^1.2.1",
+    "phpstan/phpstan-strict-rules": "^1.4.5"
   },
   "autoload": {
     "psr-4": {
