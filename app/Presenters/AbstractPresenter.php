@@ -15,10 +15,8 @@ abstract class AbstractPresenter extends Presenter
 
 	abstract public function createComponentGrid(): DataGrid;
 
-	public function changeStatus(mixed $id, string $newStatus): void
+	public function changeStatus(int $id, string $newStatus): void
 	{
-		$id = (int) $id;
-
 		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
 			$data = ['status' => $newStatus];
 
