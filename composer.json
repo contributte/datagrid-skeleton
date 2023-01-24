@@ -37,7 +37,8 @@
     "phpstan/phpstan": "^1.9.14",
     "phpstan/phpstan-dibi": "^1.0.1",
     "phpstan/phpstan-nette": "^1.2.1",
-    "phpstan/phpstan-strict-rules": "^1.4.5"
+    "phpstan/phpstan-strict-rules": "^1.4.5",
+    "phpstan/phpstan-deprecation-rules": "^1.1.1"
   },
   "autoload": {
     "psr-4": {
