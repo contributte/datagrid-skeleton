@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Nette\Configurator;
+use Nette\Bootstrap\Configurator;
 
 final class Bootstrap
 {
