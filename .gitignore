@@ -1,3 +1,5 @@
-/_data
+# Composer
 /vendor
-/ftp-deployment
+
+# Node
+/node_modules
