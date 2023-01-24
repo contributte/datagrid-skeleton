@@ -2,8 +2,8 @@
 
 namespace App\Presenters;
 
+use App\Model\Utils\DateTime;
 use App\UI\TEmptyLayoutView;
-use DateTime;
 use Dibi\Fluent;
 use Dibi\Row;
 use Nette\Utils\ArrayHash;
@@ -48,7 +48,7 @@ final class FiltersPresenter extends AbstractPresenter
 			->setFilterDateRange();
 
 		$grid->addColumnNumber('age', 'Age')
-			->setRenderer(fn (Row $row): int => $row['birth_date']->diff(new DateTime())->y)
+			->setRenderer(fn (Row $row): ?int => DateTime::fromSafe($row->asDateTime('birth_date'))?->diff(new DateTime())->y)
 			->setFilterRange()
 			->setCondition(function (Fluent $fluent, ArrayHash $values): void {
 				if ((bool) $values['from']) {

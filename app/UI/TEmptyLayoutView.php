@@ -17,7 +17,7 @@ trait TEmptyLayoutView
 	{
 		$request = $this->getRequest();
 
-		if ($request->getParameter('inFrame') === true) {
+		if ($request !== null && $request->getParameter('inFrame') === true) {
 			$this->setLayout(__DIR__ . '/../templates/@layout.inFrame.latte');
 		}
 	}
