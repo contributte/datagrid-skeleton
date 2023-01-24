@@ -17,7 +17,7 @@ final class Bootstrap
 		$configurator->setTimeZone('Europe/Prague');
 		$configurator->setTempDirectory(__DIR__ . '/../temp');
 
-		$configurator->addConfig(__DIR__ . '/../config/common.neon');
+		$configurator->addConfig(__DIR__ . '/../config/services.neon');
 
 		if (file_exists(__DIR__ . '/../config/local.neon')) {
 			$configurator->addConfig(__DIR__ . '/../config/local.neon');
