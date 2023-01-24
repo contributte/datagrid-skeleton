@@ -69,20 +69,17 @@ class ActionsPresenter extends AbstractPresenter
 		return $grid;
 	}
 
-
 	public function handleSort(): void
 	{
 		$this->flashMessage('Sorted!');
 		$this->redrawControl('flashes');
 	}
 
-
 	public function handleBlah(): void
 	{
 		$this->flashMessage('Blah');
 		$this->redrawControl('flashes');
 	}
-
 
 	public function handleDelete(): void
 	{

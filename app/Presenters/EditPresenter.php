@@ -34,9 +34,7 @@ final class EditPresenter extends AbstractPresenter
 
 		$grid->addColumnLink('link', 'Link', 'this#demo', 'name', ['id', 'surname' => 'name'])
 			->setEditableValueCallback(
-				function (Row $row) {
-					return $row['name'];
-				}
+				fn (Row $row) => $row['name']
 			)
 			->setEditableCallback(function ($id, $value): string {
 				$this->flashMessage(sprintf('Id: %s, new value: %s', $id, $value));

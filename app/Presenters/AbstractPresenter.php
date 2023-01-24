@@ -15,10 +15,7 @@ abstract class AbstractPresenter extends Presenter
 
 	abstract public function createComponentGrid(): DataGrid;
 
-	/**
-	 * @param mixed $id
-	 */
-	public function changeStatus($id, string $newStatus): void
+	public function changeStatus(mixed $id, string $newStatus): void
 	{
 		$id = (int) $id;
 

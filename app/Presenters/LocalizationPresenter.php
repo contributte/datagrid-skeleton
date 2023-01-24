@@ -35,9 +35,7 @@ final class LocalizationPresenter extends AbstractPresenter
 			->setFormat('j. n. Y');
 
 		$grid->addColumnNumber('age', 'Age')
-			->setRenderer(function (Row $row): int {
-				return $row['birth_date']->diff(new DateTime())->y;
-			});
+			->setRenderer(fn (Row $row): int => $row['birth_date']->diff(new DateTime())->y);
 
 		$translator = new SimpleTranslator([
 			'ublaboo_datagrid.no_item_found_reset' => 'Žádné položky nenalezeny. Filtr můžete vynulovat',
