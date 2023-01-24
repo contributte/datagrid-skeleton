@@ -34,6 +34,7 @@
   },
   "require-dev": {
     "contributte/qa": "^0.4.0",
+    "contributte/tester": "^0.1.0",
     "phpstan/phpstan": "^1.9.14",
     "phpstan/phpstan-dibi": "^1.0.1",
     "phpstan/phpstan-nette": "^1.2.1",
