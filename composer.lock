@@ -416,12 +416,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/caching.git",
-                "reference": "45dd9010ebcf50068cf7f3fbfc6dc34c6f890585"
+                "reference": "6d94aca2017e83e95cec7d57cc3211c82cee6987"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/caching/zipball/45dd9010ebcf50068cf7f3fbfc6dc34c6f890585",
-                "reference": "45dd9010ebcf50068cf7f3fbfc6dc34c6f890585",
+                "url": "https://api.github.com/repos/nette/caching/zipball/6d94aca2017e83e95cec7d57cc3211c82cee6987",
+                "reference": "6d94aca2017e83e95cec7d57cc3211c82cee6987",
                 "shasum": ""
             },
             "require": {
@@ -479,7 +479,7 @@
                 "issues": "https://github.com/nette/caching/issues",
                 "source": "https://github.com/nette/caching/tree/v3.2.2"
             },
-            "time": "2023-01-19T03:42:13+00:00"
+            "time": "2023-01-21T19:59:02+00:00"
         },
         {
             "name": "nette/component-model",
@@ -545,22 +545,22 @@
         },
         {
             "name": "nette/database",
-            "version": "v3.1.6",
+            "version": "v3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/database.git",
-                "reference": "f1400f8170c3d22cce00a4adb05416edf56febe5"
+                "reference": "1c37d95647429560c5a3df595f2159451825665e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/database/zipball/f1400f8170c3d22cce00a4adb05416edf56febe5",
-                "reference": "f1400f8170c3d22cce00a4adb05416edf56febe5",
+                "url": "https://api.github.com/repos/nette/database/zipball/1c37d95647429560c5a3df595f2159451825665e",
+                "reference": "1c37d95647429560c5a3df595f2159451825665e",
                 "shasum": ""
             },
             "require": {
                 "ext-pdo": "*",
                 "nette/caching": "^3.0",
-                "nette/utils": "^3.2.1",
+                "nette/utils": "^3.2.1 || ~4.0.0",
                 "php": ">=7.2 <8.3"
             },
             "conflict": {
@@ -616,9 +616,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/database/issues",
-                "source": "https://github.com/nette/database/tree/v3.1.6"
+                "source": "https://github.com/nette/database/tree/v3.1.7"
             },
-            "time": "2022-11-18T03:48:55+00:00"
+            "time": "2023-01-13T00:24:20+00:00"
         },
         {
             "name": "nette/di",
