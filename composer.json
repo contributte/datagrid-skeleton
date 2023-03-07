@@ -27,7 +27,7 @@
     "nette/utils": "^3.0",
     "latte/latte": "^3.0",
     "tracy/tracy": "^2.7.0",
-    "ublaboo/datagrid": "^6.0",
+    "ublaboo/datagrid": "dev-fx/bootstrap5",
     "dibi/dibi": "^4.0.0"
   },
   "require-dev": {
