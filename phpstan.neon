@@ -9,7 +9,7 @@ parameters:
 	level: 9
 	phpVersion: 80100
 
-	tmpDir: %currentWorkingDirectory%/temp/phpstan
+	tmpDir: %currentWorkingDirectory%/var/tmp/phpstan
 
 	paths:
 		- app
