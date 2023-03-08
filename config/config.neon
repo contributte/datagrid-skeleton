@@ -1,0 +1,35 @@
+# ======================================
+# Config ===============================
+php:
+	date.timezone: Europe/Prague
+	# session.save_path: %tempDir%/session
+
+# ======================================
+# Extension ============================
+extensions:
+	dibi: Dibi\Bridges\Nette\DibiExtension22
+
+latte:
+	extensions:
+		- Latte\Essential\RawPhpExtension
+
+dibi:
+	host: %db.host%
+	username: %db.username%
+	password: %db.password%
+	database: %db.database%
+	port: %db.port%
+
+session:
+	savePath: "%tempDir%/sessions"
+
+
+# ======================================
+# Parameters ===========================
+parameters:
+	vendorDir: %appDir%/../vendor
+
+# ======================================
+# Services =============================
+services:
+	parameters: App\Model\Parameters(%parameters%)
