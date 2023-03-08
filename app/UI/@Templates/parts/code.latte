@@ -1,0 +1,25 @@
+<div>
+	<h5>
+		{var $reflection = new ReflectionClass($control)}
+		{var $presenterFile = basename($reflection->getFileName())}
+		<span class="fa fa-info"></span>&nbsp;&nbsp;See the code below 👇 or see <a href="https://github.com/contributte/datagrid-skeleton/blob/master/app/UI/{$presenterFile}" target="_blank">GitHub</a>
+	</h5>
+
+	<pre><code class="language-php">{include #code|trim}</code></pre>
+	<br>
+</div>
+{define #code}
+	{php
+		$method = new ReflectionMethod($control, 'createComponentGrid');
+		$filename = $method->getFileName();
+		$start_line = $method->getStartLine() - 1;
+		$end_line = $method->getEndLine();
+		$length = $end_line - $start_line;
+
+		$source = file($filename);
+		$body = implode("", array_slice($source, $start_line, $length));
+		$body = trim(preg_replace_callback('/^\t/m', function($i){ return ''; }, $body));
+	}
+	{$body}
+
+{/define}

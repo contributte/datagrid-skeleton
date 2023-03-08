@@ -1,9 +1,9 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\Filters;
 
 use App\Model\Utils\DateTime;
-use App\UI\TEmptyLayoutView;
+use App\UI\AbstractPresenter;
 use Dibi\Fluent;
 use Dibi\Row;
 use Nette\Utils\ArrayHash;
@@ -11,8 +11,6 @@ use Ublaboo\DataGrid\DataGrid;
 
 final class FiltersPresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{

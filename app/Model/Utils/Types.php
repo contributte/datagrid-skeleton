@@ -9,11 +9,11 @@ class Types
 
 	public static function forceInt(mixed $input): int
 	{
-		if (!is_int($input)) {
+		if (!is_numeric($input)) {
 			throw new InvalidArgumentException(sprintf('Expect int, given %s.', gettype($input)));
 		}
 
-		return $input;
+		return intval($input);
 	}
 
 	public static function forceNumber(mixed $input): float|int

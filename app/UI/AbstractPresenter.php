@@ -1,13 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI;
 
+use Contributte\Nella\UI\NellaPresenter;
 use Dibi\Connection;
-use Nette\Application\UI\Presenter;
 use Nette\DI\Attributes\Inject;
 use Ublaboo\DataGrid\DataGrid;
 
-abstract class AbstractPresenter extends Presenter
+abstract class AbstractPresenter extends NellaPresenter
 {
 
 	#[Inject]
