@@ -1,8 +1,6 @@
-// import 'ublaboo-datagrid/assets/datagrid.js';
-// import 'ublaboo-datagrid/assets/datagrid-spinners.js';
-// import 'ublaboo-datagrid/assets/datagrid-instant-url-refresh.js';
 import naja from "naja";
 import netteForms from "nette-forms";
+import * as datagrid from "../datagrid";
 // Code highlighting
 import Prism from "prismjs/components/prism-core";
 import "prismjs/components/prism-markup-templating";
@@ -17,6 +15,23 @@ document.addEventListener("DOMContentLoaded", () => {
 	// AJAX
 	naja.formsHandler.netteForms = netteForms;
 	naja.initialize();
+
+	// Datagrid
+	(() => {
+		// Search for all datagrids on page
+		const elements = document.querySelectorAll('div.datagrid');
+
+		// Initialize datagrid
+		for (const element of elements) {
+			const grid = datagrid.createDatagrid({ root: element, debug: true });
+
+			// Plugins
+			grid.use(new datagrid.FormsPlugin());
+			grid.use(new datagrid.ConfirmPlugin());
+
+			grid.init();
+		}
+	})();
 
 	// Highlighting
 	const codes = document.querySelectorAll('code');

@@ -1,6 +1,4 @@
-var dataGridRegisterAjaxCall;
-
-if (typeof naja !== "undefined") {
+export function init() {
 	dataGridRegisterAjaxCall = function (params) {
 		var method = params.type || 'GET';
 		var data = params.data || null;
@@ -12,14 +10,7 @@ if (typeof naja !== "undefined") {
 			.catch(params.error);
 	};
 
-} else {
-	dataGridRegisterAjaxCall = function (params) {
-		$.nette.ajax(params);
-	};
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-	var element = document.querySelector('.datagrid');
+	const element = document.querySelector('.datagrid');
 
 	if (element !== null) {
 		return dataGridRegisterAjaxCall({
@@ -27,4 +18,4 @@ document.addEventListener('DOMContentLoaded', function () {
 			url: element.getAttribute('data-refresh-state')
 		});
 	}
-});
+}

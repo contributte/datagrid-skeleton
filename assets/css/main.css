@@ -1,10 +1,8 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 @import 'bootstrap/dist/css/bootstrap.css';
-@import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.css';
-@import 'bootstrap-select/dist/css/bootstrap-select.css';
-@import 'ublaboo-datagrid/assets/datagrid.css';
-@import 'ublaboo-datagrid/assets/datagrid-spinners.css';
 @import 'prismjs/themes/prism-okaidia.css';
+
+@import './../datagrid/datagrid.css';
 
 /* App styles */
 @import './styles.css';
