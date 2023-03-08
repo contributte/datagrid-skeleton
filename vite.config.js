@@ -5,7 +5,7 @@ export default defineConfig(({ mode }) => {
 	const DEV = mode === 'development';
 
 	return {
-		publicDir: './public/static',
+		publicDir: './assets/public',
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, 'assets/js'),
@@ -24,18 +24,19 @@ export default defineConfig(({ mode }) => {
 		},
 		build: {
 			manifest: true,
-			outDir: './public/dist/',
-			emptyOutDir: false,
+			assetsDir: '',
+			outDir: './www/dist/',
+			emptyOutDir: true,
 			minify: DEV ? false : 'esbuild',
 			rollupOptions: {
 				output: {
 					manualChunks: undefined,
-					chunkFileNames: DEV ? '[name].js' : '[name]-[hash].js',
-					entryFileNames: DEV ? '[name].js' : '[name].[hash].js',
-					assetFileNames: DEV ? '[name].[ext]' : '[name].[hash].[ext]',
+					chunkFileNames: '[name].js', // DEV ? '[name].js' : '[name]-[hash].js',
+					entryFileNames: '[name].js', // DEV ? '[name].js' : '[name].[hash].js',
+					assetFileNames: '[name].[ext]', // DEV ? '[name].[ext]' : '[name].[hash].[ext]',
 				},
 				input: {
-					app: './assets/js/app.js'
+					app: './assets/js/main.js'
 				}
 			}
 		},
