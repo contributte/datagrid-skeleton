@@ -1,14 +1,14 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\Home;
 
-use App\UI\TEmptyLayoutView;
+use App\Model\Utils\DateTime;
+use App\UI\AbstractPresenter;
+use Dibi\Row;
 use Ublaboo\DataGrid\DataGrid;
 
-final class ItemDetailPresenter extends AbstractPresenter
+final class HomePresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{
@@ -31,9 +31,8 @@ final class ItemDetailPresenter extends AbstractPresenter
 		$grid->addColumnDateTime('birth_date', 'Birthday')
 			->setFormat('j. n. Y');
 
-		$grid->setItemsDetail();
-
-		$grid->setTemplateFile(__DIR__ . '/../templates/ItemDetail/grid/item-detail-grid.latte');
+		$grid->addColumnNumber('age', 'Age')
+			->setRenderer(fn (Row $row): ?int => DateTime::fromSafe($row->asDateTime('birth_date'))?->diff(new DateTime())->y);
 
 		return $grid;
 	}

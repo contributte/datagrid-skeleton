@@ -1,15 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\Actions;
 
-use App\UI\TEmptyLayoutView;
+use App\UI\AbstractPresenter;
 use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
 use Ublaboo\DataGrid\DataGrid;
 
 class ActionsPresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{

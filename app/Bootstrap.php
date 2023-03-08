@@ -2,28 +2,27 @@
 
 namespace App;
 
-use Nette\Bootstrap\Configurator;
+use Contributte\Bootstrap\ExtraConfigurator;
+use Contributte\Nella\Boot\Bootloader;
+use Contributte\Nella\Boot\Preset\NellaPreset;
+use Nette\Application\Application;
 
 final class Bootstrap
 {
 
-	public static function boot(): Configurator
+	public static function boot(): ExtraConfigurator
 	{
-		$configurator = new Configurator();
+		return Bootloader::create()
+			->use(NellaPreset::create(__DIR__))
+			->boot();
+	}
 
-		$configurator->setDebugMode(getenv('NETTE_DEBUG') === '1');
-		$configurator->enableTracy(__DIR__ . '/../log');
-
-		$configurator->setTimeZone('Europe/Prague');
-		$configurator->setTempDirectory(__DIR__ . '/../temp');
-
-		$configurator->addConfig(__DIR__ . '/../config/services.neon');
-
-		if (file_exists(__DIR__ . '/../config/local.neon')) {
-			$configurator->addConfig(__DIR__ . '/../config/local.neon');
-		}
-
-		return $configurator;
+	public static function run(): void
+	{
+		self::boot()
+			->createContainer()
+			->getByType(Application::class)
+			->run();
 	}
 
 }
