@@ -1,9 +1,9 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\Edit;
 
 use App\Model\Utils\DateTime;
-use App\UI\TEmptyLayoutView;
+use App\UI\AbstractPresenter;
 use Dibi\Row;
 use Nette\Forms\Container;
 use Nette\Utils\Html;
@@ -11,8 +11,6 @@ use Ublaboo\DataGrid\DataGrid;
 
 final class EditPresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{

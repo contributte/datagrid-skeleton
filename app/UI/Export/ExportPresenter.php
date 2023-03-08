@@ -1,15 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\Export;
 
-use App\UI\TEmptyLayoutView;
+use App\UI\AbstractPresenter;
 use Ublaboo\DataGrid\Column\ColumnText;
 use Ublaboo\DataGrid\DataGrid;
 
 final class ExportPresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{

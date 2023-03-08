@@ -1,17 +1,15 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\Localization;
 
 use App\Model\Utils\DateTime;
-use App\UI\TEmptyLayoutView;
+use App\UI\AbstractPresenter;
 use Dibi\Row;
 use Ublaboo\DataGrid\DataGrid;
 use Ublaboo\DataGrid\Localization\SimpleTranslator;
 
 final class LocalizationPresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{

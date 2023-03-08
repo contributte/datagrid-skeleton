@@ -1,14 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\GroupActions;
 
-use App\UI\TEmptyLayoutView;
+use App\UI\AbstractPresenter;
 use Ublaboo\DataGrid\DataGrid;
 
 class GroupActionsPresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{

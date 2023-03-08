@@ -1,16 +1,14 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\TreeView;
 
-use App\UI\TEmptyLayoutView;
+use App\UI\AbstractPresenter;
 use Dibi\Fluent;
 use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
 use Ublaboo\DataGrid\DataGrid;
 
 final class TreeViewPresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{
@@ -85,7 +83,7 @@ final class TreeViewPresenter extends AbstractPresenter
 			->where('c.parent_category_id = ?', $parentCategoryId);
 	}
 
-	public function handleSort(int $itemId, int $prevId, int $nextId, int $parentId): void
+	public function handleSort(?int $itemId, ?int $prevId, ?int $nextId, ?int $parentId): void
 	{
 		$this->flashMessage(
 			sprintf(

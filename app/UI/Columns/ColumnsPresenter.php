@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace App\Presenters;
+namespace App\UI\Columns;
 
 use App\Model\Utils\DateTime;
 use App\Model\Utils\Types;
-use App\UI\TEmptyLayoutView;
+use App\UI\AbstractPresenter;
 use Dibi\Fluent;
 use Dibi\Row;
 use Ublaboo\DataGrid\AggregationFunction\IAggregationFunction;
@@ -16,8 +16,6 @@ use UnexpectedValueException;
 
 final class ColumnsPresenter extends AbstractPresenter
 {
-
-	use TEmptyLayoutView;
 
 	public function createComponentGrid(): DataGrid
 	{
@@ -55,7 +53,7 @@ final class ColumnsPresenter extends AbstractPresenter
 		$columnStatus->onChange[] = [$this, 'changeStatus'];
 
 		$grid->addColumnText('emojis', 'Emojis (template)')
-			->setTemplate(__DIR__ . '/../templates/Columns/grid/columnsEmojis.latte');
+			->setTemplate(__DIR__ . '/Templates/grid/columnsEmojis.latte');
 
 		$grid->addColumnDateTime('birth_date', 'Birthday')
 			->setFormat('j. n. Y')
