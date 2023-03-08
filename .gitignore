@@ -1,8 +1,20 @@
+# IDE
+.idea
+
+# Docker
+/.docker
+
 # Composer
 /vendor
+
+# Nette
+/config/local.neon
+
+# Assets
+/www/dist
 
 # Node
 /node_modules
 
-# Nette
-/config/local.neon
+# Envs
+.env
