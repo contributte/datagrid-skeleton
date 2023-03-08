@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.6'
 
 services:
   web:
@@ -6,7 +6,7 @@ services:
     volumes:
       - ./:/srv
     ports:
-      - 80:80
+      - 8000:80
     depends_on:
       - database
     environment:
@@ -15,7 +15,7 @@ services:
   database:
     image: mariadb:latest
     volumes:
-      - .docker/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - 3306:3306
     environment:
