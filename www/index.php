@@ -1,13 +1,5 @@
-<?php
-
-declare(strict_types=1);
-
-use App\Bootstrap;
-use Nette\Application\Application;
+<?php declare(strict_types = 1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-Bootstrap::boot()
-	->createContainer()
-	->getByType(Application::class)
-	->run();
+App\Bootstrap::run();
