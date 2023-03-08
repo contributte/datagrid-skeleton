@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Nette\Configurator;
+use Nette\Bootstrap\Configurator;
 
 final class Bootstrap
 {
@@ -11,13 +11,13 @@ final class Bootstrap
 	{
 		$configurator = new Configurator();
 
-		$configurator->setDebugMode(false);
+		$configurator->setDebugMode(getenv('NETTE_DEBUG') === '1');
 		$configurator->enableTracy(__DIR__ . '/../log');
 
 		$configurator->setTimeZone('Europe/Prague');
 		$configurator->setTempDirectory(__DIR__ . '/../temp');
 
-		$configurator->addConfig(__DIR__ . '/../config/common.neon');
+		$configurator->addConfig(__DIR__ . '/../config/services.neon');
 
 		if (file_exists(__DIR__ . '/../config/local.neon')) {
 			$configurator->addConfig(__DIR__ . '/../config/local.neon');

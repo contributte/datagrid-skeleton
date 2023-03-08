@@ -2,6 +2,7 @@
 
 namespace App\Presenters;
 
+use App\Model\Utils\DateTime;
 use App\UI\TEmptyLayoutView;
 use Dibi\Row;
 use Nette\Forms\Container;
@@ -23,7 +24,7 @@ final class EditPresenter extends AbstractPresenter
 
 		$grid->addColumnNumber('id', 'Id')
 			->setSortable()
-			->setAlign('left');
+			->setAlign('start');
 
 		$grid->addColumnText('name', 'Name')
 			->setSortable()
@@ -34,9 +35,7 @@ final class EditPresenter extends AbstractPresenter
 
 		$grid->addColumnLink('link', 'Link', 'this#demo', 'name', ['id', 'surname' => 'name'])
 			->setEditableValueCallback(
-				function (Row $row) {
-					return $row['name'];
-				}
+				fn (Row $row) => $row['name']
 			)
 			->setEditableCallback(function ($id, $value): string {
 				$this->flashMessage(sprintf('Id: %s, new value: %s', $id, $value));
@@ -69,7 +68,7 @@ final class EditPresenter extends AbstractPresenter
 			$container->setDefaults([
 				'id' => $row['id'],
 				'name' => $row['name'],
-				'birth_date' => $row['birth_date']->format('j. n. Y'),
+				'birth_date' => DateTime::fromSafe($row->asDateTime('birth_date'))?->format('j. n. Y'),
 				'link' => $row['name'],
 				'status' => $row['status'],
 			]);

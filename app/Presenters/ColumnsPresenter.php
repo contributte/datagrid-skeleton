@@ -2,8 +2,9 @@
 
 namespace App\Presenters;
 
+use App\Model\Utils\DateTime;
+use App\Model\Utils\Types;
 use App\UI\TEmptyLayoutView;
-use DateTime;
 use Dibi\Fluent;
 use Dibi\Row;
 use Ublaboo\DataGrid\AggregationFunction\IAggregationFunction;
@@ -61,9 +62,7 @@ final class ColumnsPresenter extends AbstractPresenter
 			->setSortable();
 
 		$grid->addColumnNumber('age', 'Age')
-			->setRenderer(function (Row $row): int {
-				return $row['birth_date']->diff(new DateTime())->y;
-			});
+			->setRenderer(fn (Row $row): ?int => DateTime::fromSafe($row->asDateTime('birth_date'))?->diff(new DateTime())->y);
 
 		$grid->setColumnsHideable();
 
@@ -80,9 +79,7 @@ final class ColumnsPresenter extends AbstractPresenter
 
 		$grid->addColumnCallback('email', function (ColumnLink $column, Row $row): void {
 			if ($row['id'] === 3) {
-				$column->setRenderer(function (): string {
-					return '';
-				});
+				$column->setRenderer(fn (): string => '');
 			}
 		});
 
@@ -92,33 +89,30 @@ final class ColumnsPresenter extends AbstractPresenter
 			new class implements IMultipleAggregationFunction
 			{
 
-				/** @var int */
-				private $idsSum = 0;
+				private int $idsSum = 0;
 
-				/** @var float */
-				private $avgAge = 0.0;
+				private float $avgAge = 0.0;
 
 				public function getFilterDataType(): string
 				{
 					return IAggregationFunction::DATA_TYPE_PAGINATED;
 				}
 
-				/** @param mixed $dataSource */
-				public function processDataSource($dataSource): void
+				public function processDataSource(mixed $dataSource): void
 				{
 					if (!$dataSource instanceof Fluent) {
 						throw new UnexpectedValueException();
 					}
 
-					$this->idsSum = (int) $dataSource->getConnection()
+					$this->idsSum = Types::forceInt($dataSource->getConnection()
 						->select('SUM([id])')
 						->from($dataSource, '_')
-						->fetchSingle();
+						->fetchSingle());
 
-					$this->avgAge = round((float) $dataSource->getConnection()
+					$this->avgAge = round(Types::forceNumber($dataSource->getConnection()
 						->select('AVG(YEAR([birth_date]))')
 						->from($dataSource, '_')
-						->fetchSingle());
+						->fetchSingle()));
 				}
 
 				public function renderResult(string $key): string

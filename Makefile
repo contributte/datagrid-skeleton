@@ -24,19 +24,27 @@ clean:
 qa: cs phpstan
 
 cs:
-	vendor/bin/codesniffer app
+ifdef GITHUB_ACTION
+	vendor/bin/phpcs --standard=ruleset.xml --extensions=php,phpt --tab-width=4 --ignore=tests/tmp -q --report=checkstyle app tests | cs2pr
+else
+	vendor/bin/phpcs --standard=ruleset.xml --extensions=php,phpt --tab-width=4 --ignore=tests/tmp --colors -nsp app tests
+endif
 
 csf:
-	vendor/bin/codefixer app
+	vendor/bin/phpcbf --standard=ruleset.xml --extensions=php,phpt --tab-width=4 --ignore=tests/tmp --colors -nsp app tests
 
 phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=512M app
+	vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=512M
 
 tests:
-	echo "OK"
+	vendor/bin/tester -s -p php --colors 1 -C tests/Cases
 
 coverage:
-	echo "OK"
+ifdef GITHUB_ACTION
+	vendor/bin/tester -s -p phpdbg --colors 1 -C --coverage coverage.xml --coverage-src app tests/Cases
+else
+	vendor/bin/tester -s -p phpdbg --colors 1 -C --coverage coverage.html --coverage-src app tests/Cases
+endif
 
 dev:
 	NETTE_DEBUG=1 NETTE_ENV=dev php -S 0.0.0.0:8000 -t www

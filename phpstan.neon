@@ -1,10 +1,20 @@
 includes:
-	- vendor/phpstan/phpstan-dibi/extension.neon
+	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
 	- vendor/phpstan/phpstan-nette/extension.neon
 	- vendor/phpstan/phpstan-nette/rules.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan-dibi/extension.neon
 
 parameters:
-	level: 8
+	level: 9
+	phpVersion: 80100
+
+	tmpDir: %currentWorkingDirectory%/temp/phpstan
 
 	paths:
 		- app
+
+	fileExtensions:
+		- php
+
+	ignoreErrors:

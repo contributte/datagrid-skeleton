@@ -6,7 +6,6 @@ use Dibi\Connection;
 use Nette\Application\UI\Presenter;
 use Nette\DI\Attributes\Inject;
 use Ublaboo\DataGrid\DataGrid;
-use UnexpectedValueException;
 
 abstract class AbstractPresenter extends Presenter
 {
@@ -16,14 +15,8 @@ abstract class AbstractPresenter extends Presenter
 
 	abstract public function createComponentGrid(): DataGrid;
 
-
-	/**
-	 * @param mixed $id
-	 */
-	public function changeStatus($id, string $newStatus): void
+	public function changeStatus(int $id, string $newStatus): void
 	{
-		$id = (int) $id;
-
 		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
 			$data = ['status' => $newStatus];
 
@@ -33,11 +26,7 @@ abstract class AbstractPresenter extends Presenter
 		}
 
 		if ($this->isAjax()) {
-			$grid = $this['grid'];
-
-			if (!$grid instanceof DataGrid) {
-				throw new UnexpectedValueException();
-			}
+			$grid = $this->getComponent('grid');
 
 			$grid->redrawItem($id);
 			$this->flashMessage('Status changed');

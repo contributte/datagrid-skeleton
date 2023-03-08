@@ -20,7 +20,7 @@ final class ExportPresenter extends AbstractPresenter
 		$grid->setItemsPerPageList([20, 50, 100]);
 
 		$grid->addColumnNumber('id', 'Id')
-			->setAlign('left')
+			->setAlign('start')
 			->setSortable();
 
 		$grid->addColumnText('name', 'Name')
@@ -43,9 +43,7 @@ final class ExportPresenter extends AbstractPresenter
 		$columnName = new ColumnText($grid, 'name', 'name', 'Name');
 		$columnEven = (new ColumnText($grid, 'even', 'even', 'Even ID (yes/no)'))
 			->setRenderer(
-				function ($item) {
-					return $item['id'] % 2 === 0 ? 'No' : 'Yes';
-				}
+				fn ($item) => $item['id'] % 2 === 0 ? 'No' : 'Yes'
 			);
 
 		$grid->addExportCsv('Csv export', 'examples-all.csv')
