@@ -40,21 +40,25 @@ composer create-project -s dev contributte/datagrid-skeleton acme
 
 ### Install using [docker](https://github.com/docker/docker/)
 
-1) At first, use GIT to download this project.
+1) At first, use Git to download this project.
 
    ```
    git clone https://github.com/contributte/datagrid-skeleton.git
    ```
 
-2) Run command:
+2) Setup project.
 
    ```
-   docker-compose up
+   make install
    ```
 
-3) Open http://localhost and enjoy!
+3) Run docker stack.
 
-  If you need enter into container (such as `composer update`) run command `docker-compose run web bash`.
+   ```
+   make docker-up
+   ```
+
+4) Open http://localhost and enjoy!
 
 ### Composer packages
 
