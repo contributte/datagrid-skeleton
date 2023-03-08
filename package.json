@@ -3,13 +3,23 @@
   "version": "0.0.0",
   "license": "MIT",
   "engines": {
-    "npm": ">=8.10",
-    "node": ">=17"
+    "npm": ">=9.0",
+    "node": ">=18.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.1.2",
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "bootstrap": "^4.4.1",
+    "bootstrap-datepicker": "^1.9",
+    "bootstrap-select": "^1.13",
+    "happy-inputs": "^2.0",
+    "jquery": "^3.5.0",
+    "jquery-ui-sortable": "^1.0",
     "naja": "^2.2.0",
-    "nette-forms": "^3.0.0"
+    "nette-forms": "^3.0.0",
+    "nette.ajax.js": "^2.3",
+    "popper.js": "^1.14.7",
+    "prismjs": "^1.29.0",
+    "ublaboo-datagrid": "^6.2.13"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
