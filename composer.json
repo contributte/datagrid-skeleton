@@ -1,6 +1,6 @@
 {
   "name": "contributte/datagrid-skeleton",
-  "description": "Datagrid component project skeleton based on Nette Framework and Contributte libraries by @f3l1x & @paveljanda.",
+    "description": "Example of contributte/datagrid component. Project skeleton based on Nette Framework and Contributte libraries by @f3l1x & @paveljanda.",
   "keywords": [
     "php",
     "nette",
@@ -15,21 +15,9 @@
   "require": {
     "php": ">= 8.1",
 
-    "nette/application": "^3.1.0",
-    "nette/bootstrap": "^3.2.0",
-    "nette/caching": "^3.2.0",
-    "nette/database": "^3.1.0",
-    "nette/di": "^3.0.15",
-    "nette/forms": "^3.1.0",
-    "nette/http": "^3.2.0",
-    "nette/utils": "^3.2.0",
-
-    "latte/latte": "^3.0.3",
-    "tracy/tracy": "^2.9.5",
-
+    "contributte/nella": "^0.1",
     "ublaboo/datagrid": "dev-next",
 
-    "nextras/orm": "^4.0.6",
     "dibi/dibi": "^4.2.7"
   },
   "require-dev": {
