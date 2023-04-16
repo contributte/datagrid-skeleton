@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   web:
-    image: dockette/web:php-80
+    image: dockette/web:php-81
     volumes:
       - ./:/srv
     ports:
@@ -15,7 +15,7 @@ services:
   database:
     image: mariadb:latest
     volumes:
-      - db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - 3306:3306
     environment:
