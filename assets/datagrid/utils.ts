@@ -26,7 +26,7 @@ export function window(): ExtendedWindow {
   return (window ?? {}) as unknown as ExtendedWindow;
 }
 
-export function slideDown(element: HTMLElement) {
+export function slideDown(element: HTMLElement, cb?: () => unknown) {
 	element.classList.add('is-active');
 	element.style.height = 'auto';
 
@@ -36,33 +36,35 @@ export function slideDown(element: HTMLElement) {
 
 	setTimeout(function () {
 		element.style.height = height;
+		cb?.();
 	}, 0);
 }
 
-export function slideUp(element: HTMLElement) {
+export function slideUp(element: HTMLElement, cb?: () => unknown) {
 	element.style.height = '0px';
 
 	element.addEventListener('transitionend', () => {
 		element.classList.remove('is-active');
+		cb?.();
 	}, { once: true });
 }
 
-export function slideToggle(element: HTMLElement) {
+export function slideToggle(element: HTMLElement, cb?: () => unknown) {
 	if (!element.classList.contains('is-active')) {
-		slideDown(element);
+		slideDown(element, cb);
 	} else {
-		slideUp(element);
+		slideUp(element, cb);
 	}
 }
 
-export function attachSlideToggle(element: HTMLElement) {
+export function attachSlideToggle(element: HTMLElement, cb?: () => unknown) {
 		if (!element.classList.contains("datagrid--slide-toggle")) {
 			element.classList.add("datagrid--slide-toggle");
 
-			slideToggle(element);
+			slideToggle(element, cb);
 
 			element.addEventListener('click', () => {
-				slideToggle(element);
+				slideToggle(element, cb);
 			});
 		}
 }
