@@ -21,7 +21,9 @@
       ],
       "@/*": [
         "./*"
-      ]
+      ],
+      "@datagrid": ["./assets/datagrid/index.ts"],
+      "@datagrid/*": ["./assets/datagrid/*"],
     },
     "types": [
       "@types/node"

@@ -1,0 +1,10 @@
+.datagrid--slide-toggle {
+	-webkit-transition: height .25s ease;
+	-o-transition: height .25s ease;
+	transition: height .25s ease;
+	overflow: hidden;
+}
+
+.datagrid--slide-toggle:not(.active) {
+	display: none;
+}

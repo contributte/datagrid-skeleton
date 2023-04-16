@@ -1,6 +1,24 @@
 import naja from "naja";
 import netteForms from "nette-forms";
-import * as datagrid from "../datagrid";
+import {
+	AutosubmitPlugin,
+	BootstrapSelect,
+	CheckboxPlugin,
+	ConfirmPlugin,
+	createDatagrids,
+	Happy,
+	HappyPlugin,
+	InlinePlugin,
+	NetteFormsPlugin,
+	SelectpickerPlugin,
+	DatepickerPlugin,
+	SortableJS,
+	SortablePlugin, TomSelect,
+	UrlPlugin,
+	VanillaDatepicker
+} from "@datagrid";
+import {NajaAjax} from "@datagrid/ajax";
+import Select from "tom-select";
 // Code highlighting
 import Prism from "prismjs/components/prism-core";
 import "prismjs/components/prism-markup-templating";
@@ -9,6 +27,7 @@ import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-css";
 // Styles
+
 import '../css/main.css';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,22 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
 	naja.formsHandler.netteForms = netteForms;
 	naja.initialize();
 
-	// Datagrid
-	(() => {
-		// Search for all datagrids on page
-		const elements = document.querySelectorAll('div.datagrid');
-
-		// Initialize datagrid
-		for (const element of elements) {
-			const grid = datagrid.createDatagrid({ root: element, debug: true });
-
-			// Plugins
-			grid.use(new datagrid.FormsPlugin());
-			grid.use(new datagrid.ConfirmPlugin());
-
-			grid.init();
-		}
-	})();
+	createDatagrids(new NajaAjax(naja), {
+		datagrid: {
+			plugins: [
+				new AutosubmitPlugin(),
+				new CheckboxPlugin(),
+				new ConfirmPlugin(),
+				new InlinePlugin(),
+				new UrlPlugin(),
+				new NetteFormsPlugin(netteForms),
+				new HappyPlugin(new Happy()),
+				new SortablePlugin(new SortableJS()),
+				new DatepickerPlugin(new VanillaDatepicker()),
+				new SelectpickerPlugin(new TomSelect(Select))
+			],
+		},
+	});
 
 	// Highlighting
 	const codes = document.querySelectorAll('code');

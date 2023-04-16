@@ -1,70 +1,153 @@
-import naja from "naja";
-import { DatagridOptions, DatagridPlugin } from "./@types/types";
+import {defaultDatagridNameResolver, isEnter, window} from "@datagrid/utils";
+import type {
+	DatagridEventMap,
+	Nette,
+	EventListener,
+	Ajax,
+	DatagridOptions, EventDetail,
+} from "@datagrid/types";
 
-export function createDatagrid(options: DatagridOptions): Datagrid {
-	if (!('netteForms' in window)) {
-		throw 'Missing nette-forms dependency.';
-	}
+export class Datagrid extends EventTarget {
+	private static readonly defaultOptions: DatagridOptions = {
+		confirm: confirm,
+		resolveDatagridName: defaultDatagridNameResolver,
+		plugins: [],
+	};
 
-	return new Datagrid(options);
-}
+	public readonly name: string;
 
-class Datagrid {
+	public readonly ajax: Ajax;
+
 	private readonly options: DatagridOptions;
-	private readonly plugins: DatagridPlugin[] = [];
 
-	constructor(options: DatagridOptions) {
-		if (!(options.root instanceof HTMLElement)) {
-			this.error('Invalid root element given', { element: options.root });
+	constructor(
+		public readonly el: HTMLElement,
+		ajax: Ajax | ((grid: Datagrid) => Ajax),
+		options: Partial<DatagridOptions>
+	) {
+		super();
+
+		const name = this.resolveDatagridName();
+		if (!name) {
+			throw new Error("Cannot resolve name of a datagrid!");
 		}
 
-		this.options = Object.assign({
-			debug: false,
-		}, options);
+		this.name = name;
 
-		this.log(`Create datagrid`, { options: this.options });
+		this.options = {
+			...Datagrid.defaultOptions,
+			...options,
+		};
+
+		this.ajax = typeof ajax === "function" ? ajax(this) : ajax;
 	}
 
-	use(plugin: DatagridPlugin): void {
-		this.log(`Register plugin ${plugin.name}`, { plugin });
-
-		this.plugins.push(plugin);
-	}
-
-	init(): void {
-		for (const pluginKey in this.plugins) {
-			const plugin = this.plugins[pluginKey];
-			const ctx = {
-				root: this.options.root,
-				naja
-			};
-
-			this.log(`Initialize plugin ${plugin.name}`, { plugin, ctx });
-
-			plugin.init(ctx);
+	public init() {
+		let cancelled = this.dispatch('beforeInit', {datagrid: this})
+		if (!cancelled) {
+			cancelled = !!this.options.plugins.find((plugin) => !plugin.onDatagridInit || plugin.onDatagridInit(this))
+			if (cancelled) return;
 		}
-	}
 
-	log(message: string, ctx: any): void {
-		if (this.options.debug) {
-			console.log(message, ctx);
+		// Uncheck toggle-all
+		const checkedRows = this.el.querySelectorAll<HTMLInputElement>("input[data-check]:checked");
+		if (checkedRows.length === 1 && checkedRows[0].getAttribute("name") === "toggle-all") {
+			const input = checkedRows[0];
+			if (input) {
+				input.checked = false;
+			}
 		}
+
+		this.el.querySelectorAll<HTMLInputElement>("input[data-datagrid-manualsubmit]").forEach(inputEl => {
+			const form = inputEl.closest("form");
+			if (!form) return;
+
+			inputEl.addEventListener("keydown", e => {
+				if (!isEnter(e)) return;
+
+				e.stopPropagation();
+				e.preventDefault();
+				return this.ajax.submitForm(form);
+			});
+		});
+
+		this.ajax.addEventListener("success", ({detail: {payload}}) => {
+			if (payload._datagrid_redraw_item_id && payload._datagrid_redraw_item_class) {
+				const row = this.el.querySelector<HTMLTableRowElement>(
+					`tr[data-id='${payload._datagrid_redraw_item_id}']`
+				)?.setAttribute("class", payload._datagrid_redraw_item_class)
+			}
+
+			// todo: maybe move?
+			if (payload._datagrid_name && payload._datagrid_name === this.name) {
+				this.el.querySelector<HTMLElement>("[data-datagrid-reset-filter-by-column]")
+					?.classList.add("hidden");
+
+				if (payload.non_empty_filters && payload.non_empty_filters.length >= 1) {
+					const resets = Array.from<HTMLElement>(this.el.querySelectorAll(
+				`[data-datagrid-reset-filter-by-column]`
+					));
+
+					const getColumnName = (el: HTMLElement) => el.getAttribute(
+						"data-datagrid-reset-filter-by-column"
+					)
+
+					for (const columnName of payload.non_empty_filters) {
+						resets.find(getColumnName)?.classList.remove("hidden");
+					}
+
+					const href = this.el.querySelector(".reset-filter")
+						?.getAttribute("href");
+
+					if (href) {
+						resets.forEach((el) => {
+							const columnName = getColumnName(el);
+
+							const newHref = href.replace("-resetFilter", "-resetColumnFilter");
+							el.setAttribute("href", `${newHref}&${this.name}-key=${columnName}`);
+						})
+					}
+				}
+			}
+		})
+
+
+		this.ajax.addEventListener("snippetUpdate", e => {
+			if (e.detail.element.classList.contains(`snippet-grid-${this.name}`)) {
+				this.init();
+			}
+		});
+
+		this.dispatch('afterInit', {datagrid: this});
 	}
 
-	error(message: string, ctx: any): void {
-		console.error(message, ctx);
+	public confirm(message: string): boolean {
+		return this.options.confirm.bind(this)(message);
 	}
-}
 
-function makeRequest(params) {
-	var method = params.type || 'GET';
-	var data = params.data || null;
+	public resolveDatagridName(): string | null {
+		return this.options.resolveDatagridName.bind(this)(this.el);
+	}
 
-	naja.makeRequest(method, params.url, data, {})
-		.then(params.success)
-		.catch(params.error);
-}
+	dispatch<
+		K extends string, M extends DatagridEventMap = DatagridEventMap
+	>(type: K, detail: K extends keyof M ? EventDetail<M[K]> : any, options?: boolean): boolean {
+		return this.dispatchEvent(new CustomEvent(type, {detail}));
+	}
 
-function submitForm(form) {
-	return naja.uiHandler.submitForm(form.get(0));
+	declare addEventListener: <K extends keyof M, M extends DatagridEventMap = DatagridEventMap>(
+		type: K,
+		listener: EventListener<this, M[K]>,
+		options?: boolean | AddEventListenerOptions
+	) => void;
+
+	declare removeEventListener: <K extends keyof M, M extends DatagridEventMap = DatagridEventMap>(
+		type: K,
+		listener: EventListener<this, M[K]>,
+		options?: boolean | AddEventListenerOptions
+	) => void;
+
+	declare dispatchEvent: <K extends string, M extends DatagridEventMap = DatagridEventMap>(
+		event: K extends keyof M ? M[K] : CustomEvent
+	) => boolean;
 }
