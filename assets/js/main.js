@@ -15,7 +15,7 @@ import {
 	SortableJS,
 	SortablePlugin, TomSelect,
 	UrlPlugin,
-	VanillaDatepicker
+	VanillaDatepicker, ItemDetailPlugin
 } from "@datagrid";
 import {NajaAjax} from "@datagrid/ajax";
 import Select from "tom-select";
@@ -42,12 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				new CheckboxPlugin(),
 				new ConfirmPlugin(),
 				new InlinePlugin(),
+				new ItemDetailPlugin(),
 				new UrlPlugin(),
 				new NetteFormsPlugin(netteForms),
 				new HappyPlugin(new Happy()),
 				new SortablePlugin(new SortableJS()),
 				new DatepickerPlugin(new VanillaDatepicker()),
-				new SelectpickerPlugin(new TomSelect(Select))
+				new SelectpickerPlugin(new TomSelect(Select)),
 			],
 		},
 	});

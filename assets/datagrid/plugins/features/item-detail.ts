@@ -14,6 +14,8 @@ export class ItemDetailPlugin implements DatagridPlugin {
 				if (row && row.querySelector<HTMLElement>(".item-detail-content")) {
 					attachSlideToggle(row);
 				}
-			})
+			});
+
+		return true;
 	}
 }
