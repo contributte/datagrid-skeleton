@@ -1,7 +1,6 @@
 import {DatagridPlugin} from "@datagrid/types";
 import {calculateCellLines, isEnter, isEsc} from "@datagrid/utils";
-import {Datagrid} from "~/assets/datagrid";
-import {data} from "autoprefixer";
+import {Datagrid} from "@datagrid";
 
 export const EditableUrlAttribute = "data-datagrid-editable-url";
 

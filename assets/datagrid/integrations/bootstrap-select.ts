@@ -1,4 +1,4 @@
-import {Selectpicker} from "@datagrid";
+import {Selectpicker} from "@datagrid/types";
 import {window} from "@datagrid/utils";
 
 /**

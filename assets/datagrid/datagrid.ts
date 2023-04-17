@@ -1,7 +1,6 @@
-import {defaultDatagridNameResolver, isEnter, window} from "@datagrid/utils";
+import {defaultDatagridNameResolver, isEnter} from "@datagrid/utils";
 import type {
 	DatagridEventMap,
-	Nette,
 	EventListener,
 	Ajax,
 	DatagridOptions, EventDetail,
@@ -27,26 +26,30 @@ export class Datagrid extends EventTarget {
 	) {
 		super();
 
+		this.options = {
+			...Datagrid.defaultOptions,
+			...options,
+		};
+
 		const name = this.resolveDatagridName();
+
 		if (!name) {
 			throw new Error("Cannot resolve name of a datagrid!");
 		}
 
 		this.name = name;
 
-		this.options = {
-			...Datagrid.defaultOptions,
-			...options,
-		};
-
 		this.ajax = typeof ajax === "function" ? ajax(this) : ajax;
+
+		this.init();
 	}
 
 	public init() {
-		let cancelled = this.dispatch('beforeInit', {datagrid: this})
+		let cancelled = !this.dispatch('beforeInit', {datagrid: this})
 		if (!cancelled) {
-			cancelled = !!this.options.plugins.find((plugin) => !plugin.onDatagridInit || plugin.onDatagridInit(this))
-			if (cancelled) return;
+			this.options.plugins.forEach((plugin) => {
+				plugin.onDatagridInit?.(this)
+			})
 		}
 
 		// Uncheck toggle-all

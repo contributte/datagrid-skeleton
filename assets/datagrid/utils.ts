@@ -1,5 +1,5 @@
 import { Datagrid } from "@datagrid/datagrid";
-import { ExtendedWindow } from "./types";
+import { ExtendedWindow } from "@datagrid/types";
 
 export function isPromise<T = any>(p: any): p is Promise<T> {
   return typeof p === "object" && typeof p.then === "function";

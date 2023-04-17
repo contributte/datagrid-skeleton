@@ -1,7 +1,7 @@
+import {Datagrid} from "@datagrid";
 import { DatagridPlugin } from "@datagrid/types";
 import { window } from "@datagrid/utils";
 import type {Happy} from "@datagrid/integrations";
-import {Datagrid} from "~/assets/datagrid";
 
 export class HappyPlugin implements DatagridPlugin {
 	constructor(private happy?: Happy) {

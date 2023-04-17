@@ -1,5 +1,5 @@
 import {EventDetail, EventListener, EventMap} from ".";
-import {Datagrid} from "~/assets/datagrid";
+import {Datagrid} from "@datagrid";
 
 export interface BaseRequestParams {
 	method: "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "CONNECT" | "OPTIONS" | "TRACE" | "PATCH" | string;

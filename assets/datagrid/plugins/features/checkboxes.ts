@@ -1,5 +1,5 @@
 import { DatagridPlugin } from "@datagrid/types";
-import {Datagrid} from "~/assets/datagrid";
+import {Datagrid} from "@datagrid";
 
 export const CheckboxAttribute = "data-check";
 
@@ -36,7 +36,7 @@ export class CheckboxPlugin implements DatagridPlugin {
 			}
 		});
 
-		const checkboxes = datagrid.el.querySelectorAll<HTMLInputElement>(`input[data-check-all-${datagrid.name}]'`);
+		const checkboxes = datagrid.el.querySelectorAll<HTMLInputElement>(`input[data-check-all-${datagrid.name}]`);
 		const select = datagrid.el.querySelector<HTMLSelectElement>("select[name='group_action[group_action]']");
 		const actionButtons = document.querySelectorAll<HTMLInputElement | HTMLButtonElement>(
 			".row-group-actions *[type='submit']"

@@ -1,8 +1,10 @@
-import {Datagrid, DatagridPlugin} from "@datagrid";
+import {Datagrid} from "@datagrid";
+import {DatagridPlugin} from "@datagrid/types";
 import {attachSlideToggle} from "@datagrid/utils";
 
 export class ItemDetailPlugin implements DatagridPlugin {
 	onDatagridInit(datagrid: Datagrid): boolean {
+		console.log("dataa")
 		datagrid.el.querySelectorAll("[data-toggle-detail]")
 			.forEach((el) => {
 				const toggleName = el.getAttribute("data-toggle-detail")!;

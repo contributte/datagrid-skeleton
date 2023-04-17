@@ -1,5 +1,5 @@
 import {DatagridPlugin, Nette} from "@datagrid/types";
-import {Datagrid} from "~/assets/datagrid";
+import {Datagrid} from "@datagrid";
 import {window} from "@datagrid/utils";
 
 export class NetteFormsPlugin implements DatagridPlugin {

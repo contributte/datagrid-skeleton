@@ -6,14 +6,14 @@ export class UrlPlugin implements DatagridPlugin {
 	onDatagridInit(datagrid: Datagrid): boolean {
 		datagrid.ajax.addEventListener('success', ({detail: {payload}}) => {
 			if (payload._datagrid_url) {
-				if (!window.history.replaceState) {
+				if (!window.history.pushState) {
 					throw new Error("History.replaceState() is not available in this browser!")
 				}
 
 				const url = new URL(window.location.href);
 				window.location.search = qs(payload.state);
 
-				window.history.replaceState({path: url.toString()}, "", url.toString());
+				window.history.pushState({path: url.toString()}, "", url.toString());
 			}
 		})
 

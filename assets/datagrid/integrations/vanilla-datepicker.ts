@@ -1,4 +1,4 @@
-import {Datepicker as DatepickerInterface} from "@datagrid";
+import {Datepicker as DatepickerInterface} from "@datagrid/types";
 import {Datepicker} from "vanillajs-datepicker";
 import {DatepickerOptions} from "vanillajs-datepicker/Datepicker";
 

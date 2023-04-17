@@ -10,6 +10,7 @@ export const AutosubmitChangeAttribute = "data-autosubmit-change";
 
 export class AutosubmitPlugin implements DatagridPlugin {
 	onDatagridInit(datagrid: Datagrid): boolean {
+		console.log("autosubmit init")
 		// Auto-submit perPage
 		datagrid.el
 			.querySelectorAll<HTMLSelectElement>(`select[${AutosubmitPerPageAttribute}]`)

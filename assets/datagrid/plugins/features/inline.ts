@@ -1,6 +1,6 @@
 import {DatagridPlugin} from "@datagrid/types";
 import {isEnter} from "@datagrid/utils";
-import {Datagrid, Datagrids} from "~/assets/datagrid";
+import {Datagrid, Datagrids} from "@datagrid";
 
 export class InlinePlugin implements DatagridPlugin {
 	onInit(datagrids: Datagrids) {

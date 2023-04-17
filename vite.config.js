@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
 			alias: {
 				'@': resolve(__dirname, 'assets/js'),
 				'~': resolve(__dirname, 'node_modules'),
+				'@datagrid': resolve(__dirname, 'assets/datagrid'),
 			},
 		},
 		base: '/dist/',

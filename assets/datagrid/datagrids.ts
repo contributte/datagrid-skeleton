@@ -48,11 +48,6 @@ export class Datagrids {
 		(this.options.datagrid?.plugins ?? []).forEach((plugin) => plugin.onInit?.(this));
 
 		this.initDatagrids();
-
-		// todo
-		this.ajax.addEventListener('success', () => {
-			this.initDatagrids()
-		})
 	}
 
 	initDatagrids() {

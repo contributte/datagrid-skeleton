@@ -1,4 +1,5 @@
-import {Datagrid, DatagridPlugin, Datepicker} from "@datagrid";
+import {Datagrid} from "@datagrid";
+import {DatagridPlugin, Datepicker} from "@datagrid/types";
 
 export class DatepickerPlugin implements DatagridPlugin {
 	constructor(private datepicker: Datepicker) {

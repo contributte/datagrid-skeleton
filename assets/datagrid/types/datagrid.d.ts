@@ -1,4 +1,5 @@
-import {Datagrid, Datagrids, EventMap, Nette} from "@datagrid";
+import {Datagrid, Datagrids} from "@datagrid";
+import {EventMap, Nette} from "@datagrid/types";
 
 export interface DatagridEventDetail {
 	datagrid: Datagrid;

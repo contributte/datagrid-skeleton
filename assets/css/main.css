@@ -2,7 +2,8 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 @import 'prismjs/themes/prism-okaidia.css';
 
-@import './../datagrid/datagrid.css';
+@import './../datagrid/assets/datagrid.css';
+@import 'vanillajs-datepicker/css/datepicker-bs5.css';
 
 /* App styles */
 @import './styles.css';

@@ -1,4 +1,4 @@
-import {Constructor, Selectpicker} from "@datagrid";
+import {Constructor, Selectpicker} from "@datagrid/types";
 import {RecursivePartial, TomInput, TomSettings} from "tom-select/dist/types/types";
 import type TomSelectType from "tom-select";
 import {window} from "@datagrid/utils";
