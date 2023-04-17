@@ -19,6 +19,7 @@ import {
 } from "@datagrid";
 import {NajaAjax} from "@datagrid/ajax";
 import Select from "tom-select";
+import {Dropdown} from "bootstrap";
 // Code highlighting
 import Prism from "prismjs/components/prism-core";
 import "prismjs/components/prism-markup-templating";
@@ -34,6 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	// AJAX
 	naja.formsHandler.netteForms = netteForms;
 	naja.initialize();
+
+	Array.from(document.querySelectorAll('.dropdown'))
+		.forEach(el => {
+			console.log(new Dropdown(el))
+		})
 
 	createDatagrids(new NajaAjax(naja), {
 		datagrid: {
