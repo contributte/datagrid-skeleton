@@ -25,7 +25,15 @@ export interface DatagridPayload {
 	non_empty_filters?: string[];
 }
 
-export type Payload<P = DatagridPayload, S = {}> = P & {
+export interface DatagridState {
+	"grid-page": number | null,
+	"grid-perPage": number,
+	// TODO
+	"grid-sort": any | null,
+	"grid-filter": any | null
+}
+
+export type Payload<P = DatagridPayload, S = DatagridState> = P & {
 	snippets?: Record<string, string>;
 	redirect?: string;
 	state: S;

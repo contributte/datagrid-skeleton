@@ -4,17 +4,19 @@ import {attachSlideToggle} from "@datagrid/utils";
 
 export class ItemDetailPlugin implements DatagridPlugin {
 	onDatagridInit(datagrid: Datagrid): boolean {
-		datagrid.el.querySelectorAll("[data-toggle-detail]")
+		datagrid.el.querySelectorAll<HTMLElement>("[data-toggle-detail-grid]")
 			.forEach((el) => {
-				const toggleName = el.getAttribute("data-toggle-detail")!;
-				const fullName = el.getAttribute("data-toggle-detail-grid-fullname");
-				const row = datagrid.el.querySelector<HTMLElement>(
-			`.item-detail-${fullName}-id-${toggleName}`
-				);
+				if (el.getAttribute("data-toggle-detail-grid") !== datagrid.name) return;
+				const toggleId = el.getAttribute("data-toggle-detail")!;
 
-				if (row && row.querySelector<HTMLElement>(".item-detail-content")) {
-					attachSlideToggle(row);
-				}
+				el.addEventListener("click", (e) => {
+					const contentRow = datagrid.el.querySelector<HTMLElement>(
+						`.item-detail-${datagrid.name}-id-${toggleId}`
+					);
+					if (contentRow) {
+						attachSlideToggle(contentRow, el);
+					}
+				})
 			});
 
 		return true;

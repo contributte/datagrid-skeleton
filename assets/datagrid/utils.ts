@@ -26,7 +26,7 @@ export function window(): ExtendedWindow {
   return (window ?? {}) as unknown as ExtendedWindow;
 }
 
-export function slideDown(element: HTMLElement, cb?: () => unknown) {
+export function slideDown(element: HTMLElement, cb?: (nextStateShown: boolean) => unknown) {
 	element.classList.add('is-active');
 	element.style.height = 'auto';
 
@@ -36,20 +36,23 @@ export function slideDown(element: HTMLElement, cb?: () => unknown) {
 
 	setTimeout(function () {
 		element.style.height = height;
-		cb?.();
+		cb?.(true);
 	}, 0);
 }
 
-export function slideUp(element: HTMLElement, cb?: () => unknown) {
+export function slideUp(element: HTMLElement, cb?: (nextStateShown: boolean) => unknown) {
 	element.style.height = '0px';
 
-	element.addEventListener('transitionend', () => {
-		element.classList.remove('is-active');
-		cb?.();
-	}, { once: true });
+	setTimeout( () => {
+		if (element.classList.contains('is-active')) {
+			element.classList.remove('is-active');
+			cb?.(false);
+		}
+	}, 250); // TODO
 }
 
-export function slideToggle(element: HTMLElement, cb?: () => unknown) {
+export function slideToggle(element: HTMLElement, cb?: (nextStateShown: boolean) => unknown) {
+	console.log("element", element);
 	if (!element.classList.contains('is-active')) {
 		slideDown(element, cb);
 	} else {
@@ -57,14 +60,17 @@ export function slideToggle(element: HTMLElement, cb?: () => unknown) {
 	}
 }
 
-export function attachSlideToggle(element: HTMLElement, cb?: () => unknown) {
+export function attachSlideToggle(element: HTMLElement, control: HTMLElement, cb?: (nextStateShown: boolean) => unknown) {
 		if (!element.classList.contains("datagrid--slide-toggle")) {
+			let sliding = false;
 			element.classList.add("datagrid--slide-toggle");
 
-			slideToggle(element, cb);
+			slideUp(element, cb);
 
-			element.addEventListener('click', () => {
-				slideToggle(element, cb);
+			control.addEventListener('click', () => {
+				if (sliding) return;
+				sliding = true;
+				slideToggle(element, () => (sliding = false));
 			});
 		}
 }

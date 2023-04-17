@@ -72,7 +72,7 @@ export const createFullDatagrids = (ajax: Ajax, _options: Partial<DatagridsOptio
 				new CheckboxPlugin(),
 				new ConfirmPlugin(),
 				new InlinePlugin(),
-				new UrlPlugin(),
+			//	new UrlPlugin(),
 				new NetteFormsPlugin(),
 				new HappyPlugin(new Happy()),
 				new SortablePlugin(new SortableJS()),

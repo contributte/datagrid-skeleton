@@ -37,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	naja.initialize();
 
 	Array.from(document.querySelectorAll('.dropdown'))
-		.forEach(el => {
-			console.log(new Dropdown(el))
-		})
+		.forEach(el => new Dropdown(el))
 
 	createDatagrids(new NajaAjax(naja), {
 		datagrid: {
