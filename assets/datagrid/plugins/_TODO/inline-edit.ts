@@ -1,3 +1,6 @@
+// mala i velka editace
+// pridavani je take inline-edit
+
 $(document).on('click', '[data-datagrid-editable-url]', function (event) {
 	var attr_name, attr_value, attrs, cell, cellValue, cell_height, cell_lines, cell_padding, input, line_height,
 		submit, valueToEdit;
@@ -142,6 +145,8 @@ dataGridRegisterExtension('datagrid-toggle-inline-add', {
 		}
 	}
 });
+
+// schova ostatni tlacitka pri editaci radku
 dataGridRegisterExtension('datagrid.inline-editing', {
 	success: function (payload) {
 		var grid;

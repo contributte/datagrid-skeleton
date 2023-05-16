@@ -1,3 +1,4 @@
+// pocet polozek na stranku
 $(document).on('change', 'select[data-autosubmit-per-page]', function () {
 	var button;
 	button = $(this).parent().find('input[type=submit]');
@@ -7,10 +8,12 @@ $(document).on('change', 'select[data-autosubmit-per-page]', function () {
 	return button.click();
 });
 
+
 $(document).on('change', 'select[data-autosubmit]', function () {
 	return dataGridSubmitForm($(this).closest('form').first());
 });
 
+// date filter
 $(document).on('change', 'input[data-autosubmit][data-autosubmit-change]', function (e) {
 	var $this, code;
 	code = e.which || e.keyCode || 0;
@@ -36,4 +39,14 @@ $(document).on('keyup', 'input[data-autosubmit]', function (e) {
 			return dataGridSubmitForm($this.closest('form').first());
 		};
 	})(this), 200);
+});
+
+$(document).on('keydown', 'input[data-datagrid-manualsubmit]', function (e) {
+	var code;
+	code = e.which || e.keyCode || 0;
+	if (code === 13) {
+		e.stopPropagation();
+		e.preventDefault();
+		return dataGridSubmitForm($(this).closest('form').first());
+	}
 });

@@ -1,3 +1,6 @@
+// $this->getPresenterInstance()->payload->_datagrid_redrawItem_class = $row->getControlClass();
+// chyba v _datagrid_redrawItem_class
+
 dataGridRegisterExtension('datagrid.redraw-item', {
 	success: function (payload) {
 		var row;
