@@ -10,4 +10,3 @@ export * from "./features/confirm";
 export * from "./features/editable";
 export * from "./features/inline";
 export * from "./features/item-detail";
-export * from "./features/url";

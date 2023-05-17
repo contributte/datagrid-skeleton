@@ -30,11 +30,11 @@ import "prismjs/components/prism-css";
 // Styles
 
 import '../css/main.css';
+// import {JquerySortable} from "@datagrid/integrations/jquery-sortable";
 
 document.addEventListener("DOMContentLoaded", () => {
 	// AJAX
 	naja.formsHandler.netteForms = netteForms;
-	naja.initialize();
 
 	Array.from(document.querySelectorAll('.dropdown'))
 		.forEach(el => new Dropdown(el))
@@ -47,15 +47,17 @@ document.addEventListener("DOMContentLoaded", () => {
 				new ConfirmPlugin(),
 				new InlinePlugin(),
 				new ItemDetailPlugin(),
-				new UrlPlugin(),
+			//	new UrlPlugin(),
 				new NetteFormsPlugin(netteForms),
 				new HappyPlugin(new Happy()),
-				new SortablePlugin(new SortableJS()),
+				// new SortablePlugin(new JquerySortable()),
 				new DatepickerPlugin(new VanillaDatepicker({buttonClass: 'btn'})),
 				new SelectpickerPlugin(new TomSelect(Select)),
 			],
 		},
 	});
+
+	naja.initialize();
 
 	// Highlighting
 	const codes = document.querySelectorAll('code');
