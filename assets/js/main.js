@@ -30,7 +30,7 @@ import "prismjs/components/prism-css";
 // Styles
 
 import '../css/main.css';
-// import {JquerySortable} from "@datagrid/integrations/jquery-sortable";
+import { TreeViewPlugin } from "../datagrid/plugins/features/treeView";
 
 document.addEventListener("DOMContentLoaded", () => {
 	// AJAX
@@ -50,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			//	new UrlPlugin(),
 				new NetteFormsPlugin(netteForms),
 				new HappyPlugin(new Happy()),
-				// new SortablePlugin(new JquerySortable()),
+				new SortablePlugin(new SortableJS()),
 				new DatepickerPlugin(new VanillaDatepicker({buttonClass: 'btn'})),
 				new SelectpickerPlugin(new TomSelect(Select)),
+				new TreeViewPlugin(),
 			],
 		},
 	});

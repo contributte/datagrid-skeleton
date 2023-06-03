@@ -12,6 +12,7 @@ export interface RequestParams<D = any> extends BaseRequestParams {
 
 export interface DatagridPayload {
 	_datagrid_name?: string;
+	_datagrid_toggle_detail?: string
 	_datagrid_inline_editing?: boolean;
 	_datagrid_inline_adding?: boolean;
 	_datagrid_inline_edited?: boolean;
