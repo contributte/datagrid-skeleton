@@ -22,7 +22,8 @@ export class AutosubmitPlugin implements DatagridPlugin {
 
 					if (!(inputEl instanceof HTMLElement)) return;
 
-					inputEl.click();
+					const form = inputEl.closest('form');
+					form && datagrid.ajax.submitForm(form);
 				});
 			});
 

@@ -22,6 +22,7 @@ export interface DatagridPayload {
 	_datagrid_editable_new_value?: string;
 	_datagrid_redraw_item_id?: string;
 	_datagrid_redraw_item_class?: string;
+	_datagrid_init?: boolean;
 	non_empty_filters?: string[];
 }
 

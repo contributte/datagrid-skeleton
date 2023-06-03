@@ -41,10 +41,18 @@ export class Datagrid extends EventTarget {
 
 		this.ajax = typeof ajax === "function" ? ajax(this) : ajax;
 
+		this.ajax.addEventListener("success", e => {
+			if (e.detail.payload?._datagrid_name === this.name && e.detail.payload?._datagrid_init) {
+				this.init();
+			}
+		});
+
 		this.init();
 	}
 
 	public init() {
+		console.log("init")
+		
 		let cancelled = !this.dispatch('beforeInit', {datagrid: this})
 		if (!cancelled) {
 			this.options.plugins.forEach((plugin) => {
@@ -75,12 +83,6 @@ export class Datagrid extends EventTarget {
 		});
 
 		this.ajax.addEventListener("success", ({detail: {payload}}) => {
-			if (payload._datagrid_redraw_item_id && payload._datagrid_redraw_item_class) {
-				const row = this.el.querySelector<HTMLTableRowElement>(
-					`tr[data-id='${payload._datagrid_redraw_item_id}']`
-				)?.setAttribute("class", payload._datagrid_redraw_item_class)
-			}
-
 			// todo: maybe move?
 			if (payload._datagrid_name && payload._datagrid_name === this.name) {
 				this.el.querySelector<HTMLElement>("[data-datagrid-reset-filter-by-column]")
@@ -95,6 +97,7 @@ export class Datagrid extends EventTarget {
 						"data-datagrid-reset-filter-by-column"
 					)
 
+					 /// tf?
 					for (const columnName of payload.non_empty_filters) {
 						resets.find(getColumnName)?.classList.remove("hidden");
 					}
@@ -113,13 +116,6 @@ export class Datagrid extends EventTarget {
 				}
 			}
 		})
-
-
-		this.ajax.addEventListener("snippetUpdate", e => {
-			if (e.detail.element.classList.contains(`snippet-grid-${this.name}`)) {
-				this.init();
-			}
-		});
 
 		this.dispatch('afterInit', {datagrid: this});
 	}

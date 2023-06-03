@@ -1,5 +1,5 @@
 import { DatagridPlugin } from "@datagrid/types";
-import {Datagrid} from "@datagrid";
+import { Datagrid } from "@datagrid";
 
 export const CheckboxAttribute = "data-check";
 
@@ -65,6 +65,11 @@ export class CheckboxPlugin implements DatagridPlugin {
 						counter.innerText = `${checkEl.checked ? total : 0}/${total}`;
 					}
 					return;
+				} else {
+					const selectAll = datagrid.el.querySelector<HTMLInputElement>(`input[data-check='${datagrid.name}'][data-check-all]`);
+					if (selectAll) {
+						selectAll.checked = Array.from(checkboxes).filter(c => !c.hasAttribute("data-check-all")).every(c => c.checked);
+					}
 				}
 
 				const checkedBoxes = Array.from(checkboxes).filter(checkbox => checkbox.checked && !checkEl.hasAttribute("data-check-all"));

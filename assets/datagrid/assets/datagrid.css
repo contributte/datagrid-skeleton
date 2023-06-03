@@ -1,11 +1,11 @@
-.datagrid--slide-toggle {
+/* .datagrid--slide-toggle > td > div {
 	-webkit-transition: height .25s ease;
 	-o-transition: height .25s ease;
 	transition: height .25s ease;
 	overflow: hidden;
-}
+} */
 
-.datagrid--slide-toggle:not(.is-active) {
+.datagrid--content-row:not(.is-active) > td /*> div*/ {
 	display: none;
 }
 
@@ -235,23 +235,6 @@
 .datagrid table tbody tr.ui-sortable-helper {
 	display: table
 }
-/*
-.datagrid table tbody tr.row-item-detail {
-	display: none
-}
-*/
-.datagrid table tbody tr.row-item-detail.toggled,
-.datagrid table tbody tr.row-item-detail.is-active {
-	display: table-row
-}
-/*
-.datagrid table tbody tr.row-item-detail .item-detail-content {
-	display: none
-}
-
-.datagrid table tbody tr.row-item-detail-helper {
-	display: none
-}*/
 
 .datagrid table tbody tr .datagrid-inline-edit .form-control {
 	margin: -3px;

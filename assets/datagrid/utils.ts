@@ -27,7 +27,6 @@ export function window(): ExtendedWindow {
 }
 
 export function slideDown(element: HTMLElement, cb?: (nextStateShown: boolean) => unknown) {
-	element.classList.add('is-active');
 	element.style.height = 'auto';
 
 	let height = element.clientHeight + "px";
@@ -44,16 +43,13 @@ export function slideUp(element: HTMLElement, cb?: (nextStateShown: boolean) => 
 	element.style.height = '0px';
 
 	setTimeout( () => {
-		if (element.classList.contains('is-active')) {
-			element.classList.remove('is-active');
-			cb?.(false);
-		}
+		cb?.(false);
 	}, 250); // TODO
 }
 
-export function slideToggle(element: HTMLElement, cb?: (nextStateShown: boolean) => unknown) {
+export function slideToggle(element: HTMLElement, isVisible: boolean, cb?: (nextStateShown: boolean) => unknown) {
 	console.log("element", element);
-	if (!element.classList.contains('is-active')) {
+	if (!isVisible) {
 		slideDown(element, cb);
 	} else {
 		slideUp(element, cb);
@@ -61,16 +57,23 @@ export function slideToggle(element: HTMLElement, cb?: (nextStateShown: boolean)
 }
 
 export function attachSlideToggle(element: HTMLElement, control: HTMLElement, cb?: (nextStateShown: boolean) => unknown) {
-		if (!element.classList.contains("datagrid--slide-toggle")) {
+		if (!control.classList.contains("datagrid--slide-toggle")) {
 			let sliding = false;
-			element.classList.add("datagrid--slide-toggle");
+			control.classList.add("datagrid--slide-toggle");
 
-			slideUp(element, cb);
+			slideDown(element, cb);
 
 			control.addEventListener('click', () => {
 				if (sliding) return;
 				sliding = true;
-				slideToggle(element, () => (sliding = false));
+				slideToggle(element, control.classList.contains('is-active'), (active) => {
+          sliding = false
+          if (active) {
+            control.classList.add("is-active");
+          } else {
+            control.classList.remove("is-active");
+          }
+        });
 			});
 		}
 }

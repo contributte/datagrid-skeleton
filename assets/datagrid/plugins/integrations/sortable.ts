@@ -48,7 +48,7 @@ export class SortablePlugin implements DatagridPlugin {
 							}
 
 							childrenContainer.append(treeItem);
-							attachSlideToggle(childrenContainer);
+							// attachSlideToggle(childrenContainer);
 						}
 					}
 				}
