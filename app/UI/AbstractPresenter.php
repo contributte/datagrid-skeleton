@@ -15,7 +15,7 @@ abstract class AbstractPresenter extends NellaPresenter
 
 	abstract public function createComponentGrid(): DataGrid;
 
-	public function changeStatus(int $id, string $newStatus): void
+	public function changeStatus($id, string $newStatus): void
 	{
 		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
 			$data = ['status' => $newStatus];

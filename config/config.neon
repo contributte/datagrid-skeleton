@@ -21,6 +21,7 @@ dibi:
 	port: %db.port%
 
 session:
+	autoStart: smart
 	savePath: "%tempDir%/sessions"
 
 
