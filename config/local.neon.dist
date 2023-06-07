@@ -1,9 +1,9 @@
-parameters:
-	db:
-		host: database
-		username: contributte
-		password: contributte
-		database: contributte
-		port: 3306
-
-services:
+# parameters:
+# 	db:
+# 		host: 0.0.0.0
+# 		username: contributte
+# 		password: contributte
+# 		database: contributte
+# 		port: 3306
+#
+# services:

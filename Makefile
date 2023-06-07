@@ -23,6 +23,7 @@ install-node:
 .PHONY: setup
 setup:
 	cp -n .env.example .env || true
+	cp -n config/local.neon.dist config/local.neon || true
 	mkdir -p var/log var/tmp var/tmp/sessions
 	chmod 0777 var/log var/tmp var/tmp/sessions
 
