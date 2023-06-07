@@ -2,24 +2,26 @@ import naja from "naja";
 import netteForms from "nette-forms";
 import {
 	AutosubmitPlugin,
-	BootstrapSelect,
 	CheckboxPlugin,
 	ConfirmPlugin,
 	createDatagrids,
+	DatepickerPlugin,
 	Happy,
 	HappyPlugin,
 	InlinePlugin,
+	ItemDetailPlugin,
 	NetteFormsPlugin,
 	SelectpickerPlugin,
-	DatepickerPlugin,
 	SortableJS,
-	SortablePlugin, TomSelect,
-	UrlPlugin,
-	VanillaDatepicker, ItemDetailPlugin
-} from "@datagrid";
-import {NajaAjax} from "@datagrid/ajax";
+	SortablePlugin,
+	TomSelect,
+	TreeViewPlugin,
+	VanillaDatepicker
+} from "@contributte/datagrid/assets";
+import { NajaAjax } from "@contributte/datagrid/assets/ajax";
 import Select from "tom-select";
-import {Dropdown} from "bootstrap";
+import { Dropdown } from "bootstrap";
+
 // Code highlighting
 import Prism from "prismjs/components/prism-core";
 import "prismjs/components/prism-markup-templating";
@@ -27,18 +29,21 @@ import "prismjs/components/prism-php";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-css";
+
 // Styles
-
 import '../css/main.css';
-import { TreeViewPlugin } from "../datagrid/plugins/features/treeView";
 
+// Datagrid + UI
 document.addEventListener("DOMContentLoaded", () => {
-	// AJAX
-	naja.formsHandler.netteForms = netteForms;
-
+	// Initialize dropdowns
 	Array.from(document.querySelectorAll('.dropdown'))
 		.forEach(el => new Dropdown(el))
 
+	// Initialize Naja (nette ajax)
+	naja.formsHandler.netteForms = netteForms;
+	naja.initialize();
+
+	// Initialize datagrids
 	createDatagrids(new NajaAjax(naja), {
 		datagrid: {
 			plugins: [
@@ -47,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				new ConfirmPlugin(),
 				new InlinePlugin(),
 				new ItemDetailPlugin(),
-			//	new UrlPlugin(),
 				new NetteFormsPlugin(netteForms),
 				new HappyPlugin(new Happy()),
 				new SortablePlugin(new SortableJS()),
@@ -57,9 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			],
 		},
 	});
+});
 
-	naja.initialize();
-
+document.addEventListener("DOMContentLoaded", () => {
 	// Highlighting
 	const codes = document.querySelectorAll('code');
 	codes.forEach(code => {

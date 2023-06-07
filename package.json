@@ -7,6 +7,7 @@
     "node": ">=18.0"
   },
   "dependencies": {
+    "@contributte/datagrid": "github:contributte/datagrid#next",
     "@fortawesome/fontawesome-free": "^6.3.0",
     "bootstrap": "^5.3.0-alpha3",
     "naja": "^2.5.0",
