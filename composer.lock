@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf4ea85d255d5928218f9a29a5beba9b",
+    "content-hash": "59c41fc2243812dd0d1dd1a9cf919f5b",
     "packages": [
         {
             "name": "contributte/application",
@@ -84,34 +84,34 @@
         },
         {
             "name": "dibi/dibi",
-            "version": "v4.2.7",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dg/dibi.git",
-                "reference": "7fa05f381b23fdc59af98caeb03b1ae8ed1e03ed"
+                "reference": "82c45c30763d1f3932907fea46ff27a594d7ba7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dg/dibi/zipball/7fa05f381b23fdc59af98caeb03b1ae8ed1e03ed",
-                "reference": "7fa05f381b23fdc59af98caeb03b1ae8ed1e03ed",
+                "url": "https://api.github.com/repos/dg/dibi/zipball/82c45c30763d1f3932907fea46ff27a594d7ba7e",
+                "reference": "82c45c30763d1f3932907fea46ff27a594d7ba7e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2"
+                "php": "8.0 - 8.3"
             },
             "replace": {
                 "dg/dibi": "*"
             },
             "require-dev": {
-                "nette/di": "^3.0",
-                "nette/tester": "~2.0",
-                "phpstan/phpstan": "^0.12",
-                "tracy/tracy": "~2.2"
+                "nette/di": "^3.1",
+                "nette/tester": "^2.5",
+                "phpstan/phpstan": "^1.0",
+                "tracy/tracy": "^2.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -148,9 +148,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dg/dibi/issues",
-                "source": "https://github.com/dg/dibi/tree/v4.2.7"
+                "source": "https://github.com/dg/dibi/tree/v5.0.0"
             },
-            "time": "2022-11-18T03:40:51+00:00"
+            "time": "2023-08-09T14:38:02+00:00"
         },
         {
             "name": "latte/latte",
