@@ -28,7 +28,7 @@
     "latte/latte": "^3.0",
     "tracy/tracy": "^2.7.0",
     "ublaboo/datagrid": "^6.0",
-    "dibi/dibi": "^4.0.0"
+    "dibi/dibi": "^5.0.0"
   },
   "require-dev": {
     "ninjify/qa": "^0.13",
