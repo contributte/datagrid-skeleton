@@ -153,49 +153,6 @@
             "time": "2023-08-09T14:38:02+00:00"
         },
         {
-            "name": "jetbrains/phpstorm-attributes",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/JetBrains/phpstorm-attributes.git",
-                "reference": "22fb28d679deceedba8366dbae65cc8ebfc17e26"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-attributes/zipball/22fb28d679deceedba8366dbae65cc8ebfc17e26",
-                "reference": "22fb28d679deceedba8366dbae65cc8ebfc17e26",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "JetBrains\\PhpStorm\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "JetBrains",
-                    "homepage": "https://www.jetbrains.com"
-                }
-            ],
-            "description": "PhpStorm specific attributes",
-            "keywords": [
-                "attributes",
-                "jetbrains",
-                "phpstorm"
-            ],
-            "support": {
-                "issues": "https://youtrack.jetbrains.com/newIssue?project=WI",
-                "source": "https://github.com/JetBrains/phpstorm-attributes/tree/master"
-            },
-            "time": "2023-09-01T08:50:25+00:00"
-        },
-        {
             "name": "latte/latte",
             "version": "v3.0.10",
             "source": {
@@ -588,21 +545,20 @@
         },
         {
             "name": "nette/database",
-            "version": "v3.1.8",
+            "version": "v3.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/database.git",
-                "reference": "dd66c09165551eccb0134d076c89ade8ad01305c"
+                "reference": "4a21417d545e226a8fe189b95111d23a454bd2b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/database/zipball/dd66c09165551eccb0134d076c89ade8ad01305c",
-                "reference": "dd66c09165551eccb0134d076c89ade8ad01305c",
+                "url": "https://api.github.com/repos/nette/database/zipball/4a21417d545e226a8fe189b95111d23a454bd2b3",
+                "reference": "4a21417d545e226a8fe189b95111d23a454bd2b3",
                 "shasum": ""
             },
             "require": {
                 "ext-pdo": "*",
-                "jetbrains/phpstorm-attributes": "dev-master",
                 "nette/caching": "^3.0",
                 "nette/utils": "^3.2.1 || ~4.0.0",
                 "php": "7.2 - 8.3"
@@ -611,6 +567,7 @@
                 "nette/di": "<3.0-stable"
             },
             "require-dev": {
+                "jetbrains/phpstorm-attributes": "^1.0",
                 "mockery/mockery": "^1.3.4",
                 "nette/di": "^v3.0",
                 "nette/tester": "^2.4",
@@ -660,9 +617,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/database/issues",
-                "source": "https://github.com/nette/database/tree/v3.1.8"
+                "source": "https://github.com/nette/database/tree/v3.1.9"
             },
-            "time": "2023-11-02T23:32:04+00:00"
+            "time": "2023-11-05T19:41:36+00:00"
         },
         {
             "name": "nette/di",
