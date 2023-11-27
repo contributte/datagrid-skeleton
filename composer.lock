@@ -84,16 +84,16 @@
         },
         {
             "name": "dibi/dibi",
-            "version": "v5.0.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dg/dibi.git",
-                "reference": "82c45c30763d1f3932907fea46ff27a594d7ba7e"
+                "reference": "86a71dde28fd1c1b55e4c66a6f7ebfd4efb13e1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dg/dibi/zipball/82c45c30763d1f3932907fea46ff27a594d7ba7e",
-                "reference": "82c45c30763d1f3932907fea46ff27a594d7ba7e",
+                "url": "https://api.github.com/repos/dg/dibi/zipball/86a71dde28fd1c1b55e4c66a6f7ebfd4efb13e1d",
+                "reference": "86a71dde28fd1c1b55e4c66a6f7ebfd4efb13e1d",
                 "shasum": ""
             },
             "require": {
@@ -103,6 +103,7 @@
                 "dg/dibi": "*"
             },
             "require-dev": {
+                "jetbrains/phpstorm-attributes": "^1.0",
                 "nette/di": "^3.1",
                 "nette/tester": "^2.5",
                 "phpstan/phpstan": "^1.0",
@@ -148,9 +149,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dg/dibi/issues",
-                "source": "https://github.com/dg/dibi/tree/v5.0.0"
+                "source": "https://github.com/dg/dibi/tree/v5.0.1"
             },
-            "time": "2023-08-09T14:38:02+00:00"
+            "time": "2023-11-25T13:08:47+00:00"
         },
         {
             "name": "latte/latte",
