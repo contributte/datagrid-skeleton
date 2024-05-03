@@ -2,10 +2,10 @@
 
 namespace App\UI;
 
+use Contributte\Datagrid\Datagrid;
 use Contributte\Nella\UI\NellaPresenter;
 use Dibi\Connection;
 use Nette\DI\Attributes\Inject;
-use Ublaboo\DataGrid\DataGrid;
 
 abstract class AbstractPresenter extends NellaPresenter
 {
@@ -15,7 +15,7 @@ abstract class AbstractPresenter extends NellaPresenter
 
 	abstract public function createComponentGrid(): DataGrid;
 
-	public function changeStatus($id, string $newStatus): void
+	public function changeStatus(string $id, string $newStatus): void
 	{
 		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
 			$data = ['status' => $newStatus];
