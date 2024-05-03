@@ -33,4 +33,4 @@ parameters:
 # ======================================
 # Services =============================
 services:
-	parameters: App\Model\Parameters(%parameters%)
+	parameters: App\Model\Parameters(@container::getParameters())
