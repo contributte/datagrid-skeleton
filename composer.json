@@ -13,10 +13,10 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "php": ">= 8.1",
+    "php": ">= 8.2",
 
-    "contributte/nella": "^0.1",
-    "ublaboo/datagrid": "dev-next",
+    "contributte/nella": "^0.2",
+    "ublaboo/datagrid": "dev-master",
 
     "dibi/dibi": "^4.2.7"
   },
