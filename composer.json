@@ -18,7 +18,7 @@
     "contributte/nella": "^0.2",
     "ublaboo/datagrid": "dev-master",
 
-    "dibi/dibi": "^4.2.7"
+    "dibi/dibi": "^5.0.1"
   },
   "require-dev": {
     "contributte/qa": "^0.4.0",

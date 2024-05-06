@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2da2142481eb3878bff384c4bf18a8e",
+    "content-hash": "2a5e1aed21280a00674d977320b21ba9",
     "packages": [
         {
             "name": "contributte/application",
@@ -614,34 +614,35 @@
         },
         {
             "name": "dibi/dibi",
-            "version": "v4.2.8",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dg/dibi.git",
-                "reference": "cb0cf4ba2face22d809c8f863a5a0465b46a6ca9"
+                "reference": "86a71dde28fd1c1b55e4c66a6f7ebfd4efb13e1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dg/dibi/zipball/cb0cf4ba2face22d809c8f863a5a0465b46a6ca9",
-                "reference": "cb0cf4ba2face22d809c8f863a5a0465b46a6ca9",
+                "url": "https://api.github.com/repos/dg/dibi/zipball/86a71dde28fd1c1b55e4c66a6f7ebfd4efb13e1d",
+                "reference": "86a71dde28fd1c1b55e4c66a6f7ebfd4efb13e1d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2"
+                "php": "8.0 - 8.3"
             },
             "replace": {
                 "dg/dibi": "*"
             },
             "require-dev": {
-                "nette/di": "^3.0",
-                "nette/tester": "~2.0",
-                "phpstan/phpstan": "^0.12",
-                "tracy/tracy": "~2.2"
+                "jetbrains/phpstorm-attributes": "^1.0",
+                "nette/di": "^3.1",
+                "nette/tester": "^2.5",
+                "phpstan/phpstan": "^1.0",
+                "tracy/tracy": "^2.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -678,9 +679,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dg/dibi/issues",
-                "source": "https://github.com/dg/dibi/tree/v4.2.8"
+                "source": "https://github.com/dg/dibi/tree/v5.0.1"
             },
-            "time": "2023-08-09T14:15:07+00:00"
+            "time": "2023-11-25T13:08:47+00:00"
         },
         {
             "name": "latte/latte",
@@ -3158,7 +3159,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">= 8.1"
+        "php": ">= 8.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
