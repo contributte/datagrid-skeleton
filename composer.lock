@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a5e1aed21280a00674d977320b21ba9",
+    "content-hash": "591e19e3d0135cbab2757063de2af870",
     "packages": [
         {
             "name": "contributte/application",
@@ -385,16 +385,16 @@
         },
         {
             "name": "contributte/nella",
-            "version": "v0.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/nella.git",
-                "reference": "63cdae025404aa2215d5f3536207087a4bd5b402"
+                "reference": "25013bc3b76e5a645367dc21af536b850cce649a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/nella/zipball/63cdae025404aa2215d5f3536207087a4bd5b402",
-                "reference": "63cdae025404aa2215d5f3536207087a4bd5b402",
+                "url": "https://api.github.com/repos/contributte/nella/zipball/25013bc3b76e5a645367dc21af536b850cce649a",
+                "reference": "25013bc3b76e5a645367dc21af536b850cce649a",
                 "shasum": ""
             },
             "require": {
@@ -407,16 +407,20 @@
                 "contributte/utils": "^0.6.0",
                 "php": ">=8.1"
             },
+            "conflict": {
+                "nette/application": "<3.2.5"
+            },
             "require-dev": {
                 "contributte/phpstan": "^0.1",
                 "contributte/qa": "^0.4",
                 "contributte/tester": "^0.3",
                 "mockery/mockery": "^1.5.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "0.3.x-dev"
                 }
             },
             "autoload": {
@@ -444,7 +448,7 @@
             ],
             "support": {
                 "issues": "https://github.com/contributte/nella/issues",
-                "source": "https://github.com/contributte/nella/tree/v0.2.0"
+                "source": "https://github.com/contributte/nella/tree/master"
             },
             "funding": [
                 {
@@ -456,7 +460,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-04T19:43:02+00:00"
+            "time": "2024-05-29T20:07:59+00:00"
         },
         {
             "name": "contributte/tracy",

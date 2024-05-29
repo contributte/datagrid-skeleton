@@ -15,7 +15,7 @@
   "require": {
     "php": ">= 8.2",
 
-    "contributte/nella": "^0.2",
+    "contributte/nella": "^0.3",
     "ublaboo/datagrid": "dev-master",
 
     "dibi/dibi": "^5.0.1"
