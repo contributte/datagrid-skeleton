@@ -51,15 +51,15 @@ final class EditPresenter extends AbstractPresenter
 		$inlineEdit = $grid->addInlineEdit();
 
 		$inlineEdit->onControlAdd[] = function ($container): void {
-				$container->addText('name', '')
-					->setRequired('aaa');
-				$container->addText('birth_date', '');
-				$container->addText('link', '');
-				$container->addSelect('status', '', [
-					'active' => 'Active',
-					'inactive' => 'Inactive',
-					'deleted' => 'Deleted',
-				]);
+			$container->addText('name', '')
+				->setRequired('aaa');
+			$container->addText('birth_date', '');
+			$container->addText('link', '');
+			$container->addSelect('status', '', [
+				'active' => 'Active',
+				'inactive' => 'Inactive',
+				'deleted' => 'Deleted',
+			]);
 		};
 
 		$inlineEdit->onSetDefaults[] = function (Container $container, Row $row): void {
@@ -73,7 +73,8 @@ final class EditPresenter extends AbstractPresenter
 		};
 
 		$inlineEdit->onSubmit[] = function ($id, $values): void {
-			$this->flashMessage('Record was updated! (not really)', 'success');
+			$this->dibiConnection->update('users', ['name' => $values['name']])->where('id = %i', $id)->execute();
+			$this->flashMessage('Record was updated!', 'success');
 			$this->redrawControl('flashes');
 		};
 
