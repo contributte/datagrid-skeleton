@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
 				'~': resolve(__dirname, 'node_modules'),
 			},
 		},
-		base: '/dist/',
+		base: process.env.VITE_BASE ?? '/dist/',
 		server: {
 			open: false,
 			hmr: false,
