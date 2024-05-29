@@ -22,8 +22,6 @@ dibi:
 
 session:
 	autoStart: smart
-	savePath: "%tempDir%/sessions"
-
 
 # ======================================
 # Parameters ===========================
