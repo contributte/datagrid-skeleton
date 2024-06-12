@@ -2,6 +2,7 @@
 
 namespace App\UI\Add;
 
+use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
 use Ublaboo\DataGrid\DataGrid;
 
@@ -29,19 +30,27 @@ final class AddPresenter extends AbstractPresenter
 
 		$inlineAdd->setPositionTop()
 			->onControlAdd[] = function ($container): void {
-				$container->addText('name', '')
-					->setRequired('aaa');
-				$container->addText('birth_date', '');
-				$container->addText('link', '');
-				$container->addSelect('status', '', [
-					'active' => 'Active',
-					'inactive' => 'Inactive',
-					'deleted' => 'Deleted',
-				]);
-			};
+			$container->addText('name', '')
+				->setRequired('aaa');
+			$container->addText('birth_date', '');
+			$container->addText('link', '');
+			$container->addSelect('status', '', [
+				'active' => 'Active',
+				'inactive' => 'Inactive',
+				'deleted' => 'Deleted',
+			]);
+		};
 
 		$inlineAdd->onSubmit[] = function ($values): void {
-			$this->flashMessage('Record was added! (not really)', 'success');
+			$this->dibiConnection->insert('users',
+				[
+					'name' => $values['name'],
+					'status' => $values['status'],
+					'countries_visited' => 1,
+					'birth_date' => new DateTime()
+				]
+			)->execute();
+			$this->flashMessage('Record was added!', 'success');
 			$this->redrawControl('flashes');
 		};
 
