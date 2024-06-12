@@ -2295,12 +2295,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/datagrid.git",
-                "reference": "d1494eb0bfd4004bcf0aefb775b71227f372938d"
+                "reference": "edee4d6de07f0805043b9ab315147ba1a7957b68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/datagrid/zipball/d1494eb0bfd4004bcf0aefb775b71227f372938d",
-                "reference": "d1494eb0bfd4004bcf0aefb775b71227f372938d",
+                "url": "https://api.github.com/repos/contributte/datagrid/zipball/edee4d6de07f0805043b9ab315147ba1a7957b68",
+                "reference": "edee4d6de07f0805043b9ab315147ba1a7957b68",
                 "shasum": ""
             },
             "require": {
@@ -2382,7 +2382,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-05-29T19:34:49+00:00"
+            "time": "2024-06-12T09:25:08+00:00"
         }
     ],
     "packages-dev": [
