@@ -2846,21 +2846,21 @@
         },
         {
             "name": "phpstan/phpstan-dibi",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-dibi.git",
-                "reference": "f5b29e0261d0948f68bc1800e30cbe90808725d8"
+                "reference": "6b675502582d370e9439982f910fcb5815b812dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-dibi/zipball/f5b29e0261d0948f68bc1800e30cbe90808725d8",
-                "reference": "f5b29e0261d0948f68bc1800e30cbe90808725d8",
+                "url": "https://api.github.com/repos/phpstan/phpstan-dibi/zipball/6b675502582d370e9439982f910fcb5815b812dd",
+                "reference": "6b675502582d370e9439982f910fcb5815b812dd",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0",
-                "phpstan/phpstan": "^1.0"
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.12"
             },
             "conflict": {
                 "dibi/dibi": "<3.0"
@@ -2868,15 +2868,12 @@
             "require-dev": {
                 "dibi/dibi": "~4.0",
                 "php-parallel-lint/php-parallel-lint": "^1.2",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.4",
+                "phpstan/phpstan-strict-rules": "^1.6",
                 "phpunit/phpunit": "^9.5"
             },
             "type": "phpstan-extension",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
                 "phpstan": {
                     "includes": [
                         "extension.neon"
@@ -2895,9 +2892,9 @@
             "description": "Dibi class reflection extension for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-dibi/issues",
-                "source": "https://github.com/phpstan/phpstan-dibi/tree/1.0.1"
+                "source": "https://github.com/phpstan/phpstan-dibi/tree/1.0.2"
             },
-            "time": "2022-01-16T10:42:02+00:00"
+            "time": "2024-09-11T15:46:34+00:00"
         },
         {
             "name": "phpstan/phpstan-nette",
