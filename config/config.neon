@@ -28,6 +28,13 @@ session:
 parameters:
 	vendorDir: %appDir%/../vendor
 
+	db:
+		host: 0.0.0.0
+		username: contributte
+		password: contributte
+		database: contributte
+		port: 3306
+
 # ======================================
 # Services =============================
 services:
