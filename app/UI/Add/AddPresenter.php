@@ -28,8 +28,7 @@ final class AddPresenter extends AbstractPresenter
 
 		$inlineAdd = $grid->addInlineAdd();
 
-		$inlineAdd->setPositionTop()
-			->onControlAdd[] = function ($container): void {
+		$inlineAdd->setPositionTop()->onControlAdd[] = function ($container): void {
 			$container->addText('name', '')
 				->setRequired('aaa');
 			$container->addText('birth_date', '');
@@ -42,12 +41,13 @@ final class AddPresenter extends AbstractPresenter
 		};
 
 		$inlineAdd->onSubmit[] = function ($values): void {
-			$this->dibiConnection->insert('users',
+			$this->dibiConnection->insert(
+				'users',
 				[
 					'name' => $values['name'],
 					'status' => $values['status'],
 					'countries_visited' => 1,
-					'birth_date' => new DateTime()
+					'birth_date' => new DateTime(),
 				]
 			)->execute();
 			$this->flashMessage('Record was added!', 'success');
