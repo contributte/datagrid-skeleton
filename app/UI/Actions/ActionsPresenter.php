@@ -3,8 +3,8 @@
 namespace App\UI\Actions;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\Datagrid\Column\Action\Confirmation\StringConfirmation;
+use Contributte\Datagrid\Datagrid;
 
 class ActionsPresenter extends AbstractPresenter
 {
@@ -56,7 +56,7 @@ class ActionsPresenter extends AbstractPresenter
 		$grid->addAction('delete', '', 'delete!')
 			->setIcon('trash')
 			->setTitle('Delete')
-			->setClass('btn btn-xs btn-danger ajax')
+			->setClass('btn btn-xs btn-danger')
 			->setConfirmation(
 				new StringConfirmation('Do you really want to delete example %s?', 'name')
 			);
