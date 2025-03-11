@@ -1,19 +1,17 @@
-version: '3.6'
-
 services:
   web:
     image: dockette/web:php-82
     volumes:
       - ./:/srv
     ports:
-      - 8000:80
+      - 8080:80
     depends_on:
       - database
     environment:
       NETTE_DEBUG: 1
 
   database:
-    image: mariadb:latest
+    image: mariadb:11.5
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
