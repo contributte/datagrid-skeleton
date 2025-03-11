@@ -2,5 +2,4 @@
 @import '@contributte/datagrid/assets/css/datagrid-full.css';
 
 /* App styles */
-@import 'prismjs/themes/prism-okaidia.css';
 @import './styles.css';
