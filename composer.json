@@ -22,12 +22,12 @@
   },
   "require-dev": {
     "contributte/qa": "^0.4.0",
-    "contributte/tester": "^0.1.0",
-    "phpstan/phpstan": "^1.9.14",
-    "phpstan/phpstan-dibi": "^1.0.1",
-    "phpstan/phpstan-nette": "^1.2.1",
-    "phpstan/phpstan-strict-rules": "^1.4.5",
-    "phpstan/phpstan-deprecation-rules": "^1.1.1"
+    "contributte/tester": "^0.3.0",
+    "contributte/phpstan": "^0.2.0",
+    "phpstan/phpstan-dibi": "^2.0.0",
+    "phpstan/phpstan-nette": "^2.0.3",
+    "phpstan/phpstan-strict-rules": "^2.0.3",
+    "phpstan/phpstan-deprecation-rules": "^2.0.1"
   },
   "autoload": {
     "psr-4": {
