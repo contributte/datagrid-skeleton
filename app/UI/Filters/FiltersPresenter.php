@@ -7,7 +7,7 @@ use App\UI\AbstractPresenter;
 use Dibi\Fluent;
 use Dibi\Row;
 use Nette\Utils\ArrayHash;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\DataGrid\DataGrid;
 
 final class FiltersPresenter extends AbstractPresenter
 {
@@ -57,8 +57,6 @@ final class FiltersPresenter extends AbstractPresenter
 					$fluent->where('(YEAR(CURDATE()) - YEAR(birth_date)) <= ?', $values['to']);
 				}
 			});
-
-		// $grid->setOuterFilterRendering();
 
 		return $grid;
 	}

@@ -3,8 +3,8 @@
 namespace App\UI\Export;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\Column\ColumnText;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\DataGrid\Column\ColumnText;
+use Contributte\DataGrid\DataGrid;
 
 final class ExportPresenter extends AbstractPresenter
 {

@@ -4,7 +4,7 @@ namespace App\UI\Add;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\DataGrid\DataGrid;
 
 final class AddPresenter extends AbstractPresenter
 {

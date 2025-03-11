@@ -15,25 +15,4 @@ abstract class AbstractPresenter extends NellaPresenter
 
 	abstract public function createComponentGrid(): DataGrid;
 
-	public function changeStatus(string $id, string $newStatus): void
-	{
-		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
-			$data = ['status' => $newStatus];
-
-			$this->dibiConnection->update('users', $data)
-				->where('id = ?', $id)
-				->execute();
-		}
-
-		if ($this->isAjax()) {
-			$grid = $this->getComponent('grid');
-
-			$grid->redrawItem($id);
-			$this->flashMessage('Status changed');
-			$this->redrawControl('flashes');
-		} else {
-			$this->redirect('this');
-		}
-	}
-
 }

@@ -5,8 +5,8 @@ namespace App\UI\Localization;
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
 use Dibi\Row;
-use Ublaboo\DataGrid\DataGrid;
-use Ublaboo\DataGrid\Localization\SimpleTranslator;
+use Contributte\DataGrid\DataGrid;
+use Contributte\DataGrid\Localization\SimpleTranslator;
 
 final class LocalizationPresenter extends AbstractPresenter
 {

@@ -3,7 +3,7 @@
 namespace App\UI\GroupActions;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\DataGrid\DataGrid;
 
 class GroupActionsPresenter extends AbstractPresenter
 {

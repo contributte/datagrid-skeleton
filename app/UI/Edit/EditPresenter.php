@@ -7,7 +7,7 @@ use App\UI\AbstractPresenter;
 use Dibi\Row;
 use Nette\Forms\Container;
 use Nette\Utils\Html;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\DataGrid\DataGrid;
 
 final class EditPresenter extends AbstractPresenter
 {

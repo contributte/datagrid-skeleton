@@ -5,7 +5,7 @@ namespace App\UI\Home;
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
 use Dibi\Row;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\DataGrid\DataGrid;
 
 final class HomePresenter extends AbstractPresenter
 {

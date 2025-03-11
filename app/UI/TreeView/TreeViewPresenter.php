@@ -3,9 +3,9 @@
 namespace App\UI\TreeView;
 
 use App\UI\AbstractPresenter;
+use Contributte\DataGrid\Column\Action\Confirmation\StringConfirmation;
+use Contributte\DataGrid\DataGrid;
 use Dibi\Fluent;
-use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
-use Ublaboo\DataGrid\DataGrid;
 
 final class TreeViewPresenter extends AbstractPresenter
 {
@@ -81,6 +81,27 @@ final class TreeViewPresenter extends AbstractPresenter
 			->leftJoin($join, 'c_b')
 			->on('c_b.parent_category_id = c.id')
 			->where('c.parent_category_id = ?', $parentCategoryId);
+	}
+
+	public function changeStatus(string $id, string $newStatus): void
+	{
+		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
+			$data = ['status' => $newStatus];
+
+			$this->dibiConnection->update('users', $data)
+				->where('id = ?', $id)
+				->execute();
+		}
+
+		if ($this->isAjax()) {
+			$grid = $this->getComponent('grid');
+
+			$grid->redrawItem($id);
+			$this->flashMessage('Status changed');
+			$this->redrawControl('flashes');
+		} else {
+			$this->redirect('this');
+		}
 	}
 
 	public function handleSort(?int $itemId, ?int $prevId, ?int $nextId, ?int $parentId): void

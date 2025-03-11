@@ -5,13 +5,13 @@ namespace App\UI\Columns;
 use App\Model\Utils\DateTime;
 use App\Model\Utils\Types;
 use App\UI\AbstractPresenter;
+use Contributte\DataGrid\AggregationFunction\IAggregationFunction;
+use Contributte\DataGrid\AggregationFunction\IMultipleAggregationFunction;
+use Contributte\DataGrid\Column\ColumnLink;
+use Contributte\DataGrid\Column\ColumnStatus;
+use Contributte\DataGrid\DataGrid;
 use Dibi\Fluent;
 use Dibi\Row;
-use Ublaboo\DataGrid\AggregationFunction\IAggregationFunction;
-use Ublaboo\DataGrid\AggregationFunction\IMultipleAggregationFunction;
-use Ublaboo\DataGrid\Column\ColumnLink;
-use Ublaboo\DataGrid\Column\ColumnStatus;
-use Ublaboo\DataGrid\DataGrid;
 use UnexpectedValueException;
 
 final class ColumnsPresenter extends AbstractPresenter
@@ -64,11 +64,6 @@ final class ColumnsPresenter extends AbstractPresenter
 
 		$grid->setColumnsHideable();
 
-		/*$grid->setColumnsSummary(['id'])
-			->setRenderer(function(int $summary, string $column): string {
-				return 'Summary renderer: ' . $summary . ' $';
-			});*/
-
 		$grid->addColumnCallback('status', function (ColumnStatus $column, Row $row): void {
 			if ($row['id'] === 3) {
 				$column->removeOption('active');
@@ -81,11 +76,8 @@ final class ColumnsPresenter extends AbstractPresenter
 			}
 		});
 
-		// $grid->addAggregationFunction('status', new FunctionSum('id'));
-
 		$grid->setMultipleAggregationFunction(
-			new class implements IMultipleAggregationFunction
-			{
+			new class implements IMultipleAggregationFunction {
 
 				private int $idsSum = 0;
 
@@ -130,6 +122,27 @@ final class ColumnsPresenter extends AbstractPresenter
 		);
 
 		return $grid;
+	}
+
+	public function changeStatus(string $id, string $newStatus): void
+	{
+		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
+			$data = ['status' => $newStatus];
+
+			$this->dibiConnection->update('users', $data)
+				->where('id = ?', $id)
+				->execute();
+		}
+
+		if ($this->isAjax()) {
+			$grid = $this->getComponent('grid');
+
+			$grid->redrawItem($id);
+			$this->flashMessage('Status changed');
+			$this->redrawControl('flashes');
+		} else {
+			$this->redirect('this');
+		}
 	}
 
 }

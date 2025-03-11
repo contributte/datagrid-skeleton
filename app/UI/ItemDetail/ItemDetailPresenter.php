@@ -3,7 +3,7 @@
 namespace App\UI\ItemDetail;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\DataGrid\DataGrid;
 
 final class ItemDetailPresenter extends AbstractPresenter
 {

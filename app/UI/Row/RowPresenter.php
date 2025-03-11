@@ -3,8 +3,8 @@
 namespace App\UI\Row;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\DataGrid\Column\Action\Confirmation\StringConfirmation;
+use Contributte\DataGrid\DataGrid;
 
 final class RowPresenter extends AbstractPresenter
 {
