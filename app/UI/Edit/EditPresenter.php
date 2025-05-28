@@ -67,7 +67,7 @@ final class EditPresenter extends AbstractPresenter
 				'id' => $row['id'],
 				'name' => $row['name'],
 				'birth_date' => DateTime::fromSafe($row->asDateTime('birth_date'))?->format('j. n. Y'),
-				'link' => $row['name'],
+				'link' => '',
 				'status' => $row['status'],
 			]);
 		};
