@@ -35,6 +35,14 @@ final class FiltersPresenter extends AbstractPresenter
 				'deleted' => 'Deleted',
 			]);
 
+		$grid->addColumnStatus('multistatus', 'Multi Status', 'status')
+			->setFilterMultiSelect([
+				'' => 'All',
+				'active' => 'Active',
+				'inactive' => 'Inactive',
+				'deleted' => 'Deleted',
+			]);
+
 		$grid->addColumnDateTime('birth_date', 'Birthday')
 			->setFormat('j. n. Y')
 			->setSortable()
