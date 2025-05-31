@@ -1,5 +1,5 @@
 /* Datagrid styles */
-@import '@contributte/datagrid/assets/css/datagrid-full.css';
+@import '../../vendor/ublaboo/datagrid/assets/css/datagrid-all.css';
 
 /* App styles */
 @import './styles.css';
