@@ -6,13 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta name="description" content="Contributte DataGrid Demo">
 	<meta name="keywords" content="DataGrid, Nette, PHP, Contributte">
-	<meta name="author" content="Pavel Janda">
+	<meta name="author" content="Pavel, Felix">
 
 	<title>{ifset title}{include title|stripHtml} | {/ifset}DataGrid Sandbox</title>
 
-	<!-- Datagrid -->
-	<link rel="stylesheet" type="text/css" href="{$basePath}/dist/app.css">
-	<script defer src="{$basePath}/dist/app.js"></script>
+	{block head}
+		<!-- Datagrid (bundled) -->
+		<link rel="stylesheet" type="text/css" href="{$basePath}/dist/app.css">
+		<script defer src="{$basePath}/dist/app.js"></script>
+	{/block}
 
 	<!-- Skeleton -->
 	<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
@@ -77,6 +79,9 @@
 				</div>
 				<div>
 					<a n:class="isLinkCurrent('Localization:*') ? 'font-bold', ''" n:href="Localization:">Localization</a>
+				</div>
+				<div>
+					<a n:class="isLinkCurrent('Cdn:*') ? 'font-bold', ''" n:href="Cdn:">CDN</a>
 				</div>
 			</div>
 		</div>
