@@ -1,5 +1,10 @@
 /* Datagrid styles */
-@import '../../vendor/ublaboo/datagrid/assets/css/datagrid-all.css';
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'vanillajs-datepicker/css/datepicker-bs5.css';
+@import "tom-select/dist/css/tom-select.css";
+@import '../../vendor/ublaboo/datagrid/assets/css/happy.css';
+@import '../../vendor/ublaboo/datagrid/assets/css/datagrid.css';
 
 /* App styles */
 @import './styles.css';
