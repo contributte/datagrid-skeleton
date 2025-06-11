@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d61709af475ec16020cb7b8f208fa8",
+    "content-hash": "6bd0874592f9b0d5be7064d8cb145cf2",
     "packages": [
         {
             "name": "contributte/application",
@@ -2497,12 +2497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/datagrid.git",
-                "reference": "865970bebc52e8e1b44d624e8e96c3360b1a2884"
+                "reference": "1f061cb109cfa77f0918b327550fb2e9b8d85613"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/datagrid/zipball/865970bebc52e8e1b44d624e8e96c3360b1a2884",
-                "reference": "865970bebc52e8e1b44d624e8e96c3360b1a2884",
+                "url": "https://api.github.com/repos/contributte/datagrid/zipball/1f061cb109cfa77f0918b327550fb2e9b8d85613",
+                "reference": "1f061cb109cfa77f0918b327550fb2e9b8d85613",
                 "shasum": ""
             },
             "require": {
@@ -2543,9 +2543,6 @@
                 }
             },
             "autoload": {
-                "files": [
-                    "./compatibility.php"
-                ],
                 "psr-4": {
                     "Contributte\\Datagrid\\": "src/"
                 }
@@ -2587,7 +2584,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-02T14:24:07+00:00"
+            "time": "2025-06-11T13:59:44+00:00"
         }
     ],
     "packages-dev": [
@@ -3429,7 +3426,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">= 8.2"
+        "php": ">=8.3"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
