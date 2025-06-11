@@ -3,12 +3,12 @@
 namespace App\UI\ItemDetail;
 
 use App\UI\AbstractPresenter;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 
 final class ItemDetailPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

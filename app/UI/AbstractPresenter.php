@@ -13,6 +13,6 @@ abstract class AbstractPresenter extends NellaPresenter
 	#[Inject]
 	public Connection $dibiConnection;
 
-	abstract public function createComponentGrid(): DataGrid;
+	abstract public function createComponentGrid(): Datagrid;
 
 }

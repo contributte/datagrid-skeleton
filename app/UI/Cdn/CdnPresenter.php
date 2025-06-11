@@ -4,7 +4,7 @@ namespace App\UI\Cdn;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Fluent;
 use Dibi\Row;
 use Nette\Utils\ArrayHash;
@@ -12,7 +12,7 @@ use Nette\Utils\ArrayHash;
 final class CdnPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 		$grid->setStrictSessionFilterValues(false);

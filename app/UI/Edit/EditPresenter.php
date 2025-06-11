@@ -7,12 +7,12 @@ use App\UI\AbstractPresenter;
 use Dibi\Row;
 use Nette\Forms\Container;
 use Nette\Utils\Html;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 
 final class EditPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

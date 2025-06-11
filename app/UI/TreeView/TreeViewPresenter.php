@@ -3,14 +3,14 @@
 namespace App\UI\TreeView;
 
 use App\UI\AbstractPresenter;
-use Contributte\DataGrid\Column\Action\Confirmation\StringConfirmation;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Column\Action\Confirmation\StringConfirmation;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Fluent;
 
 final class TreeViewPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

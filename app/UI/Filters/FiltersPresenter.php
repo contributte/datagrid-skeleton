@@ -7,12 +7,12 @@ use App\UI\AbstractPresenter;
 use Dibi\Fluent;
 use Dibi\Row;
 use Nette\Utils\ArrayHash;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 
 final class FiltersPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

@@ -5,13 +5,13 @@ namespace App\UI\Localization;
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
 use Dibi\Row;
-use Contributte\DataGrid\DataGrid;
-use Contributte\DataGrid\Localization\SimpleTranslator;
+use Contributte\Datagrid\Datagrid;
+use Contributte\Datagrid\Localization\SimpleTranslator;
 
 final class LocalizationPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

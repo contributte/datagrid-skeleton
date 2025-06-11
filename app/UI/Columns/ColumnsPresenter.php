@@ -5,11 +5,11 @@ namespace App\UI\Columns;
 use App\Model\Utils\DateTime;
 use App\Model\Utils\Types;
 use App\UI\AbstractPresenter;
-use Contributte\DataGrid\AggregationFunction\IAggregationFunction;
-use Contributte\DataGrid\AggregationFunction\IMultipleAggregationFunction;
-use Contributte\DataGrid\Column\ColumnLink;
-use Contributte\DataGrid\Column\ColumnStatus;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\AggregationFunction\IAggregationFunction;
+use Contributte\Datagrid\AggregationFunction\IMultipleAggregationFunction;
+use Contributte\Datagrid\Column\ColumnLink;
+use Contributte\Datagrid\Column\ColumnStatus;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Fluent;
 use Dibi\Row;
 use UnexpectedValueException;
@@ -17,7 +17,7 @@ use UnexpectedValueException;
 final class ColumnsPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

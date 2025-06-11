@@ -4,12 +4,12 @@ namespace App\UI\Add;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 
 final class AddPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

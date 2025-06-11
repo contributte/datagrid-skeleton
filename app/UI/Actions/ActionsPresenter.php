@@ -9,7 +9,7 @@ use Contributte\Datagrid\Datagrid;
 class ActionsPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

@@ -3,12 +3,12 @@
 namespace App\UI\GroupActions;
 
 use App\UI\AbstractPresenter;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 
 class GroupActionsPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

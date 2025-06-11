@@ -5,12 +5,12 @@ namespace App\UI\Home;
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
 use Dibi\Row;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 
 final class HomePresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 

@@ -3,13 +3,13 @@
 namespace App\UI\Row;
 
 use App\UI\AbstractPresenter;
-use Contributte\DataGrid\Column\Action\Confirmation\StringConfirmation;
-use Contributte\DataGrid\DataGrid;
+use Contributte\Datagrid\Column\Action\Confirmation\StringConfirmation;
+use Contributte\Datagrid\Datagrid;
 
 final class RowPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
 		$grid = new DataGrid();
 
