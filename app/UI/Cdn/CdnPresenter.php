@@ -15,6 +15,7 @@ final class CdnPresenter extends AbstractPresenter
 	public function createComponentGrid(): DataGrid
 	{
 		$grid = new DataGrid();
+		$grid->setStrictSessionFilterValues(false);
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 
