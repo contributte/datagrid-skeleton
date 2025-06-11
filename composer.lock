@@ -8,34 +8,34 @@
     "packages": [
         {
             "name": "contributte/application",
-            "version": "v0.6.0",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/application.git",
-                "reference": "54035efe9b8de624ffe050c29308c85d7f220ab7"
+                "reference": "691f106e56d6dbb0c88b8b073196ac8cdb3d97a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/application/zipball/54035efe9b8de624ffe050c29308c85d7f220ab7",
-                "reference": "54035efe9b8de624ffe050c29308c85d7f220ab7",
+                "url": "https://api.github.com/repos/contributte/application/zipball/691f106e56d6dbb0c88b8b073196ac8cdb3d97a1",
+                "reference": "691f106e56d6dbb0c88b8b073196ac8cdb3d97a1",
                 "shasum": ""
             },
             "require": {
-                "nette/application": "^3.1.11 || ^4.0.0",
-                "php": ">=8.1"
+                "nette/application": "^3.2.6 || ^4.0.0",
+                "php": ">=8.2"
             },
             "require-dev": {
-                "contributte/phpstan": "^0.1.0",
+                "contributte/phpstan": "^0.2.0",
                 "contributte/qa": "^0.4.0",
-                "contributte/tester": "^0.3.0",
-                "nette/http": "^4.0.0",
-                "psr/http-message": "~1.0.1",
-                "tracy/tracy": "~2.9.1"
+                "contributte/tester": "^0.4.0",
+                "nette/http": "^3.3.2 || ^4.0.0",
+                "psr/http-message": "^1.0.1 || ^2.0.0",
+                "tracy/tracy": "^2.9.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.6.x-dev"
+                    "dev-master": "0.7.x-dev"
                 }
             },
             "autoload": {
@@ -64,7 +64,7 @@
             ],
             "support": {
                 "issues": "https://github.com/contributte/application/issues",
-                "source": "https://github.com/contributte/application/tree/v0.6.0"
+                "source": "https://github.com/contributte/application/tree/v0.6.1"
             },
             "funding": [
                 {
@@ -76,7 +76,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-27T12:07:11+00:00"
+            "time": "2025-04-30T05:51:01+00:00"
         },
         {
             "name": "contributte/bootstrap",
@@ -228,16 +228,16 @@
         },
         {
             "name": "contributte/forms",
-            "version": "v0.5.1",
+            "version": "v0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/forms.git",
-                "reference": "c7ac26b456ff2958ea207c43be6515ad1154dcea"
+                "reference": "aad9937f8c6633b4a2325f474c55d6906ec99cc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/forms/zipball/c7ac26b456ff2958ea207c43be6515ad1154dcea",
-                "reference": "c7ac26b456ff2958ea207c43be6515ad1154dcea",
+                "url": "https://api.github.com/repos/contributte/forms/zipball/aad9937f8c6633b4a2325f474c55d6906ec99cc7",
+                "reference": "aad9937f8c6633b4a2325f474c55d6906ec99cc7",
                 "shasum": ""
             },
             "require": {
@@ -294,7 +294,7 @@
             ],
             "support": {
                 "issues": "https://github.com/contributte/forms/issues",
-                "source": "https://github.com/contributte/forms/tree/v0.5.1"
+                "source": "https://github.com/contributte/forms/tree/v0.5.2"
             },
             "funding": [
                 {
@@ -306,7 +306,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-13T17:22:04+00:00"
+            "time": "2025-06-11T07:46:35+00:00"
         },
         {
             "name": "contributte/latte",
@@ -1565,16 +1565,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.6",
+            "version": "v4.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "ce708655043c7050eb050df361c5e313cf708309"
+                "reference": "e67c4061eb40b9c113b218214e42cb5a0dda28f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/ce708655043c7050eb050df361c5e313cf708309",
-                "reference": "ce708655043c7050eb050df361c5e313cf708309",
+                "url": "https://api.github.com/repos/nette/utils/zipball/e67c4061eb40b9c113b218214e42cb5a0dda28f2",
+                "reference": "e67c4061eb40b9c113b218214e42cb5a0dda28f2",
                 "shasum": ""
             },
             "require": {
@@ -1645,9 +1645,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.6"
+                "source": "https://github.com/nette/utils/tree/v4.0.7"
             },
-            "time": "2025-03-30T21:06:30+00:00"
+            "time": "2025-06-03T04:55:08+00:00"
         },
         {
             "name": "psr/container",
@@ -2497,12 +2497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/datagrid.git",
-                "reference": "a99d4cd12fcb839a56a3bc6b7e6515d9bbb2263c"
+                "reference": "865970bebc52e8e1b44d624e8e96c3360b1a2884"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/datagrid/zipball/a99d4cd12fcb839a56a3bc6b7e6515d9bbb2263c",
-                "reference": "a99d4cd12fcb839a56a3bc6b7e6515d9bbb2263c",
+                "url": "https://api.github.com/repos/contributte/datagrid/zipball/865970bebc52e8e1b44d624e8e96c3360b1a2884",
+                "reference": "865970bebc52e8e1b44d624e8e96c3360b1a2884",
                 "shasum": ""
             },
             "require": {
@@ -2510,7 +2510,7 @@
                 "nette/di": "^3.0.0",
                 "nette/forms": "^3.2.0",
                 "nette/utils": "^4.0.0",
-                "php": ">=8.1",
+                "php": ">=8.3",
                 "symfony/property-access": "^6.4.0 || ^7.2.0"
             },
             "conflict": {
@@ -2539,7 +2539,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.x-dev"
+                    "dev-master": "7.1.x-dev"
                 }
             },
             "autoload": {
@@ -2587,7 +2587,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-31T13:32:34+00:00"
+            "time": "2025-06-02T14:24:07+00:00"
         }
     ],
     "packages-dev": [
@@ -3273,16 +3273,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.18.1",
+            "version": "8.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "06b18b3f64979ab31d27c37021838439f3ed5919"
+                "reference": "458d665acd49009efebd7e0cb385d71ae9ac3220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/06b18b3f64979ab31d27c37021838439f3ed5919",
-                "reference": "06b18b3f64979ab31d27c37021838439f3ed5919",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/458d665acd49009efebd7e0cb385d71ae9ac3220",
+                "reference": "458d665acd49009efebd7e0cb385d71ae9ac3220",
                 "shasum": ""
             },
             "require": {
@@ -3322,7 +3322,7 @@
             ],
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.18.1"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.19.1"
             },
             "funding": [
                 {
@@ -3334,7 +3334,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-22T14:32:30+00:00"
+            "time": "2025-06-09T17:53:57+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
