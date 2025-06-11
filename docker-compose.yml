@@ -1,6 +1,6 @@
 services:
   web:
-    image: dockette/web:php-82
+    image: dockette/web:php-83
     volumes:
       - ./:/srv
     ports:
