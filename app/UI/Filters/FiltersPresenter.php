@@ -4,17 +4,17 @@ namespace App\UI\Filters;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Fluent;
 use Dibi\Row;
 use Nette\Utils\ArrayHash;
-use Ublaboo\DataGrid\DataGrid;
 
 final class FiltersPresenter extends AbstractPresenter
 {
 
 	public function createComponentGrid(): DataGrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 

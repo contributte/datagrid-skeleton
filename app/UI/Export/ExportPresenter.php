@@ -3,15 +3,15 @@
 namespace App\UI\Export;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\Column\ColumnText;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\Datagrid\Column\ColumnText;
+use Contributte\Datagrid\Datagrid;
 
 final class ExportPresenter extends AbstractPresenter
 {
 
-	public function createComponentGrid(): DataGrid
+	public function createComponentGrid(): Datagrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 

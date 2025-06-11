@@ -3,15 +3,15 @@
 namespace App\UI\Actions;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\Datagrid\Column\Action\Confirmation\StringConfirmation;
+use Contributte\Datagrid\Datagrid;
 
 class ActionsPresenter extends AbstractPresenter
 {
 
 	public function createComponentGrid(): DataGrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 

@@ -3,16 +3,16 @@
 namespace App\UI\TreeView;
 
 use App\UI\AbstractPresenter;
+use Contributte\Datagrid\Column\Action\Confirmation\StringConfirmation;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Fluent;
-use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
-use Ublaboo\DataGrid\DataGrid;
 
 final class TreeViewPresenter extends AbstractPresenter
 {
 
 	public function createComponentGrid(): DataGrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$join = $this->dibiConnection->select('COUNT(id) AS count, parent_category_id')
 			->from('categories')

@@ -4,15 +4,15 @@ namespace App\UI\Home;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Row;
-use Ublaboo\DataGrid\DataGrid;
 
 final class HomePresenter extends AbstractPresenter
 {
 
 	public function createComponentGrid(): DataGrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 

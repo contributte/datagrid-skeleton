@@ -5,13 +5,13 @@ namespace App\UI\Columns;
 use App\Model\Utils\DateTime;
 use App\Model\Utils\Types;
 use App\UI\AbstractPresenter;
+use Contributte\Datagrid\AggregationFunction\IAggregationFunction;
+use Contributte\Datagrid\AggregationFunction\IMultipleAggregationFunction;
+use Contributte\Datagrid\Column\ColumnLink;
+use Contributte\Datagrid\Column\ColumnStatus;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Fluent;
 use Dibi\Row;
-use Ublaboo\DataGrid\AggregationFunction\IAggregationFunction;
-use Ublaboo\DataGrid\AggregationFunction\IMultipleAggregationFunction;
-use Ublaboo\DataGrid\Column\ColumnLink;
-use Ublaboo\DataGrid\Column\ColumnStatus;
-use Ublaboo\DataGrid\DataGrid;
 use UnexpectedValueException;
 
 final class ColumnsPresenter extends AbstractPresenter
@@ -19,7 +19,7 @@ final class ColumnsPresenter extends AbstractPresenter
 
 	public function createComponentGrid(): DataGrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDefaultSort(['id' => 'ASC']);
 

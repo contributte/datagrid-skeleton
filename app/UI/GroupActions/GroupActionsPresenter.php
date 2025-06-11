@@ -3,14 +3,14 @@
 namespace App\UI\GroupActions;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 
 class GroupActionsPresenter extends AbstractPresenter
 {
 
 	public function createComponentGrid(): DataGrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 

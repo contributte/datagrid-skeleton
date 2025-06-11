@@ -4,16 +4,16 @@ namespace App\UI\Localization;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
+use Contributte\Datagrid\Datagrid;
+use Contributte\Datagrid\Localization\SimpleTranslator;
 use Dibi\Row;
-use Ublaboo\DataGrid\DataGrid;
-use Ublaboo\DataGrid\Localization\SimpleTranslator;
 
 final class LocalizationPresenter extends AbstractPresenter
 {
 
 	public function createComponentGrid(): DataGrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 

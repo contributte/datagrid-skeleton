@@ -3,14 +3,14 @@
 namespace App\UI\ItemDetail;
 
 use App\UI\AbstractPresenter;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\Datagrid\Datagrid;
 
 final class ItemDetailPresenter extends AbstractPresenter
 {
 
 	public function createComponentGrid(): DataGrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 
