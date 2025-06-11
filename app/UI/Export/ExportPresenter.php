@@ -51,6 +51,13 @@ final class ExportPresenter extends AbstractPresenter
 				$columnEven,
 			]);
 
+		$grid->addExportExcel('Excel export', 'examples-all.xlsx')
+			->setTitle('Excel export')
+			->setColumns([
+				$columnName,
+				$columnEven,
+			]);
+
 		return $grid;
 	}
 
