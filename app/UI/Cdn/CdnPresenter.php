@@ -27,13 +27,18 @@ final class CdnPresenter extends AbstractPresenter
 		$grid->addColumnText('name', 'Name')
 			->setFilterText();
 
-		$grid->addColumnStatus('status', 'Status')
-			->setFilterSelect([
-				'' => 'All',
-				'active' => 'Active',
-				'inactive' => 'Inactive',
-				'deleted' => 'Deleted',
-			]);
+		$columnStatus = $grid->addColumnStatus('status', 'Status');
+		$columnStatus
+			->addOption('active', 'Active')
+			->endOption()
+			->addOption('inactive', 'Inactive')
+			->setClass('btn-warning')
+			->endOption()
+			->addOption('deleted', 'Deleted')
+			->setClass('btn-danger')
+			->endOption()
+			->setSortable();
+		$columnStatus->onChange[] = [$this, 'changeStatus'];
 
 		$grid->addColumnStatus('multistatus', 'Multi Status', 'status')
 			->setFilterMultiSelect([
@@ -67,6 +72,27 @@ final class CdnPresenter extends AbstractPresenter
 			});
 
 		return $grid;
+	}
+
+	public function changeStatus(string $id, string $newStatus): void
+	{
+		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
+			$data = ['status' => $newStatus];
+
+			$this->dibiConnection->update('users', $data)
+				->where('id = ?', $id)
+				->execute();
+		}
+
+		if ($this->isAjax()) {
+			$grid = $this->getComponent('grid');
+
+			$grid->redrawItem($id);
+			$this->flashMessage('Status changed');
+			$this->redrawControl('flashes');
+		} else {
+			$this->redirect('this');
+		}
 	}
 
 }
