@@ -7,12 +7,13 @@ includes:
 
 parameters:
 	level: 9
-	phpVersion: 80100
+	phpVersion: 80300
 
 	tmpDir: %currentWorkingDirectory%/var/tmp/phpstan
 
 	paths:
 		- app
+		- tests
 
 	fileExtensions:
 		- php
