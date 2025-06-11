@@ -4,10 +4,10 @@ namespace App\UI\Filters;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Fluent;
 use Dibi\Row;
 use Nette\Utils\ArrayHash;
-use Contributte\Datagrid\Datagrid;
 
 final class FiltersPresenter extends AbstractPresenter
 {

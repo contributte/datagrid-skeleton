@@ -4,10 +4,10 @@ namespace App\UI\Edit;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
+use Contributte\Datagrid\Datagrid;
 use Dibi\Row;
 use Nette\Forms\Container;
 use Nette\Utils\Html;
-use Contributte\Datagrid\Datagrid;
 
 final class EditPresenter extends AbstractPresenter
 {

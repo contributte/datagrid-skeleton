@@ -4,8 +4,8 @@ namespace App\UI\Home;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
-use Dibi\Row;
 use Contributte\Datagrid\Datagrid;
+use Dibi\Row;
 
 final class HomePresenter extends AbstractPresenter
 {

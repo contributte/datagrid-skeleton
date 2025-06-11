@@ -4,9 +4,9 @@ namespace App\UI\Localization;
 
 use App\Model\Utils\DateTime;
 use App\UI\AbstractPresenter;
-use Dibi\Row;
 use Contributte\Datagrid\Datagrid;
 use Contributte\Datagrid\Localization\SimpleTranslator;
+use Dibi\Row;
 
 final class LocalizationPresenter extends AbstractPresenter
 {
