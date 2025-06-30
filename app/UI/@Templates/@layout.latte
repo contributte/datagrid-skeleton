@@ -15,22 +15,19 @@
 		<link rel="stylesheet" type="text/css" href="{$basePath}/dist/app.css">
 		<script defer src="{$basePath}/dist/app.js"></script>
 	{/block}
-
-	<!-- Skeleton -->
-	<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="!bg-zinc-100">
+<body class="bg-light">
 {snippet flashes}
-	<div class="w-full !mt-2">
-		<div class="mx-auto md:max-w-5xl">
+	<div class="container-fluid mt-2">
+		<div class="container">
 			<div
 					n:foreach="$flashes as $flash"
-					{if $flash->type === 'info'}class="bg-blue-100 p-2 rounded border !border-blue-600"
-					{elseif $flash->type === 'error'}class="bg-red-100 p-2 rounded border !border-red-600"
-					{elseif $flash->type === 'success'}class="bg-green-100 p-2 rounded border !border-green-600"
-					{elseif $flash->type === 'warning'}class="bg-yellow-100 p-2 rounded border !border-yellow-600"
-					{else}class="bg-gray-100 p-2 rounded border !border-gray-600"
+					{if $flash->type === 'info'}class="alert alert-info"
+					{elseif $flash->type === 'error'}class="alert alert-danger"
+					{elseif $flash->type === 'success'}class="alert alert-success"
+					{elseif $flash->type === 'warning'}class="alert alert-warning"
+					{else}class="alert alert-secondary"
 					{/if}
 			>
 				{$flash->message}
@@ -39,53 +36,56 @@
 	</div>
 {/snippet}
 
-<div class="md:max-w-7xl mx-auto mt-4">
-	<div class="grid grid-cols-[200px_auto] !gap-4 text-black">
-		<div class="!px-2 flex flex-col gap-2 divide-y divide-gray-300">
-			<div class="font-bold text-3xl">Datagrid</div>
-			<div class="grid grid-cols-1 !gap-2">
+<div class="container mt-4">
+	<div class="row g-4">
+		<div class="col-12 col-md-2">
+			<div class="fw-bold fs-3">Datagrid</div>
+			<div class="d-grid gap-2">
 				<div>
-					<a n:class="isLinkCurrent('Home:*') ? 'font-bold', ''" n:href="Home:">Home</a>
+					<a n:class="isLinkCurrent('Home:*') ? 'fw-bold', ''" n:href="Home:">Home</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Filters:*') ? 'font-bold', ''" n:href="Filters:">Filters</a>
+					<a n:class="isLinkCurrent('Filters:*') ? 'fw-bold', ''" n:href="Filters:">Filters</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Columns:*') ? 'font-bold', ''" n:href="Columns:">Columns</a>
+					<a n:class="isLinkCurrent('OuterFilters:*') ? 'fw-bold', ''" n:href="OuterFilters:">Outer Filters</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Actions:*') ? 'font-bold', ''" n:href="Actions:">Actions</a>
+					<a n:class="isLinkCurrent('Columns:*') ? 'fw-bold', ''" n:href="Columns:">Columns</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('GroupActions:*') ? 'font-bold', ''" n:href="GroupActions:">Group Actions</a>
+					<a n:class="isLinkCurrent('Actions:*') ? 'fw-bold', ''" n:href="Actions:">Actions</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Row:*') ? 'font-bold', ''" n:href="Row:">Row</a>
+					<a n:class="isLinkCurrent('GroupActions:*') ? 'fw-bold', ''" n:href="GroupActions:">Group Actions</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('ItemDetail:*') ? 'font-bold', ''" n:href="ItemDetail:">ItemDetail</a>
+					<a n:class="isLinkCurrent('Row:*') ? 'fw-bold', ''" n:href="Row:">Row</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Export:*') ? 'font-bold', ''" n:href="Export:">Export</a>
+					<a n:class="isLinkCurrent('ItemDetail:*') ? 'fw-bold', ''" n:href="ItemDetail:">ItemDetail</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('TreeView:*') ? 'font-bold', ''" n:href="TreeView:">TreeView</a>
+					<a n:class="isLinkCurrent('Export:*') ? 'fw-bold', ''" n:href="Export:">Export</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Edit:*') ? 'font-bold', ''" n:href="Edit:">Edit</a>
+					<a n:class="isLinkCurrent('TreeView:*') ? 'fw-bold', ''" n:href="TreeView:">TreeView</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Add:*') ? 'font-bold', ''" n:href="Add:">Add</a>
+					<a n:class="isLinkCurrent('Edit:*') ? 'fw-bold', ''" n:href="Edit:">Edit</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Localization:*') ? 'font-bold', ''" n:href="Localization:">Localization</a>
+					<a n:class="isLinkCurrent('Add:*') ? 'fw-bold', ''" n:href="Add:">Add</a>
 				</div>
 				<div>
-					<a n:class="isLinkCurrent('Cdn:*') ? 'font-bold', ''" n:href="Cdn:">CDN</a>
+					<a n:class="isLinkCurrent('Localization:*') ? 'fw-bold', ''" n:href="Localization:">Localization</a>
+				</div>
+				<div>
+					<a n:class="isLinkCurrent('Cdn:*') ? 'fw-bold', ''" n:href="Cdn:">CDN</a>
 				</div>
 			</div>
 		</div>
-		<div class="!bg-white !rounded !rounded-8">
+		<div class="bg-white col-12 col-md">
 			{include content}
 		</div>
 	</div>
