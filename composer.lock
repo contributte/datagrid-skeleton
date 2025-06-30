@@ -2497,12 +2497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/datagrid.git",
-                "reference": "1f061cb109cfa77f0918b327550fb2e9b8d85613"
+                "reference": "668ff520aa05dad5c3f39400e68552070e201820"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/datagrid/zipball/1f061cb109cfa77f0918b327550fb2e9b8d85613",
-                "reference": "1f061cb109cfa77f0918b327550fb2e9b8d85613",
+                "url": "https://api.github.com/repos/contributte/datagrid/zipball/668ff520aa05dad5c3f39400e68552070e201820",
+                "reference": "668ff520aa05dad5c3f39400e68552070e201820",
                 "shasum": ""
             },
             "require": {
@@ -2510,7 +2510,7 @@
                 "nette/di": "^3.0.0",
                 "nette/forms": "^3.2.0",
                 "nette/utils": "^4.0.0",
-                "php": ">=8.3",
+                "php": ">=8.2",
                 "symfony/property-access": "^6.4.0 || ^7.2.0"
             },
             "conflict": {
@@ -2584,7 +2584,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-11T13:59:44+00:00"
+            "time": "2025-06-30T12:57:31+00:00"
         }
     ],
     "packages-dev": [
@@ -3429,6 +3429,6 @@
     "platform": {
         "php": ">=8.3"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
