@@ -1,6 +1,6 @@
 # parameters:
 # 	db:
-# 		host: 0.0.0.0
+# 		host: database
 # 		username: contributte
 # 		password: contributte
 # 		database: contributte
