@@ -21,9 +21,14 @@ import {
 import { NajaAjax } from "../../vendor/ublaboo/datagrid/assets/ajax";
 import Select from "tom-select";
 import { Dropdown } from "bootstrap";
+import Datepicker from 'vanillajs-datepicker/Datepicker';
+import cs from 'vanillajs-datepicker/locales/cs';
 
 // Styles
 import '../css/main.css';
+
+// Datepicker Locale
+Object.assign(Datepicker.locales, cs);
 
 // Datagrid + UI
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				new NetteFormsPlugin(netteForms),
 				new HappyPlugin(new Happy()),
 				new SortablePlugin(new SortableJS()),
-				new DatepickerPlugin(new VanillaDatepicker({ buttonClass: 'btn' })),
+				new DatepickerPlugin(new VanillaDatepicker({ buttonClass: 'btn', language: 'cs' })),
 				new SelectpickerPlugin(new TomSelect(Select)),
 				new TreeViewPlugin(),
 			],
