@@ -19,7 +19,7 @@ final class ColumnsPresenter extends AbstractPresenter
 
 	public function createComponentGrid(): Datagrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDefaultSort(['id' => 'ASC']);
 
