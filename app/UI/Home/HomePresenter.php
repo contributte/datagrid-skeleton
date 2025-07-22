@@ -12,7 +12,7 @@ final class HomePresenter extends AbstractPresenter
 
 	public function createComponentGrid(): Datagrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 
