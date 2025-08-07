@@ -615,20 +615,20 @@
         },
         {
             "name": "dibi/dibi",
-            "version": "v5.0.2",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dg/dibi.git",
-                "reference": "97053089e05eadab4c368ad37619adf411b2847e"
+                "reference": "32b6976209859f61eb79380c5a8904ea33db47df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dg/dibi/zipball/97053089e05eadab4c368ad37619adf411b2847e",
-                "reference": "97053089e05eadab4c368ad37619adf411b2847e",
+                "url": "https://api.github.com/repos/dg/dibi/zipball/32b6976209859f61eb79380c5a8904ea33db47df",
+                "reference": "32b6976209859f61eb79380c5a8904ea33db47df",
                 "shasum": ""
             },
             "require": {
-                "php": "8.0 - 8.4"
+                "php": "8.2 - 8.5"
             },
             "replace": {
                 "dg/dibi": "*"
@@ -637,16 +637,19 @@
                 "jetbrains/phpstorm-attributes": "^1.0",
                 "nette/di": "^3.1",
                 "nette/tester": "^2.5",
-                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-nette": "^2.0@stable",
                 "tracy/tracy": "^2.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0-dev"
+                    "dev-master": "5.1-dev"
                 }
             },
             "autoload": {
+                "psr-4": {
+                    "Dibi\\": "src/Dibi"
+                },
                 "classmap": [
                     "src/"
                 ]
@@ -680,9 +683,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dg/dibi/issues",
-                "source": "https://github.com/dg/dibi/tree/v5.0.2"
+                "source": "https://github.com/dg/dibi/tree/v5.1.0"
             },
-            "time": "2024-09-03T01:18:11+00:00"
+            "time": "2025-08-06T22:26:19+00:00"
         },
         {
             "name": "latte/latte",
