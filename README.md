@@ -52,13 +52,19 @@ composer create-project -s dev contributte/datagrid-skeleton acme
    make install
    ```
 
-3) Run docker stack.
+3) Setup project.
 
    ```
-   make docker-up
+   make install
    ```
 
-4) Open http://localhost and enjoy!
+4) Build assets.
+
+   ```
+   npm run build
+   ```
+
+5) Open http://localhost and enjoy!
 
 ### Composer packages
 
