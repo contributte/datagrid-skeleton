@@ -17,7 +17,7 @@
 	{/block}
 </head>
 
-<body class="bg-light">
+<body>
 {snippet flashes}
 	<div class="container-fluid mt-2">
 		<div class="container">
@@ -89,6 +89,12 @@
 			</div>
 		</div>
 		<div class="bg-white col-12 col-md">
+			<div class="bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded-xs relative mb-2" role="alert">
+				<strong class="font-bold">💡</strong>
+					<span class="block sm:inline">Look at the code behind this: <a href="https://github.com/contributte/datagrid-skeleton/blob/master/app/UI/{$presenterDir}/{$presenterFile}.php">{$presenterFile}.php</a></span>
+					<span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+				</span>
+			</div>
 			{include content}
 		</div>
 	</div>
