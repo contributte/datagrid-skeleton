@@ -19,8 +19,8 @@ abstract class AbstractPresenter extends NellaPresenter
 	{
 		$reflector = new \ReflectionClass($this);
 
-		$this->getTemplate()->presenterFile = pathinfo($reflector->getFileName(), PATHINFO_FILENAME);
-		$this->getTemplate()->presenterDir = basename(dirname($reflector->getFileName()));
-
+		$this->getTemplate()->presenterFile = pathinfo((string) $reflector->getFileName(), PATHINFO_FILENAME);
+		$this->getTemplate()->presenterDir = basename(dirname((string) $reflector->getFileName()));
 	}
+
 }
