@@ -1,1 +1,7 @@
 /** Your CSS styles go here **/
+
+/* Remove datagrid container margin/padding only */
+[data-datagrid-name] {
+  padding: 0 !important;
+  margin: 0 !important;
+}

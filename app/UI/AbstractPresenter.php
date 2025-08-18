@@ -15,4 +15,12 @@ abstract class AbstractPresenter extends NellaPresenter
 
 	abstract public function createComponentGrid(): Datagrid;
 
+	public function beforeRender(): void
+	{
+		$reflector = new \ReflectionClass($this);
+
+		$this->getTemplate()->presenterFile = pathinfo($reflector->getFileName(), PATHINFO_FILENAME);
+		$this->getTemplate()->presenterDir = basename(dirname($reflector->getFileName()));
+
+	}
 }
