@@ -46,6 +46,12 @@ final class EditPresenter extends AbstractPresenter
 				return (string) $link;
 			})->addCellAttributes(['class' => 'text-center']);
 
+		$grid->addColumnText('countries_visited', 'Countries Visited')
+			->setEditableInputTypeSelect(array_combine(range(0, 100), range(0, 100)))
+			->setEditableCallback(function ($id, $value): void {
+				$this->flashMessage(sprintf('Id: %s, new value: %s', $id, $value));
+			});
+
 		$grid->addColumnStatus('status', 'Status');
 
 		$inlineEdit = $grid->addInlineEdit();
