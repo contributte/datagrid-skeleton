@@ -1,5 +1,5 @@
 {block content}
 	{control grid}
 
-	{include modal.confirm.latte, modalTitle => $modalTitle ?? 'Delete confirmation'}
+	{include modal.confirm.latte, modalTitle => $modalTitle ?? 'Delete confirmation', $cancelLabel => $cancelLabel ?? 'Cancel', $deleteLabel => $deleteLabel ?? 'Delete'}
 {/block}
