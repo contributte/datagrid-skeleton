@@ -12,7 +12,7 @@ final class TreeViewPresenter extends AbstractPresenter
 
 	public function createComponentGrid(): Datagrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$join = $this->dibiConnection->select('COUNT(id) AS count, parent_category_id')
 			->from('categories')
