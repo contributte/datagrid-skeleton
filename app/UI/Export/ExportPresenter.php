@@ -11,7 +11,7 @@ final class ExportPresenter extends AbstractPresenter
 
 	public function createComponentGrid(): Datagrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 
@@ -46,6 +46,13 @@ final class ExportPresenter extends AbstractPresenter
 
 		$grid->addExportCsv('Csv export', 'examples-all.csv')
 			->setTitle('Csv export')
+			->setColumns([
+				$columnName,
+				$columnEven,
+			]);
+
+		$grid->addExportExcel('Excel export', 'examples-all.xlsx')
+			->setTitle('Excel export')
 			->setColumns([
 				$columnName,
 				$columnEven,
