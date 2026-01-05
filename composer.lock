@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bd0874592f9b0d5be7064d8cb145cf2",
+    "content-hash": "7dd1aae070c07a396d80b1df79c9cde1",
     "packages": [
         {
             "name": "contributte/application",
@@ -2596,33 +2596,33 @@
     "packages-dev": [
         {
             "name": "contributte/phpstan",
-            "version": "v0.2",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/phpstan.git",
-                "reference": "392afbf783b24bfd0af5849f5b9a72e1fe812634"
+                "reference": "dbc466d26fd21e87d1a9d63fa3f96fbf53696b44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/phpstan/zipball/392afbf783b24bfd0af5849f5b9a72e1fe812634",
-                "reference": "392afbf783b24bfd0af5849f5b9a72e1fe812634",
+                "url": "https://api.github.com/repos/contributte/phpstan/zipball/dbc466d26fd21e87d1a9d63fa3f96fbf53696b44",
+                "reference": "dbc466d26fd21e87d1a9d63fa3f96fbf53696b44",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0",
+                "php": ">=8.2",
                 "phpstan/phpstan": "^2.0.1",
                 "phpstan/phpstan-deprecation-rules": "^2.0.0",
                 "phpstan/phpstan-nette": "^2.0.0",
                 "phpstan/phpstan-strict-rules": "^2.0.0"
             },
             "require-dev": {
-                "contributte/qa": "^0.4",
-                "contributte/tester": "^v0.3.0"
+                "contributte/qa": "^0.4.0",
+                "contributte/tester": "^0.3.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "0.3.x-dev"
                 }
             },
             "autoload": {
@@ -2651,7 +2651,7 @@
             ],
             "support": {
                 "issues": "https://github.com/contributte/phpstan/issues",
-                "source": "https://github.com/contributte/phpstan/tree/v0.2"
+                "source": "https://github.com/contributte/phpstan/tree/v0.3.0"
             },
             "funding": [
                 {
@@ -2663,7 +2663,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-18T10:58:44+00:00"
+            "time": "2026-01-04T17:28:07+00:00"
         },
         {
             "name": "contributte/qa",
