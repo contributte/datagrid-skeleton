@@ -88,7 +88,7 @@ final class TreeViewPresenter extends AbstractPresenter
 		if (in_array($newStatus, ['active', 'inactive', 'deleted'], true)) {
 			$data = ['status' => $newStatus];
 
-			$this->dibiConnection->update('users', $data)
+			$this->dibiConnection->update('categories', $data)
 				->where('id = ?', $id)
 				->execute();
 		}
@@ -104,15 +104,15 @@ final class TreeViewPresenter extends AbstractPresenter
 		}
 	}
 
-	public function handleSort(?int $itemId, ?int $prevId, ?int $nextId, ?int $parentId): void
+	public function handleSort(?int $item_id, ?int $prev_id, ?int $next_id, ?int $parent_id): void
 	{
 		$this->flashMessage(
 			sprintf(
 				'Item id: %s, Previous id: %s, Next id: %s, Parent id: %s (only in tree view)',
-				$itemId,
-				$prevId,
-				$nextId,
-				$parentId
+				$item_id,
+				$prev_id,
+				$next_id,
+				$parent_id
 			),
 			'success'
 		);
