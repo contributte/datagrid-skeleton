@@ -16,7 +16,7 @@
     "php": ">=8.3",
 
     "contributte/nella": "^0.3",
-    "ublaboo/datagrid": "dev-master",
+    "ublaboo/datagrid": "^7.2",
 
     "dibi/dibi": "^5.0.1"
   },
