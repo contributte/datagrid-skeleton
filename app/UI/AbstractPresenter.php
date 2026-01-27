@@ -21,6 +21,7 @@ abstract class AbstractPresenter extends NellaPresenter
 
 		$this->getTemplate()->presenterFile = pathinfo((string) $reflector->getFileName(), PATHINFO_FILENAME);
 		$this->getTemplate()->presenterDir = basename(dirname((string) $reflector->getFileName()));
+		$this->getTemplate()->gitRevision = trim((string) shell_exec('git rev-parse HEAD'));
 	}
 
 }
