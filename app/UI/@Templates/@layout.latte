@@ -11,99 +11,85 @@
 	<title>{ifset title}{include title|stripHtml} | {/ifset}DataGrid Sandbox</title>
 
 	{block head}
-		<!-- Datagrid (bundled) -->
 		<link rel="stylesheet" type="text/css" href="{$basePath}/dist/app.css">
 		<script defer src="{$basePath}/dist/app.js"></script>
 	{/block}
 </head>
 
-<body>
-{snippet flashes}
-	<div class="container-fluid mt-2">
-		<div class="container">
-			<div
-					n:foreach="$flashes as $flash"
-					{if $flash->type === 'info'}class="alert alert-info"
-					{elseif $flash->type === 'error'}class="alert alert-danger"
-					{elseif $flash->type === 'success'}class="alert alert-success"
-					{elseif $flash->type === 'warning'}class="alert alert-warning"
-					{else}class="alert alert-secondary"
-					{/if}
-			>
-				{$flash->message}
+<body class="d-flex flex-column min-vh-100">
+<header class="header">
+	<div class="container">
+		<div class="d-flex align-items-center justify-content-between">
+			<a href="{link Home:}" class="header-brand">Datagrid</a>
+			<div class="header-links">
+				<a href="https://github.com/contributte/datagrid" class="header-link" target="_blank">Docs</a>
+				<a href="https://github.com/contributte/datagrid-skeleton" class="header-link" target="_blank">Source</a>
 			</div>
+		</div>
+	</div>
+</header>
+
+{snippet flashes}
+	<div class="container mt-3" n:if="$flashes">
+		<div
+			n:foreach="$flashes as $flash"
+			n:class="'alert', 'alert-dismissible',
+				$flash->type === 'info' ? 'alert-info',
+				$flash->type === 'error' ? 'alert-danger',
+				$flash->type === 'success' ? 'alert-success',
+				$flash->type === 'warning' ? 'alert-warning',
+				!in_array($flash->type, ['info', 'error', 'success', 'warning']) ? 'alert-secondary'"
+		>
+			{$flash->message}
 		</div>
 	</div>
 {/snippet}
 
-<div class="container mt-4">
+<main class="container py-4 flex-grow-1">
 	<div class="row g-4">
-		<div class="col-12 col-md-2">
-			<div class="fw-bold fs-3">Datagrid</div>
-			<div class="d-grid gap-2">
-				<div>
-					<a n:class="isLinkCurrent('Home:*') ? 'fw-bold', ''" n:href="Home:">Home</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Filters:*') ? 'fw-bold', ''" n:href="Filters:">Filters</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('OuterFilters:*') ? 'fw-bold', ''" n:href="OuterFilters:">Outer Filters</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Columns:*') ? 'fw-bold', ''" n:href="Columns:">Columns</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Actions:*') ? 'fw-bold', ''" n:href="Actions:">Actions</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('GroupActions:*') ? 'fw-bold', ''" n:href="GroupActions:">Group Actions</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Row:*') ? 'fw-bold', ''" n:href="Row:">Row</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('ItemDetail:*') ? 'fw-bold', ''" n:href="ItemDetail:">ItemDetail</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Export:*') ? 'fw-bold', ''" n:href="Export:">Export</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('TreeView:*') ? 'fw-bold', ''" n:href="TreeView:">TreeView</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Edit:*') ? 'fw-bold', ''" n:href="Edit:">Edit</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Add:*') ? 'fw-bold', ''" n:href="Add:">Add</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Localization:*') ? 'fw-bold', ''" n:href="Localization:">Localization</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('Cdn:*') ? 'fw-bold', ''" n:href="Cdn:">CDN</a>
-				</div>
-				<div>
-					<a n:class="isLinkCurrent('NoPagination:*') ? 'fw-bold', ''" n:href="NoPagination:">No Pagination</a>
+		<nav class="col-12 col-lg-2">
+			<div class="sidebar">
+				<div class="sidebar-label">Menu</div>
+				<ul class="sidebar-nav">
+					<li><a n:class="isLinkCurrent('Home:*') ? 'active'" n:href="Home:">Home</a></li>
+					<li><a n:class="isLinkCurrent('Filters:*') ? 'active'" n:href="Filters:">Filters</a></li>
+					<li><a n:class="isLinkCurrent('OuterFilters:*') ? 'active'" n:href="OuterFilters:">Outer Filters</a></li>
+					<li><a n:class="isLinkCurrent('Columns:*') ? 'active'" n:href="Columns:">Columns</a></li>
+					<li><a n:class="isLinkCurrent('Actions:*') ? 'active'" n:href="Actions:">Actions</a></li>
+					<li><a n:class="isLinkCurrent('GroupActions:*') ? 'active'" n:href="GroupActions:">Group Actions</a></li>
+					<li><a n:class="isLinkCurrent('Row:*') ? 'active'" n:href="Row:">Row</a></li>
+					<li><a n:class="isLinkCurrent('ItemDetail:*') ? 'active'" n:href="ItemDetail:">ItemDetail</a></li>
+					<li><a n:class="isLinkCurrent('Export:*') ? 'active'" n:href="Export:">Export</a></li>
+					<li><a n:class="isLinkCurrent('TreeView:*') ? 'active'" n:href="TreeView:">TreeView</a></li>
+					<li><a n:class="isLinkCurrent('Edit:*') ? 'active'" n:href="Edit:">Edit</a></li>
+					<li><a n:class="isLinkCurrent('Add:*') ? 'active'" n:href="Add:">Add</a></li>
+					<li><a n:class="isLinkCurrent('Localization:*') ? 'active'" n:href="Localization:">Localization</a></li>
+					<li><a n:class="isLinkCurrent('Cdn:*') ? 'active'" n:href="Cdn:">CDN</a></li>
+					<li><a n:class="isLinkCurrent('NoPagination:*') ? 'active'" n:href="NoPagination:">No Pagination</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="col-12 col-lg-10">
+			<div class="content-shell">
+				<div class="content-body">
+					{include content}
 				</div>
 			</div>
-		</div>
-		<div class="bg-white col-12 col-md">
-			<div class="bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded-xs relative mb-2" role="alert">
-				<strong class="font-bold">💡</strong>
-					<span class="block sm:inline">Look at the code behind this: <a href="https://github.com/contributte/datagrid-skeleton/blob/master/app/UI/{$presenterDir}/{$presenterFile}.php">{$presenterFile}.php</a></span>
-					<span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-				</span>
-			</div>
-			{include content}
 		</div>
 	</div>
-</div>
+</main>
 
-<footer class="container mt-4 mb-3 text-center text-muted">
-	<small>
-		Revision: <a href="https://github.com/contributte/datagrid-skeleton/commit/{$gitRevision}">{$gitRevision|truncate:7,''}</a>
-	</small>
+<footer class="footer mt-auto">
+	<div class="container">
+		<div class="d-flex justify-content-between align-items-center">
+			<span>&copy; {date('Y')} <a href="https://contributte.org">Contributte</a></span>
+			<span class="footer-meta">
+				<a href="https://github.com/contributte/datagrid-skeleton/blob/master/app/UI/{$presenterDir}/{$presenterFile}.php" target="_blank">{$presenterFile}.php</a>
+				&middot;
+				<a href="https://github.com/contributte/datagrid-skeleton/commit/{$gitRevision}" target="_blank">{$gitRevision|truncate:7,''}</a>
+			</span>
+		</div>
+	</div>
 </footer>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\UI;
 
+use App\Model\Parameters;
 use Contributte\Datagrid\Datagrid;
 use Contributte\Nella\UI\NellaPresenter;
 use Dibi\Connection;
@@ -13,6 +14,9 @@ abstract class AbstractPresenter extends NellaPresenter
 	#[Inject]
 	public Connection $dibiConnection;
 
+	#[Inject]
+	public Parameters $parameters;
+
 	abstract public function createComponentGrid(): Datagrid;
 
 	public function beforeRender(): void
@@ -21,7 +25,8 @@ abstract class AbstractPresenter extends NellaPresenter
 
 		$this->getTemplate()->presenterFile = pathinfo((string) $reflector->getFileName(), PATHINFO_FILENAME);
 		$this->getTemplate()->presenterDir = basename(dirname((string) $reflector->getFileName()));
-		$this->getTemplate()->gitRevision = trim((string) shell_exec('git rev-parse HEAD'));
+		$git = $this->parameters->get('git');
+		$this->getTemplate()->gitRevision = is_array($git) && isset($git['revision']) ? $git['revision'] : 'dev';
 	}
 
 }

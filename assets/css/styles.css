@@ -1,7 +1,138 @@
-/** Your CSS styles go here **/
+/** Custom styles for Datagrid Skeleton **/
 
 /* Remove datagrid container margin/padding only */
 [data-datagrid-name] {
   padding: 0 !important;
   margin: 0 !important;
+}
+
+/* Header */
+.header {
+  background: #f1f3f5;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header-brand {
+  color: #212529;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-brand:hover {
+  color: #212529;
+}
+
+.header-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-link {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  transition: color 0.15s ease-in-out;
+}
+
+.header-link:hover {
+  color: #212529;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #f6f6f6;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.sidebar-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #343a40;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: all 0.15s ease-in-out;
+  border-radius: 0.4rem;
+}
+
+.sidebar-nav li a:hover {
+  background: #e9ecef;
+  color: #212529;
+}
+
+.sidebar-nav li a.active {
+  background: #e0e0e0;
+  color: #212529;
+  font-weight: 600;
+}
+
+/* Content Card */
+.content-shell {
+  background: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e5e5;
+  padding: 1.25rem;
+  min-height: 400px;
+}
+
+.content-body {
+  background: #fff;
+}
+
+main.container {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: #f1f3f5;
+  border-top: 1px solid #e9ecef;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.footer a {
+  color: #495057;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #212529;
+  text-decoration: underline;
+}
+
+.footer-meta {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8125rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .sidebar {
+    margin-bottom: 1rem;
+  }
 }
