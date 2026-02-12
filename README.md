@@ -34,6 +34,8 @@ https://examples.contributte.org/datagrid-skeleton/
 
 To install latest version of `contributte/datagrid-skeleton` use [Composer](https://getcomposer.org).
 
+Requires PHP 8.4 or newer.
+
 ```
 composer create-project -s dev contributte/datagrid-skeleton acme
 ```
