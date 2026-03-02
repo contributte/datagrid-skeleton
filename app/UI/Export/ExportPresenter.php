@@ -11,7 +11,7 @@ final class ExportPresenter extends AbstractPresenter
 
 	public function createComponentGrid(): Datagrid
 	{
-		$grid = new DataGrid();
+		$grid = new Datagrid();
 
 		$grid->setDataSource($this->dibiConnection->select('*')->from('users'));
 
@@ -29,7 +29,7 @@ final class ExportPresenter extends AbstractPresenter
 
 		$grid->addColumnText('status', 'Status');
 
-		$grid->addExportCallback('Dump to ajax rq', function (array $rows, DataGrid $grid): void {
+		$grid->addExportCallback('Dump to ajax rq', function (array $rows, Datagrid $grid): void {
 			echo 'All fetched data were passed to export callback. Size of data: ';
 			echo count($rows);
 			die;
