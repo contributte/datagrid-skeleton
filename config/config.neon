@@ -7,7 +7,7 @@ php:
 # ======================================
 # Extension ============================
 extensions:
-	dibi: Dibi\Bridges\Nette\DibiExtension22
+	dibi: Dibi\Bridges\Nette\DibiExtension3
 
 latte:
 	extensions:
