@@ -30,6 +30,31 @@ This project is here for super-simple demonstration how to create a project with
 
 https://examples.contributte.org/datagrid-skeleton/
 
+## Screenshots
+
+| Page | Static | Interactive |
+|------|--------|-------------|
+| Home | <a href="screenshots/00-home.png"><img src="screenshots/00-home.png" width="240"></a> | |
+| Filters | <a href="screenshots/01-filters.png"><img src="screenshots/01-filters.png" width="240"></a> | |
+| Outer Filters | <a href="screenshots/02-outer-filters.png"><img src="screenshots/02-outer-filters.png" width="240"></a> | <a href="screenshots/02-outer-filters-expanded.png"><img src="screenshots/02-outer-filters-expanded.png" width="240"></a> |
+| Columns | <a href="screenshots/03-columns.png"><img src="screenshots/03-columns.png" width="240"></a> | <a href="screenshots/03-columns-hideable.png"><img src="screenshots/03-columns-hideable.png" width="240"></a> |
+| Actions | <a href="screenshots/04-actions.png"><img src="screenshots/04-actions.png" width="240"></a> | <a href="screenshots/04-actions-multiaction.png"><img src="screenshots/04-actions-multiaction.png" width="240"></a> |
+| Group Actions | <a href="screenshots/05-group-actions.png"><img src="screenshots/05-group-actions.png" width="240"></a> | <a href="screenshots/05-group-actions-selected.png"><img src="screenshots/05-group-actions-selected.png" width="240"></a> |
+| Row | <a href="screenshots/06-row.png"><img src="screenshots/06-row.png" width="240"></a> | |
+| ItemDetail | <a href="screenshots/07-item-detail.png"><img src="screenshots/07-item-detail.png" width="240"></a> | <a href="screenshots/07-item-detail-expanded.png"><img src="screenshots/07-item-detail-expanded.png" width="240"></a> |
+| Export | <a href="screenshots/08-export.png"><img src="screenshots/08-export.png" width="240"></a> | |
+| TreeView | <a href="screenshots/09-tree-view.png"><img src="screenshots/09-tree-view.png" width="240"></a> | <a href="screenshots/09-tree-view-expanded.png"><img src="screenshots/09-tree-view-expanded.png" width="240"></a> |
+| Edit | <a href="screenshots/10-edit.png"><img src="screenshots/10-edit.png" width="240"></a> | <a href="screenshots/10-edit-inline.png"><img src="screenshots/10-edit-inline.png" width="240"></a> |
+| Add | <a href="screenshots/11-add.png"><img src="screenshots/11-add.png" width="240"></a> | <a href="screenshots/11-add-inline.png"><img src="screenshots/11-add-inline.png" width="240"></a> |
+| Localization | <a href="screenshots/12-localization.png"><img src="screenshots/12-localization.png" width="240"></a> | |
+| CDN | <a href="screenshots/13-cdn.png"><img src="screenshots/13-cdn.png" width="240"></a> | |
+| No Pagination | <a href="screenshots/14-no-pagination.png"><img src="screenshots/14-no-pagination.png" width="240"></a> | |
+| Sorting | <a href="screenshots/15-sorting.png"><img src="screenshots/15-sorting.png" width="240"></a> | |
+| Columns Summary | <a href="screenshots/16-columns-summary.png"><img src="screenshots/16-columns-summary.png" width="240"></a> | |
+| Array Datasource | <a href="screenshots/17-array-datasource.png"><img src="screenshots/17-array-datasource.png" width="240"></a> | |
+| State Storage | <a href="screenshots/18-state-storage.png"><img src="screenshots/18-state-storage.png" width="240"></a> | |
+| Events | <a href="screenshots/19-events.png"><img src="screenshots/19-events.png" width="240"></a> | |
+
 ## Installation
 
 To install latest version of `contributte/datagrid-skeleton` use [Composer](https://getcomposer.org).
