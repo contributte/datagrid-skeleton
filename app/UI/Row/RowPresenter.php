@@ -50,6 +50,13 @@ final class RowPresenter extends AbstractPresenter
 
 		$grid->allowRowsAction('detail', fn ($item): bool => $item->id % 4 === 0);
 
+		$multiAction = $grid->addMultiAction('multi', 'More')
+			->addAction('view', 'View', 'this')
+			->addAction('export', 'Export', 'this');
+
+		$grid->allowRowsMultiAction('multi', 'view', fn ($item): bool => $item->id % 2 === 0);
+		$grid->allowRowsMultiAction('multi', 'export', fn ($item): bool => $item->id % 3 === 0);
+
 		return $grid;
 	}
 

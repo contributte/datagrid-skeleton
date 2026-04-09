@@ -36,6 +36,7 @@ final class ColumnsPresenter extends AbstractPresenter
 			->setSortable();
 
 		$grid->addColumnLink('email', 'E-mail', 'this')
+			->setOpenInNewTab()
 			->setSortable();
 
 		$columnStatus = $grid->addColumnStatus('status', 'Status');
@@ -59,10 +60,16 @@ final class ColumnsPresenter extends AbstractPresenter
 			->setFormat('j. n. Y')
 			->setSortable();
 
+		$grid->addColumnNumber('countries_visited', 'Countries Visited')
+			->setFormat(0, '.', ',')
+			->setSortable();
+
 		$grid->addColumnNumber('age', 'Age')
 			->setRenderer(fn (Row $row): ?int => DateTime::fromSafe($row->asDateTime('birth_date'))?->diff(new DateTime())->y);
 
 		$grid->setColumnsHideable();
+
+		$grid->setColumnsOrder(['id', 'email', 'status', 'countries_visited', 'emojis', 'birth_date', 'age']);
 
 		$grid->addColumnCallback('status', function (ColumnStatus $column, Row $row): void {
 			if ($row['id'] === 3) {

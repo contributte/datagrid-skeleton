@@ -35,7 +35,7 @@ final class ExportPresenter extends AbstractPresenter
 			die;
 		})->setAjax();
 
-		$grid->addExportCsvFiltered('Csv export (filtered)', 'examples.csv')
+		$grid->addExportCsvFiltered('Csv export (filtered)', 'examples.csv', 'windows-1250', ',', true)
 			->setTitle('Csv export (filtered)');
 
 		$columnName = new ColumnText($grid, 'name', 'name', 'Name');
@@ -44,12 +44,14 @@ final class ExportPresenter extends AbstractPresenter
 				fn ($item) => $item['id'] % 2 === 0 ? 'No' : 'Yes'
 			);
 
-		$grid->addExportCsv('Csv export', 'examples-all.csv')
+		$grid->addExportCsv('Csv export', 'examples-all.csv', 'utf-8', ',', true)
 			->setTitle('Csv export')
 			->setColumns([
 				$columnName,
 				$columnEven,
 			]);
+
+		$grid->setColumnsExportOrder(['name', 'status', 'birth_date', 'id']);
 
 		return $grid;
 	}

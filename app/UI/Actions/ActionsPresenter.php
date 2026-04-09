@@ -3,6 +3,7 @@
 namespace App\UI\Actions;
 
 use App\UI\AbstractPresenter;
+use Contributte\Datagrid\Column\Action\Confirmation\CallbackConfirmation;
 use Contributte\Datagrid\Column\Action\Confirmation\StringConfirmation;
 use Contributte\Datagrid\Datagrid;
 
@@ -61,6 +62,18 @@ class ActionsPresenter extends AbstractPresenter
 				new StringConfirmation('Do you really want to delete example %s?', 'name')
 			);
 
+		$grid->addAction('archive', '', 'archive!')
+			->setIcon('box-archive')
+			->setTitle('Archive')
+			->setClass('btn btn-xs btn-warning ajax')
+			->setConfirmation(
+				new CallbackConfirmation(
+					function ($item): string {
+						return 'Do you really want to archive "' . $item['name'] . '" (ID: ' . $item['id'] . ')?';
+					}
+				)
+			);
+
 		$grid->addToolbarButton('this', 'Toolbar')->addAttributes(['foo' => 'bar']);
 		$grid->addToolbarButton('this#2', 'Button', ['foo' => 'bar']);
 
@@ -82,6 +95,12 @@ class ActionsPresenter extends AbstractPresenter
 	public function handleDelete(): void
 	{
 		$this->flashMessage('Deleted!', 'info');
+		$this->redrawControl('flashes');
+	}
+
+	public function handleArchive(): void
+	{
+		$this->flashMessage('Archived!', 'info');
 		$this->redrawControl('flashes');
 	}
 

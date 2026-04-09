@@ -84,7 +84,13 @@ final class EditPresenter extends AbstractPresenter
 			$this->redrawControl('flashes');
 		};
 
+		$inlineEdit->onCustomRedraw[] = function (): void {
+			$this['grid']->redrawControl();
+		};
+
 		$inlineEdit->setShowNonEditingColumns();
+
+		$grid->allowRowsInlineEdit(fn ($item): bool => $item['id'] % 2 === 0);
 
 		return $grid;
 	}

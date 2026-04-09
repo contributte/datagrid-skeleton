@@ -16,6 +16,8 @@ class GroupActionsPresenter extends AbstractPresenter
 
 		$grid->setItemsPerPageList([20, 50, 100]);
 
+		$grid->setShowSelectedRowsCount();
+
 		$grid->addColumnNumber('id', 'Id')
 			->setAlign('start')
 			->setSortable();
@@ -48,6 +50,20 @@ class GroupActionsPresenter extends AbstractPresenter
 		$grid->addGroupAction('Delete')->onSelect[] = [$this, 'groupDelete'];
 
 		$grid->addGroupButtonAction('Say hello')->onClick[] = [$this, 'sayHello'];
+
+		$grid->addGroupSelectAction('Move to group', [
+			'admins' => 'Admins',
+			'users' => 'Users',
+			'guests' => 'Guests',
+		])->onSelect[] = [$this, 'groupMoveToGroup'];
+
+		$grid->addGroupMultiSelectAction('Assign tags', [
+			'php' => 'PHP',
+			'js' => 'JavaScript',
+			'css' => 'CSS',
+		])->onSelect[] = [$this, 'groupAssignTags'];
+
+		$grid->addGroupTextareaAction('Add comment')->onSelect[] = [$this, 'groupAddComment'];
 
 		return $grid;
 	}
@@ -144,6 +160,60 @@ class GroupActionsPresenter extends AbstractPresenter
 		$this->flashMessage(
 			sprintf('Hello said to: [%s]', implode(',', $ids)),
 			'info'
+		);
+
+		if ($this->isAjax()) {
+			$this->redrawControl('flashes');
+			$this['grid']->redrawControl();
+		} else {
+			$this->redirect('this');
+		}
+	}
+
+	/**
+	 * @param mixed[] $ids
+	 */
+	public function groupMoveToGroup(array $ids, string $group): void
+	{
+		$this->flashMessage(
+			sprintf('Items [%s] moved to group: [%s]', implode(',', $ids), $group),
+			'success'
+		);
+
+		if ($this->isAjax()) {
+			$this->redrawControl('flashes');
+			$this['grid']->redrawControl();
+		} else {
+			$this->redirect('this');
+		}
+	}
+
+	/**
+	 * @param mixed[] $ids
+	 */
+	public function groupAssignTags(array $ids, string $tags): void
+	{
+		$this->flashMessage(
+			sprintf('Tags [%s] assigned to items: [%s]', $tags, implode(',', $ids)),
+			'success'
+		);
+
+		if ($this->isAjax()) {
+			$this->redrawControl('flashes');
+			$this['grid']->redrawControl();
+		} else {
+			$this->redirect('this');
+		}
+	}
+
+	/**
+	 * @param mixed[] $ids
+	 */
+	public function groupAddComment(array $ids, string $comment): void
+	{
+		$this->flashMessage(
+			sprintf('Comment [%s] added to items: [%s]', $comment, implode(',', $ids)),
+			'success'
 		);
 
 		if ($this->isAjax()) {

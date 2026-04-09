@@ -20,12 +20,18 @@ final class FiltersPresenter extends AbstractPresenter
 
 		$grid->setItemsPerPageList([20, 50, 100], true);
 
+		$grid->setAutoSubmit(false);
+		$grid->setColumnReset();
+		$grid->setRefreshUrl();
+
 		$grid->addColumnText('id', 'Id')
 			->setFilterText()
 			->setExactSearch();
 
 		$grid->addColumnText('name', 'Name')
-			->setFilterText();
+			->setFilterText()
+			->setSplitWordsSearch(true)
+			->setConjunctionSearch();
 
 		$grid->addColumnStatus('status', 'Status')
 			->setFilterSelect([
